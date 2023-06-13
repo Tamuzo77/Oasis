@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\ActualiteController;
+use App\Http\Controllers\Admin\CategoryNewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +33,18 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware('can:admin')->prefix('admin')->name('admin.')->group(function(){
     Route::get('dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+
+
+    Route::get('actualites-list', [ActualiteController::class, 'index'])->name('actualites-list');
+    Route::get('actualites-grid', [ActualiteController::class, 'index'])->name('actualites-grid');
+
+
+
+    Route::get('actualites/categories', [CategoryNewController::class, 'index'])->name('categories-news');
+    Route::post('store-categoryNew', [CategoryNewController::class, 'store'])->name('categoryNew-store');
+    Route::get('show-categoryNew/{categoryNew:slug}', [CategoryNewController::class, 'show'])->name('categoryNew-details');
+    Route::patch('update-categoryNew/{categoryNew:slug}', [CategoryNewController::class, 'update'])->name('categoryNew-update');
+    Route::delete('delete-categoryNew/{categoryNew:slug}', [CategoryNewController::class, 'destroy'])->name('categoryNew-delete');
 });
 
 require __DIR__.'/auth.php';
