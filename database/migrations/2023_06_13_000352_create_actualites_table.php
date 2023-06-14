@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('title')->unique();
             $table->string('author');
             $table->text('content');
+            $table->string('cover_image');
             $table->foreignId('status_id');
             $table->foreignId('categoryNew_id');
             $table->timestamps();

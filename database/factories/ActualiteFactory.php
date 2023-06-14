@@ -22,9 +22,10 @@ class ActualiteFactory extends Factory
             'slug' => \fake()->slug(),
             'title' => \fake()->title(),
             'author' => \fake()->lastname(),
-            'content' => \fake()->text(10),
+            'content' => \fake()->realText(15),
             'status_id' => 1,
-            'categoryNew_id' =>CategoryNew::factory() 
+            'categoryNew_id' =>CategoryNew::factory(),
+            'cover_image' => \fake()->imageUrl()
         ];
     }
 }

@@ -37,7 +37,9 @@ Route::middleware('can:admin')->prefix('admin')->name('admin.')->group(function(
 
     Route::get('actualites-list', [ActualiteController::class, 'index'])->name('actualites-list');
     Route::get('actualites-grid', [ActualiteController::class, 'index'])->name('actualites-grid');
-
+    Route::post('store-actus', [ActualiteController::class, 'store'])->name('actus-store');
+    Route::delete('delete-actualite/{actualite:slug}', [ActualiteController::class, 'destroy'])->name('actus-delete');
+    Route::put('active-actus/{actualite:slug}', [ActualiteController::class, 'activeOrNot'])->name('actus-active');
 
 
     Route::get('actualites/categories', [CategoryNewController::class, 'index'])->name('categories-news');
