@@ -14,8 +14,8 @@ class AdminController extends Controller
         return \view('admin/dashboard');
     }
 
-    public function dedede()
+    public function partenaireService()
     {
-        return \view('admin.dedede');
+        return \view('admin.p&s.index');
     }
 }

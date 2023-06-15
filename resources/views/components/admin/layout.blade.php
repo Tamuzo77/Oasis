@@ -12,6 +12,7 @@
     <meta name="author" content="Codescandy">
 
     @include('admin.frontend.styles')
+    @livewireStyles()
     <title>Admin | {{ $title ?? 'Titre oublié !' }}</title>
 </head>
 
@@ -42,6 +43,7 @@
 
 
     @include('admin.frontend.scripts')
+    @livewireScripts()
 </body>
 
 

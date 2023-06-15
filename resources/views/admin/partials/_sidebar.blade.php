@@ -1,10 +1,16 @@
 <x-admin.sidebar>
 
     <x-admin.sidebar-item class="{{ request()->is('admin/dashboard') ? 'active': '' }}" title="Tableau de Bord" href="{{ route('admin.dashboard') }}" icon="home" />
-    <x-admin.sidebar-item title="Actualités" separator="Site" :toggle="true" data-bs-toggle="collapse">
-        <x-admin.sidebar-item class="{{ request()->is('admin/actualites-grid')  ?   'active' : '' }}" title="Toutes Les Actualités" href="{{ route('admin.actualites-grid') }}" />
-        <x-admin.sidebar-item class="{{ request()->is('admin/create-actus')  ?   'active' : '' }}" title="Créer une Actualité" href="{{ route('admin.actus-create') }}" />
+
+
+
+    <x-admin.sidebar-item title="Actualités" icon="grid" separator="Site" :toggle="true" data-bs-toggle="collapse">
+        <x-admin.sidebar-item class="{{ request()->is('admin/actualites-grid')  ?   'active' : '' }}" title="Toutes Les Actualités" icon="book-open" href="{{ route('admin.actualites-grid') }}" />
+        <x-admin.sidebar-item class="{{ request()->is('admin/create-actus')  ?   'active' : '' }}" title="Créer une Actualité" icon="plus-square" href="{{ route('admin.actus-create') }}" />
     </x-admin.sidebar-item>
+
+    <x-admin.sidebar-item title="Partenaires & Services" icon="pocket" href="{{ route('admin.partenaires&services') }}" />
+
     <x-admin.sidebar-item title="Formations"  :toggle="true" data-bs-toggle="collapse">
         <x-admin.sidebar-item title="Nouvelle " href="" />
         <x-admin.sidebar-item title="Nouvelle " href="" />
