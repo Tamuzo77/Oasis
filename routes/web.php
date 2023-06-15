@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\IndexController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ConnexionController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\ActualiteController;
 use App\Http\Controllers\Admin\CategoryNewController;
@@ -17,9 +19,11 @@ use App\Http\Controllers\Admin\CategoryNewController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[IndexController::class,'index']);
+Route::get('/connexion',[ConnexionController::class,'connexion']);
+
+
+/*---------------------------------------------------------------------------------*/
 
 Route::get('/dashboard', function () {
     return view('dashboard');
