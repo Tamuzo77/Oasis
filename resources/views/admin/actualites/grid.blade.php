@@ -11,7 +11,7 @@
 
     <div class="row justify-content-md-between mb-5 mb-xl-0 ">
         <!-- col -->
-        <div class="col-xl-2 col-lg-4 col-md-6 col-12">
+        <div class="col-xl-3 col-lg-4 col-md-6 col-12">
             <!-- search -->
             <div class="mb-2 mb-lg-4">
                 <form method="GET">
@@ -21,21 +21,56 @@
                     <input type="search" name="search" value="{{ request('search') }}" id="search-input"
                         class="form-control" placeholder="Search Actus">
                 </form>
-              
+
             </div>
         </div>
-        <div class="col-xxl-1 col-lg-2 col-md-6 col-12 ">
+        <div class="col-xl-6 col-lg-6 col-md-6 col-12 d-flex  justify-content-end ">
+            <div>
+                <a href="{{ route('admin.actualites-list') }}"
+                    class="btn btn-ghost btn-icon btn-md rounded-circle texttooltip " data-template="listTooltip">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="feather feather-list icon-xs">
+                        <line x1="8" y1="6" x2="21" y2="6"></line>
+                        <line x1="8" y1="12" x2="21" y2="12"></line>
+                        <line x1="8" y1="18" x2="21" y2="18"></line>
+                        <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                        <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                        <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                    </svg>
+                    <div class="d-none" id="listTooltip">
+                        <span>List</span>
+                    </div>
+                </a>
+                <a href="{{ route('admin.actualites-grid') }}"
+                    class="btn btn-ghost btn-icon btn-md rounded-circle  texttooltip " data-template="gridTooltip">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="feather feather-grid icon-xs">
+                        <rect x="3" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="14" width="7" height="7"></rect>
+                        <rect x="3" y="14" width="7" height="7"></rect>
+                    </svg>
+                    <div class="d-none" id="gridTooltip">
+                        <span>Grid</span>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+        <div class="col-xl-3 col-lg-2 col-md-6 col-12 ">
 
 
             <!-- Custom select -->
-            <form  method="get">
-              <select name="status" class="form-select" onchange="this.form.submit()">
-                  <option value="">Filtre</option>
-                  <option value="actif" {{ Request::get('status')=='actif' ? 'selected' :'' }}>Actif</option>
-                  <option value="inactif" {{ Request::get('status')=='inactif' ? 'selected' :'' }}>Inactif</option>
-  
-              </select>
-  
+            <form method="get">
+                <select name="status" class="form-select" onchange="this.form.submit()">
+                    <option value="">Filtre</option>
+                    <option value="actif" {{ Request::get('status') == 'actif' ? 'selected' : '' }}>Actif</option>
+                    <option value="inactif" {{ Request::get('status') == 'inactif' ? 'selected' : '' }}>Inactif</option>
+
+                </select>
+
 
             </form>
         </div>
@@ -43,131 +78,143 @@
     <x-admin.flash />
     <div class="row">
         @foreach ($actualites as $actualite)
-        <div class="col-xxl-3 col-xl-4 col-lg-6 col-md-6 col-sm-12 mb-5">
-          <!-- card -->
-          <div class="card h-100">
-            @if ($actualite->cover_image ?? false)
-              <img src="{{ asset( 'storage/' . $actualite->cover_image) }}" alt="Image"
-                  class="img-fluid rounded-top custom-image">
-            @endif
-              <div class="d-flex position-absolute end-0 pe-3 pt-3">
+            <div class="col-xxl-3 col-xl-4 col-lg-6 col-md-6 col-sm-12 mb-5">
+                <!-- card -->
+                <div class="card h-100">
+                    @if ($actualite->cover_image ?? false)
+                        <img src="{{ asset('storage/' . $actualite->cover_image) }}" alt="Image"
+                            class="img-fluid rounded-top custom-image">
+                    @endif
+                    <div class="d-flex position-absolute end-0 pe-3 pt-3">
 
-                  <div class="dropdown dropstart">
-                      <a href="#!" class="btn-icon btn btn-ghost btn-sm rounded-circle"
-                          data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          <i data-feather="more-vertical" class="icon-xs"></i>
-                      </a>
-                      <div class="dropdown-menu">
+                        <div class="dropdown dropstart">
+                            <a href="#!" class="btn-icon btn btn-ghost btn-sm rounded-circle"
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i data-feather="more-vertical" class="icon-xs"></i>
+                            </a>
+                            <div class="dropdown-menu">
+                                <form
+                                    action="{{ route('admin.actus-edit', \Illuminate\Support\Facades\Crypt::encrypt($actualite->slug)) }}"
+                                    method="get">
+                                    @csrf
+                                    <button type="submit" class="dropdown-item d-flex align-items-center">
+                                        <i class=" dropdown-item-icon" data-feather="edit"></i>Edit Details
+                                    </button>
+                                </form>
 
-                          <a class="dropdown-item d-flex align-items-center" href="#!">
-                              <i class=" dropdown-item-icon" data-feather="edit"></i>Edit Details
-                          </a>
-
-                          <a class="dropdown-item d-flex align-items-center" href="#!">
-                              <i class="dropdown-item-icon" data-feather="link"></i>Copy Actus link
-
-                          </a>
-
-                          <div class="dropdown-divider"></div>
-                          <form action="" method="post">
-                            @csrf
-                            @method('')
-                            <button class=" disabled dropdown-item d-flex align-items-center" href="#!">
-                                <i class=" dropdown-item-icon" data-feather="printer"></i>Export / Print
-                            </button>
-                          </form>
-                          <div class="dropdown-divider"></div>
-                          <form action="{{ route('admin.actus-active',\Illuminate\Support\Facades\Crypt::encrypt($actualite->slug)) }}" method="post">
-                            @csrf
-                            @method('PUT')
-                            <button type="submit" class="dropdown-item d-flex align-items-center">
-                              <i class="dropdown-item-icon" data-feather="archive"></i>
-                              {{ ($actualite->status_id === 1) ? 'Désactiver' : 'Activer' }}
-                          </button>
-                          </form>
-                          <form action="{{ route('admin.actus-delete', \Illuminate\Support\Facades\Crypt::encrypt($actualite->slug)) }}" method="post">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="dropdown-item d-flex align-items-center">
-                              <i class="dropdown-item-icon" data-feather="trash"></i>Supprimer
-                            </button>
-                          </form>
-                          
+                                <a class="dropdown-item d-flex align-items-center" href="#"
+                                    onclick="copyActusLink()">
+                                    <i class="dropdown-item-icon" data-feather="link"></i>Copy Actus link
+                                </a>
+                                <input type="hidden" id="actus-link" value="http://example.com/actus" />
 
 
-                      </div>
-                  </div>
-              </div>
-              <!-- card body -->
-              <div class="card-body">
-                  <!-- heading-->
-
-
-                  <!-- text-->
+                                <div class="dropdown-divider"></div>
+                                <form action="" method="post">
+                                    @csrf
+                                    @method('')
+                                    <button class=" disabled dropdown-item d-flex align-items-center" href="#!">
+                                        <i class=" dropdown-item-icon" data-feather="printer"></i>Export / Print
+                                    </button>
+                                </form>
+                                <div class="dropdown-divider"></div>
+                                <form
+                                    action="{{ route('admin.actus-active', \Illuminate\Support\Facades\Crypt::encrypt($actualite->slug)) }}"
+                                    method="post">
+                                    @csrf
+                                    @method('PUT')
+                                    <button type="submit" class="dropdown-item d-flex align-items-center">
+                                        <i class="dropdown-item-icon" data-feather="archive"></i>
+                                        {{ $actualite->status_id === 1 ? 'Désactiver' : 'Activer' }}
+                                    </button>
+                                </form>
+                                <form
+                                    action="{{ route('admin.actus-delete', \Illuminate\Support\Facades\Crypt::encrypt($actualite->slug)) }}"
+                                    method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="dropdown-item d-flex align-items-center">
+                                        <i class="dropdown-item-icon" data-feather="trash"></i>Supprimer
+                                    </button>
+                                </form>
 
 
 
-                  <div class="mb-4">
-                      <h4 class="mb-0 h5"><a href="#!" class="text-inherit">{{ $actualite->title }}
-                          </a></h4>
-                      <span class="text-muted fs-6">{{ $actualite->categoryNew->name }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- card body -->
+                    <div class="card-body">
+                        <!-- heading-->
 
 
-                  </div>
-                  <div class="mt-3 mb-4">
-                    <p class="mb-0">{!! $actualite->content !!}</p>
-                  </div>
+                        <!-- text-->
 
 
 
-                  <!-- progress -->
-                  <div class="d-flex justify-content-between
+                        <div class="mb-4">
+                            <h4 class="mb-0 h5"><a href="#!" class="text-inherit">{{ $actualite->title }}
+                                </a></h4>
+                            <span class="text-muted fs-6">{{ $actualite->categoryNew->name }}</span>
+
+
+                        </div>
+                        <div class="mt-3 mb-4">
+                            <p class="mb-0">{!! $actualite->content !!}</p>
+                        </div>
+
+
+
+                        <!-- progress -->
+                        <div class="d-flex justify-content-between
                           align-items-center mb-5">
-                      <div class="d-flex align-items-center">
-                          <!-- avatar group -->
-                          <div class="avatar-group">
-                              <span class="avatar avatar-sm avatar-success imgtooltip" data-template="textThirteen">
-                                  <span class="avatar-initials rounded-circle ">
+                            <div class="d-flex align-items-center">
+                                <!-- avatar group -->
+                                <div class="avatar-group">
+                                    <span class="avatar avatar-sm avatar-success imgtooltip"
+                                        data-template="textThirteen">
+                                        <span class="avatar-initials rounded-circle ">
 
-                                      OA</span>
+                                            OA</span>
 
-                                  <span id="textThirteen" class="d-none">
-                                      <span>OASIS</span>
+                                        <span id="textThirteen" class="d-none">
+                                            <span>OASIS</span>
 
-                                  </span>
-                              </span>
+                                        </span>
+                                    </span>
 
 
-                          </div>
+                                </div>
 
-                      </div>
-                      <!-- text -->
-                      <div>
-                          <span class="badge {{ ($actualite->status_id == 1) ? 'badge-success-soft' : 'badge-danger-soft' }} ">{{ $actualite->status->libelle }}</span>
-                      </div>
+                            </div>
+                            <!-- text -->
+                            <div>
+                                <span
+                                    class="badge {{ $actualite->status_id == 1 ? 'badge-success-soft' : 'badge-danger-soft' }} ">{{ $actualite->status->libelle }}</span>
+                            </div>
 
-                  </div>
+                        </div>
 
-              </div>
-              <!-- card footer -->
-              <div class="card-footer p-0">
-                  <div class="d-flex justify-content-between ">
+                    </div>
+                    <!-- card footer -->
+                    <div class="card-footer p-0">
+                        <div class="d-flex justify-content-between ">
 
-                      <div class="w-50 py-3 px-4 ">
-                          <h6 class="mb-0 text-muted">Créer:</h6>
-                          <p class="text-dark fs-6  mb-0">{{ $actualite->created_at->diffForHumans() }}</p>
-                      </div>
-                      <div class="border-start w-50 py-3 px-4">
-                          <h6 class="mb-0 text-muted">Modifié:</h6>
-                          <p class="text-dark fs-6  mb-0">{{ $actualite->updated_at->diffForHumans() }}</p>
+                            <div class="w-50 py-3 px-4 ">
+                                <h6 class="mb-0 text-muted">Créer:</h6>
+                                <p class="text-dark fs-6  mb-0">{{ $actualite->created_at->diffForHumans() }}</p>
+                            </div>
+                            <div class="border-start w-50 py-3 px-4">
+                                <h6 class="mb-0 text-muted">Modifié:</h6>
+                                <p class="text-dark fs-6  mb-0">{{ $actualite->updated_at->diffForHumans() }}</p>
 
-                      </div>
-                  </div>
+                            </div>
+                        </div>
 
-              </div>
+                    </div>
 
-          </div>
-        </div>
+                </div>
+            </div>
         @endforeach
         {{ $actualites->links() }}
 
@@ -345,7 +392,7 @@
 
         <div class="offcanvas-body" data-simplebar>
             <div class="offcanvas-header px-2 pt-0">
-                <h3 class="offcanvas-title" id="offcanvasExampleLabel">Créer une Nouvelle Actualité</h3>
+                <h3 class="offcanvas-title" id="offcanvasExampleLabel">Création Rapide : Actualité</h3>
                 <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
                     aria-label="Close"></button>
             </div>
@@ -378,9 +425,9 @@
                             </div>
                             <input type="hidden" name="content" id="description" class="hidden-input">
                             @error('content')
-                              <div class="invalid-feedback">
-                                {{ $message }}
-                              </div>
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
                             @enderror
                         </div>
 
@@ -417,11 +464,12 @@
 
                             <div class="fallback d-block dropzone border-dashed min-h-0 rounded-2">
 
-                                <input value="{{ old('cover_image') ?? '' }}" name="cover_image" type="file" required>
+                                <input value="{{ old('cover_image') ?? '' }}" name="cover_image" type="file"
+                                    required>
                                 @error('cover_image')
-                                <div class="invalid-feedback">
-                                  {{ $message }}
-                                </div>
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
                                 @enderror
                             </div>
 
@@ -462,19 +510,43 @@
             };
 
         }
+
+        function copyActusLink() {
+            // Récupérer le lien à copier depuis l'élément HTML
+            var actusLink = document.getElementById('actus-link').value;
+
+            // Copier le lien dans le presse-papiers
+            var tempInput = document.createElement('input');
+            tempInput.setAttribute('value', actusLink);
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+
+            // Afficher une notification de succès avec SweetAlert
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Lien copié  !',
+                showConfirmButton: false,
+                timer: 1500
+            })
+        }
     </script>
 
     <style>
-      .ql-hidden{
-        visibility: hidden;
-        position: absolute;
-      }
-      .custom-image {
-        height: 130px; 
-        object-fit: cover; 
-      }
+        .ql-hidden {
+            visibility: hidden;
+            position: absolute;
+        }
 
-
+        .custom-image {
+            width: 100%;
+            height: auto;
+            max-height: 150px;
+            /* Spécifiez ici la hauteur maximale souhaitée */
+            object-fit: cover;
+        }
     </style>
 
 </x-admin.layout>

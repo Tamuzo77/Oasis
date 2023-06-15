@@ -37,7 +37,10 @@ Route::middleware('can:admin')->prefix('admin')->name('admin.')->group(function(
 
     Route::get('actualites-list', [ActualiteController::class, 'index'])->name('actualites-list');
     Route::get('actualites-grid', [ActualiteController::class, 'index'])->name('actualites-grid');
+    Route::get('create-actus', [ActualiteController::class, 'create'])->name('actus-create');
     Route::post('store-actus', [ActualiteController::class, 'store'])->name('actus-store');
+    Route::patch('update-actus/{actualite:slug}', [ActualiteController::class, 'update'])->name('actus-update');
+    Route::get('edit-actus/{actualite:slug}', [ActualiteController::class, 'edit'])->name('actus-edit');
     Route::delete('delete-actualite/{actualite:slug}', [ActualiteController::class, 'destroy'])->name('actus-delete');
     Route::put('active-actus/{actualite:slug}', [ActualiteController::class, 'activeOrNot'])->name('actus-active');
 
