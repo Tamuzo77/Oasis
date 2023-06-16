@@ -29,6 +29,8 @@
     <script src="{{ asset('admin/assets/js/vendors/tooltip.js') }}"></script>
 
     @endif
+
+    <script src="https://unpkg.com/filepond@^4/dist/filepond.js"></script>
    
 
 

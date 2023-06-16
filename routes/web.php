@@ -5,6 +5,8 @@ use App\Http\Controllers\IndexController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ConnexionController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\ImageController;
+use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\ActualiteController;
 use App\Http\Controllers\Admin\PartenaireController;
 use App\Http\Controllers\Admin\CategoryNewController;
@@ -41,6 +43,12 @@ Route::middleware('can:admin')->prefix('admin')->name('admin.')->group(function(
     Route::get('partenaires&services',[AdminController::class, 'partenaireService'])->name('partenaires&services');
     Route::post('store-partenaire',[PartenaireController::class, 'store'])->name('partenaire-store');
     Route::delete('delete-partenaire, {partenaire:id}',[PartenaireController::class, 'destroy'])->name('partenaire-delete');
+
+    Route::get('create-service',[ServiceController::class, 'create'])->name('service-create');
+    Route::post('store-service',[ServiceController::class, 'store'])->name('service-store');
+    Route::get('edit-service,{service:slug}', [ServiceController::class, 'edit'])->name('service-edit');
+    Route::get('show-service,{service:slug}', [ServiceController::class, 'show'])->name('service-show');
+
     Route::get('actualites-list', [ActualiteController::class, 'index'])->name('actualites-list');
     Route::get('actualites-grid', [ActualiteController::class, 'index'])->name('actualites-grid');
     Route::get('create-actus', [ActualiteController::class, 'create'])->name('actus-create');
@@ -56,6 +64,11 @@ Route::middleware('can:admin')->prefix('admin')->name('admin.')->group(function(
     Route::get('show-categoryNew/{categoryNew:slug}', [CategoryNewController::class, 'show'])->name('categoryNew-details');
     Route::patch('update-categoryNew/{categoryNew:slug}', [CategoryNewController::class, 'update'])->name('categoryNew-update');
     Route::delete('delete-categoryNew/{categoryNew:slug}', [CategoryNewController::class, 'destroy'])->name('categoryNew-delete');
+
+    Route::get('library',[ImageController::class, 'index'])->name('library');
+    Route::post('store-image',[ImageController::class, 'store'])->name('image-store');
+    Route::post('tmp-upload',[ImageController::class, 'tmpUpload'])->name('tmpUpload');
+    Route::delete('tmp-delete',[ImageController::class, 'tmpDelete'])->name('tmpDelete');
 
 
 });

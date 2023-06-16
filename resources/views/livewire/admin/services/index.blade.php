@@ -1,4 +1,6 @@
-
+@php
+    $badges = ['success', 'warning', 'danger', 'info', 'secondary', 'primary'];
+@endphp
 <div class="py-6">
   <div class="row">
     <div class="col-md-12 col-12 mb-4">
@@ -20,7 +22,7 @@
 
 
           </form>
-          <a href="#!" class="btn btn-primary ms-3">Ajouter un Service</a>
+          <a href="{{ route('admin.service-create') }}" class="btn btn-primary ms-3">Ajouter un Service</a>
         </div>
       </div>
 
@@ -30,332 +32,88 @@
   
   </div>
   <div class="row">
-      <div class="col-xxl-3 col-lg-6 mb-4">
-          <div class="card">
-              <div class="card-body text-center  ">
-                  <div class="my-4">
-                      <div class="mb-5">
-                          <img src="{{ asset('admin/assets/images/svg/sellerlogo-1.svg') }}" alt="Image">
-  
-                      </div>
-                      <h4 class="mb-0">True Line Store</h4>
-                      <span>Adam Pyles</span>
-                  </div>
-  
-                  <div id="storeOne" class="px-8"></div>
-                  <div class="mt-6 row ">
-                      <div class="col">
-                          <div>
-                              <h3 class="mb-0 ">345</h3>
-                              <span>Products</span>
-                          </div>
-  
-                      </div>
-                      <div class="vr g-0"></div>
-                      <div class="col">
-                          <div>
-                              <h3 class="mb-0 ">$45,129</h3>
-                              <span>Wallet Balance</span>
-                          </div>
-  
-                      </div>
-  
-                  </div>
-  
-              </div>
-              <div class="card-footer text-end">
-                  <a href="#!" class="btn btn-primary-soft">View Details<i class="ms-1 icon-xs"
-                          data-feather="arrow-right"></i></a>
-              </div>
-  
-          </div>
-  
-      </div>
-      <div class="col-xxl-3 col-lg-6 mb-4">
-          <div class="card">
-              <div class="card-body text-center  ">
-                  <div class="my-4 ">
-                      <div class="mb-5">
-                          <img src="{{ asset('admin/assets/images/svg/sellerlogo-2.svg') }}" alt="Image">
-                      </div>
-                      <h4 class="mb-0">Nykaa Fashion</h4>
-                      <span>Brian Raines</span>
-                  </div>
-  
-                  <div id="storeTwo" class="px-8"></div>
-                  <div class="mt-6 row ">
-                      <div class="col">
-                          <div>
-                              <h3 class="mb-0 ">1234</h3>
-                              <span>Products</span>
-                          </div>
-  
-                      </div>
-                      <div class="vr g-0"></div>
-                      <div class="col">
-                          <div>
-                              <h3 class="mb-0 ">$1,45,129</h3>
-                              <span>Wallet Balance</span>
-                          </div>
-  
-                      </div>
-  
-                  </div>
-  
-              </div>
-              <div class="card-footer text-end">
-                  <a href="#!" class="btn btn-primary-soft">View Details<i class="ms-1 icon-xs"
-                          data-feather="arrow-right"></i></a>
-              </div>
-  
-          </div>
-  
-      </div>
-      <div class="col-xxl-3 col-lg-6 mb-4">
-          <div class="card">
-              <div class="card-body text-center  ">
-                  <div class="my-4 ">
-                      <div class="mb-5">
-                          <img src="{{ asset('admin/assets/images/svg/sellerlogo-3.svg') }}" alt="Image">
-                      </div>
-                      <h4 class="mb-0">Beverly Maclean</h4>
-                      <span>Brian Raines</span>
-                  </div>
-  
-                  <div id="storeThree" class="px-8"></div>
-                  <div class="mt-6 row ">
-                      <div class="col">
-                          <div>
-                              <h3 class="mb-0 ">456</h3>
-                              <span>Products</span>
-                          </div>
-  
-                      </div>
-                      <div class="vr g-0"></div>
-                      <div class="col">
-                          <div>
-                              <h3 class="mb-0 ">$53,269</h3>
-                              <span>Wallet Balance</span>
-                          </div>
-  
-                      </div>
-  
-                  </div>
-  
-              </div>
-              <div class="card-footer text-end">
-                  <a href="#!" class="btn btn-primary-soft">View Details<i class="ms-1 icon-xs"
-                          data-feather="arrow-right"></i></a>
-              </div>
-  
-          </div>
-  
-      </div>
-      <div class="col-xxl-3 col-lg-6 mb-4">
-          <div class="card">
-              <div class="card-body text-center  ">
-                  <div class="my-4 ">
-                      <div class="mb-5">
-                          <img src="{{ asset('admin/assets/images/svg/sellerlogo-4.svg') }}" alt="Image">
-                      </div>
-                      <h4 class="mb-0">Nine Digital Store</h4>
-                      <span>Adam Pyles</span>
-                  </div>
-  
-                  <div id="storeFour" class="px-8"></div>
-                  <div class="mt-6 row ">
-                      <div class="col">
-                          <div>
-                              <h3 class="mb-0 ">242</h3>
-                              <span>Products</span>
-                          </div>
-  
-                      </div>
-                      <div class="vr g-0"></div>
-                      <div class="col">
-                          <div>
-                              <h3 class="mb-0 ">$63,789</h3>
-                              <span>Wallet Balance</span>
-                          </div>
-  
-                      </div>
-  
-                  </div>
-  
-              </div>
-              <div class="card-footer text-end">
-                  <a href="#!" class="btn btn-primary-soft">View Details<i class="ms-1 icon-xs"
-                          data-feather="arrow-right"></i></a>
-              </div>
-  
-          </div>
-  
-      </div>
-      <div class="col-xxl-3 col-lg-6 mb-4">
-          <div class="card">
-              <div class="card-body text-center  ">
-                  <div class="my-4 ">
-                      <div class="mb-5">
-                          <img src="{{ asset('admin/assets/images/svg/sellerlogo-5.svg') }}" alt="Image">
-                      </div>
-                      <h4 class="mb-0">Titan Jewellery</h4>
-                      <span>Brian Raines</span>
-                  </div>
-  
-                  <div id="storeFive" class="px-8"></div>
-                  <div class="mt-6 row ">
-                      <div class="col">
-                          <div>
-                              <h3 class="mb-0 ">636</h3>
-                              <span>Products</span>
-                          </div>
-  
-                      </div>
-                      <div class="vr g-0"></div>
-                      <div class="col">
-                          <div>
-                              <h3 class="mb-0 ">$13,976</h3>
-                              <span>Wallet Balance</span>
-                          </div>
-  
-                      </div>
-  
-                  </div>
-  
-              </div>
-              <div class="card-footer text-end">
-                  <a href="#!" class="btn btn-primary-soft">View Details<i class="ms-1 icon-xs"
-                          data-feather="arrow-right"></i></a>
-              </div>
-  
-          </div>
-  
-      </div>
-      <div class="col-xxl-3 col-lg-6 mb-4">
-          <div class="card">
-              <div class="card-body text-center  ">
-                  <div class="my-4 ">
-                      <div class="mb-5">
-                          <img src="{{ asset('admin/assets/images/svg/sellerlogo-6.svg') }}" alt="Image">
-                      </div>
-                      <h4 class="mb-0">HalfRound Store</h4>
-                      <span>Beverly Maclean</span>
-                  </div>
-  
-                  <div id="storeSix" class="px-8"></div>
-                  <div class="mt-6 row ">
-                      <div class="col">
-                          <div>
-                              <h3 class="mb-0 ">456</h3>
-                              <span>Products</span>
-                          </div>
-  
-                      </div>
-                      <div class="vr g-0"></div>
-                      <div class="col">
-                          <div>
-                              <h3 class="mb-0 ">$13,976</h3>
-                              <span>Wallet Balance</span>
-                          </div>
-  
-                      </div>
-  
-                  </div>
-  
-              </div>
-              <div class="card-footer text-end">
-                  <a href="#!" class="btn btn-primary-soft">View Details<i class="ms-1 icon-xs"
-                          data-feather="arrow-right"></i></a>
-              </div>
-  
-          </div>
-  
-      </div>
-      <div class="col-xxl-3 col-lg-6 mb-4">
-          <div class="card">
-              <div class="card-body text-center  ">
-                  <div class="my-4 ">
-                      <div class="mb-5">
-                          <img src="{{ asset('admin/assets/images/svg/sellerlogo-2.svg') }}" alt="Image">
-                      </div>
-                      <h4 class="mb-0">True Line Store</h4>
-                      <span>Beverly Maclean</span>
-                  </div>
-  
-                  <div id="storeSeven" class="px-8"></div>
-                  <div class="mt-6 row ">
-                      <div class="col">
-                          <div>
-                              <h3 class="mb-0 ">283</h3>
-                              <span>Products</span>
-                          </div>
-  
-                      </div>
-                      <div class="vr g-0"></div>
-                      <div class="col">
-                          <div>
-                              <h3 class="mb-0 ">$10,976</h3>
-                              <span>Wallet Balance</span>
-                          </div>
-  
-                      </div>
-  
-                  </div>
-  
-              </div>
-              <div class="card-footer text-end">
-                  <a href="#!" class="btn btn-primary-soft">View Details<i class="ms-1 icon-xs"
-                          data-feather="arrow-right"></i></a>
-              </div>
-  
-          </div>
-  
-      </div>
-      <div class="col-xxl-3 col-lg-6 mb-4">
-          <div class="card">
-              <div class="card-body text-center  ">
-                  <div class="my-4 ">
-                      <div class="mb-5">
-                          <img src="{{ asset('admin/assets/images/svg/sellerlogo-1.svg') }}" alt="Image">
-                      </div>
-                      <h4 class="mb-0">Nykaa Fashion</h4>
-                      <span>Brian Raines</span>
-                  </div>
-  
-                  <div id="storeEight" class="px-8"></div>
-                  <div class="mt-6 row ">
-                      <div class="col">
-                          <div>
-                              <h3 class="mb-0 ">560</h3>
-                              <span>Products</span>
-                          </div>
-  
-                      </div>
-                      <div class="vr g-0"></div>
-                      <div class="col">
-                          <div>
-                              <h3 class="mb-0 ">$12,300</h3>
-                              <span>Wallet Balance</span>
-                          </div>
-  
-                      </div>
-  
-                  </div>
-  
-              </div>
-              <div class="card-footer text-end">
-                  <a href="#!" class="btn btn-primary-soft">View Details<i class="ms-1 icon-xs"
-                          data-feather="arrow-right"></i></a>
-              </div>
-  
-          </div>
-  
-      </div>
+    @if ($services->count() == 0)
+        <div class="empty-state">
+            <h3>Aucun service trouvé</h3>
+            <p>Aucun service n'est disponible pour le moment.</p>
+        </div>
+    @endif
+
+    
+    @foreach ( $services as $serv )
+    <div class="col-xxl-3 col-lg-6 mb-4">
+        <div class="card">
+            <div class="card-body text-center  ">
+                <div class="my-4">
+                    <div
+                            class="icon-shape icon-xxl bg-{{ $badges[random_int(0, 5)] }}-soft
+                  rounded-circle
+                  text-center mb-4">
+                            @if (asset('storage/' . $serv->cover_image))
+                                <img src="{{ asset('storage/' . $serv->cover_image) }}"
+                                    class="img-fluid rounded-top h-auto w-auto" alt="" srcset="">
+                            @else
+                                <i class="text-primary  " data-feather="codepen"></i>
+                            @endif
+                        </div>
+                    <h4 class="mb-0">{{ $serv->name }}</h4>
+                    <span>{{ $serv->excerpt }}</span>
+                </div>
+
+                <div class="mt-6 row ">
+                    <div class="col">
+                        <div>
+                            <h3 class="mb-0 ">345</h3>
+                            <span>Products</span>
+                        </div>
+
+                    </div>
+                    <div class="vr g-0"></div>
+                    <div class="col">
+                        <div>
+                            <h3 class="mb-0 ">$45,129</h3>
+                            <span>Wallet Balance</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="card-footer text-end">
+                <a href="{{ route('admin.service-show',\Illuminate\Support\Facades\Crypt::encrypt($serv->slug) ) }}" class="btn btn-primary-soft">View Details<i class="ms-1 icon-xs"
+                        data-feather="arrow-right"></i></a>
+            </div>
+
+        </div>
+
+    </div>
+    @endforeach
   </div>
+  {{ $services->links() }}
   </div>
 
 </div>
+<style>
+    .empty-state {
+    text-align: center;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    }
 
+    .empty-state h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .empty-state p {
+        font-size: 16px;
+        color: #888;
+    }
+
+</style>
 
 
 

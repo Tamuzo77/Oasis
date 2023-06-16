@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Status;
 use App\Models\Service;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Crypt;
@@ -23,6 +25,8 @@ class ServiceController extends Controller
     public function create()
     {
         //
+        $statuses = Status::all();
+        return \view('admin.p&s.services.create', compact( 'statuses'));
     }
 
     /**
@@ -31,7 +35,6 @@ class ServiceController extends Controller
     public function store()
     {
         //
-        try {
             //code...
             $attributes = \request()->validate([
                 'nom' =>'required|string|min:3|max:80|unique:services,name',
@@ -48,25 +51,24 @@ class ServiceController extends Controller
                 'status_id' => $attributes['status_id'],
             ];
             $attr['cover_image'] = request()->file('image')->store('servicesStore', 'public');
-
-            $serv = Service::create($attributes);
-            return redirect()->back()->with('success', "Service <strong>$serv->name</strong> crée avec succès !");
-        } catch (\Throwable $th) {
-            //throw $th;
-            return redirect()->back()->with('error',$th->getMessage());
-        }
+            $attr['slug'] = Str::slug($attributes['nom']);
+            $serv = Service::create($attr);
+            return redirect()->route('admin.partenaires&services')->with('success', "Service <strong>$serv->name</strong> crée avec succès !");
         
-
-
-
+        
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Service $service)
+    public function show($slug)
     {
         //
+
+        $slug = Crypt::decrypt($slug);
+        $serv = Service::where('slug', $slug)->get()->first();
+        $statuses = Status::all();
+        return \view('admin.p&s.services.show', compact('serv', 'statuses'));
     }
 
     /**

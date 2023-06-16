@@ -22,25 +22,9 @@
 
         </div>
         @if ($partenaires->count() == 0)
-            <!-- With Captions -->
-            <div class="bd-example">
-                <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"></li>
-                        <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></li>
-                        <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"></li>
-                    </ol>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="{{ asset('admin/assets/images/placeholder/4by3.jpg') }}" class="d-block w-100 "
-                                alt="...">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h3>Aucun Partenariat trouvé pour OASIS 🥲 </h3>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
+            <div class="empty-state">
+                <h3>Aucun partenaire trouvé</h3>
+                <p>Aucun partenaire n'est disponible pour le moment.</p>
             </div>
         @endif
         @foreach ($partenaires as $partenaire)
@@ -150,3 +134,23 @@
         })
     }
 </script>
+<style>
+    .empty-state {
+    text-align: center;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    }
+
+    .empty-state h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .empty-state p {
+        font-size: 16px;
+        color: #888;
+    }
+
+</style>
