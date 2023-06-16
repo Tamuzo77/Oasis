@@ -13,4 +13,9 @@ class AdminController extends Controller
     {
         return \view('admin/dashboard');
     }
+
+    public function partenaireService()
+    {
+        return \view('admin.p&s.index');
+    }
 }
