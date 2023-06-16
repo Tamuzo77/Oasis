@@ -38,3 +38,4 @@
 <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<link href="https://unpkg.com/filepond@^4/dist/filepond.css" rel="stylesheet" />

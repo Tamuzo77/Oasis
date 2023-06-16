@@ -22,6 +22,8 @@
         <x-admin.sidebar-item class="{{ request()->is('admin/actualites/categories') ? 'active' : '' }}" title="Categories d'Actualités " href="{{ route('admin.categories-news') }}" />
         <x-admin.sidebar-item title="Nouvelle " href="" />
     </x-admin.sidebar-item>
+
+    <x-admin.sidebar-item title="Banque d'Images" icon="image" class="{{ request()->is('admin/library') ? 'active' : '' }}" href="{{ route('admin.library') }}" />
     {{--<li class="nav-item">
         <a class="nav-link has-arrow " href="#!" data-bs-toggle="collapse"
             data-bs-target="#navDashboard" aria-expanded="false" aria-controls="navDashboard">

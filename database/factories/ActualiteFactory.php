@@ -20,9 +20,9 @@ class ActualiteFactory extends Factory
         return [
             //
             'slug' => \fake()->slug(),
-            'title' => \fake()->title(),
+            'title' => \fake()->realText(20),
             'author' => \fake()->lastname(),
-            'content' => \fake()->realText(15),
+            'content' => \fake()->realText(80),
             'status_id' => 1,
             'categoryNew_id' =>CategoryNew::factory(),
             'cover_image' => \fake()->imageUrl()
