@@ -29,14 +29,26 @@
         background-position: center;
 
     }
+    .div-footer{
+        background-image:url('oasis/accueil/footer.png');
+    }
 
 </style>
 
 <body>
 
-    <div class="nav-bar">
+    <header class="nav-bar">
         <x-partials.header></x-partials.header>
-    </div>
+    </header>
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam dolorem eaque, ab libero molestiae necessitatibus vel adipisci
+ odit illum quibusdam assumenda itaque sed numquam placeat veniam, doloribus architecto qui similique!
 
 
+    <footer class="div-footer pt-5 pb-5">
+        <x-partials.footer></x-partials.footer>
+    </footer>
+
+ {{-- @include('partials._footer') --}}
+</body>
 </html>
