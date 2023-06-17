@@ -123,8 +123,40 @@ class ServiceController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Service $service)
+    public function destroy($slug)
     {
         //
+        try {
+            //code...
+            $slug = Crypt::decrypt($slug);
+            $serv = Service::where('slug', $slug)->get()->first();
+            $serv->delete();
+            return redirect()->back()->with("success","Service supprimé avec succès !");
+        } catch (\Throwable $th) {
+            //throw $th;
+            return redirect()->back()->with('error',$th->getMessage());
+        }
+
+    }
+
+    public function activeOrNot($slug)
+    {
+        $slug = Crypt::decrypt($slug);
+        $serv = Service::where('slug', $slug)->get()->first();
+
+        $serv->status_id == 1 ? $serv->status_id = 2 : $serv->status_id =1;
+        if($serv->status_id == 1)
+        {
+            $state = "Activé";
+        }
+
+        if($serv->status_id == 2)
+        {
+            $state = "Inactivé";
+        }
+        $serv->save();
+
+        return redirect()->back()->with('warning', "Le service $serv->title est désormais $state !");
+
     }
 }

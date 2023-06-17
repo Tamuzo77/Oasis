@@ -69,7 +69,7 @@
                                 class="img-fluid">
                             <div class="image-overlay">
                                 <a href="{{ asset("storage/library/$image->image_url") }}" class="image-link">Voir</a>
-                                <button onclick="confirmationDelete()" wire:click="deleteImage({{ $image->id }})" 
+                                <button wire:click="deleteImage({{ $image->id }})" 
                                     class="btn btn-danger btn-delete">Supprimer</button>
                             </div>
                         </div>

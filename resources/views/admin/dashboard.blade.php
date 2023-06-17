@@ -1,4 +1,4 @@
-<x-admin.layout>
+<x-admin.layout title="Dashboard">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-12">
                         <!-- Page header -->
