@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\EmploiController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ConnexionController;
 use App\Http\Controllers\Admin\AdminController;
@@ -60,7 +61,7 @@ Route::middleware('can:admin')->prefix('admin')->name('admin.')->group(function(
     Route::delete('delete-actualite/{actualite:slug}', [ActualiteController::class, 'destroy'])->name('actus-delete');
     Route::put('active-actus/{actualite:slug}', [ActualiteController::class, 'activeOrNot'])->name('actus-active');
 
-
+    //Route::resource('actualites/categories', CategoryNewController::class)->except(['create']);
     Route::get('actualites/categories', [CategoryNewController::class, 'index'])->name('categories-news');
     Route::post('store-categoryNew', [CategoryNewController::class, 'store'])->name('categoryNew-store');
     Route::get('show-categoryNew/{categoryNew:slug}', [CategoryNewController::class, 'show'])->name('categoryNew-details');
@@ -72,7 +73,13 @@ Route::middleware('can:admin')->prefix('admin')->name('admin.')->group(function(
     Route::post('tmp-upload',[ImageController::class, 'tmpUpload'])->name('tmpUpload');
     Route::delete('tmp-delete',[ImageController::class, 'tmpDelete'])->name('tmpDelete');
 
+    Route::get('emplois', [AdminController::class, 'emplois'])->name('emplois');
+    Route::get('create-emploi', [AdminController::class, 'emplois_create'])->name('emplois-create');
 
+});
+
+Route::middleware(['guest'])->prefix('espace_emplois')->as('emplois.')->group(function(){
+    Route::resource('emplois', EmploiController::class);
 });
 
 require __DIR__.'/auth.php';

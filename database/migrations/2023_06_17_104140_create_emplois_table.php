@@ -13,9 +13,11 @@ return new class extends Migration
     {
         Schema::create('emplois', function (Blueprint $table) {
             $table->id();
+            $table->string('slug');
             $table->string('libelle');
             $table->text('description');
-            $table->foreignId('recruteur_id')->constrained();
+            $table->foreignId('user_id')->constrained();
+            $table->boolean('visible')->default(0);
             $table->timestamps();
         });
     }
