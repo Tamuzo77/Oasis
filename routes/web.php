@@ -48,6 +48,8 @@ Route::middleware('can:admin')->prefix('admin')->name('admin.')->group(function(
     Route::post('store-service',[ServiceController::class, 'store'])->name('service-store');
     Route::get('edit-service,{service:slug}', [ServiceController::class, 'edit'])->name('service-edit');
     Route::get('show-service,{service:slug}', [ServiceController::class, 'show'])->name('service-show');
+    Route::put('active-service/{service:slug}', [ServiceController::class, 'activeOrNot'])->name('service-active');
+    Route::delete('delete-service/{service:slug}', [ServiceController::class, 'destroy'])->name('service-delete');
 
     Route::get('actualites-list', [ActualiteController::class, 'index'])->name('actualites-list');
     Route::get('actualites-grid', [ActualiteController::class, 'index'])->name('actualites-grid');

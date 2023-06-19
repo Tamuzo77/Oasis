@@ -34,7 +34,7 @@ class ImageBank extends Component
         $image = ImageModel::find($imageId);
         if($image)
         {
-            Storage::deleteImage($image->image_url);
+            Storage::delete($image->image_url);
             $image->delete();
             $this->images = ImageModel::latest()->get();
             session()->flash('success', 'Image deleted successfully');
