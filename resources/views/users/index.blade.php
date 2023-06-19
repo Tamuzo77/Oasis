@@ -20,7 +20,8 @@
 </head>
 
 <style>
-    .nav-bar{
+
+ .nav-bar{
         height: 500px;
         background-image:url('oasis/accueil/Rectangle 2 (1).png');
         background-size:cover;
@@ -32,6 +33,18 @@
     .div-footer{
         background-image:url('oasis/accueil/footer.png');
     }
+    .div-ac-title{
+        margin-left:100px;
+        margin-top:80px;
+    }
+    @media screen and (max-width:750px){
+        .div-ac-title{
+            margin-left: 5%;
+            margin-right: 5%;
+            text-align:center !important;
+
+        }
+    }
 
 </style>
 
@@ -39,11 +52,29 @@
 
     <header class="nav-bar">
         <x-partials.header></x-partials.header>
+        <div class="div-ac-title col-md-5 text-white opacity-80" style="">
+            <div class="accueil-title">Lorem ipsum  minus .</div>
+            <p> sit amet consectetur adipisicing elit  Numquam magnam eveniet repellendus . optio corporis vel id eaque nesciunt voluptatum, aperiam deleniti non tempora necessitatibus tempore </p>
+        </div>
     </header>
+    <div class="consulting mt-3">
+        <title class="mt-3 mb-5">OASIS CONSULTING</title>
+        <div class="d-flex container">
+            <div class="logo col-4 "><img src="oasis/accueil/logo Oasis Consulting 1.png" alt="" style="height:auto;width:100%"></div>
+            <div class="col-8">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores facilis doloremque doloribus odit saepe
+                    assumenda, asperiores non? Non, odio reiciendis doloribus modi, dolorem eum, totam illum est alias dolore laborum.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="caroussel">
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam dolorem eaque, ab libero molestiae necessitatibus vel adipisci
- odit illum quibusdam assumenda itaque sed numquam placeat veniam, doloribus architecto qui similique!
+    </div>
+    <div class="news">
 
+    </div>
 
     <footer class="div-footer pt-5 pb-5">
         <x-partials.footer></x-partials.footer>

@@ -30,23 +30,31 @@
         <x-partials.header></x-partials.header>
     </header>
 
-    <div>
-        <form action="POST">
-            <div>
+    <div class="div-form pt-4">
+        <form action="POST" class="pb-5 mt-5">
+            <div class="mb-3 text-center">
                 <x-partials.logo ></x-partials.logo>
             </div>
             <div>
                 <label class="email" for="email">Email</label>
                     <br>
-                <input type="email" name="email" id="email">
-                    <br><br>
+                <div class="text-center">
+                    <input type="email" name="email" id="email">
+                    <br>
+                </div>
                 <label class="password" for="password">Mot de passe</label>
                     <br>
-                <input type="password" name="password" id="password">
+                <div class="text-center">
+                    <input type="password text-center" name="password" id="password">
+                </div>
             </div>
-            <button class="mt-4 mb-2" type="submit">Connexion</button>
+            <div class="text-center">
+                <button class="mt-3 mb-4 " type="submit">Connexion</button>
                     <br>
-            <a href="">Mot de passe oublié ?</a>
+            </div>
+
+            <div class="text-end me-5"><a  href="">Mot de passe oublié ?</a></div>
+
 
         </form>
     </div>

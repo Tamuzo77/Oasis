@@ -23,6 +23,7 @@
         font-size:20px;
         line-height: 1.4;
         margin:0;
+
     }
     /*----------------------------------header--------------------------------*/
     nav{
@@ -70,7 +71,9 @@
 
 
     } */
-
+    .dropdown-item{
+        color: #4684BF;
+    }
     /*---------------------------------------------------------------------------*/
 
 
@@ -103,6 +106,7 @@
      /*-----------------------------------------------------------------------*/
 
     /*----------------------------connexion-----------------------------------*/
+
     .welcome{
         background-color: #4684BF;
         height: 70px;
@@ -110,22 +114,72 @@
         font-weight: bold;
         font-size: 25px;
     }
+    .div-form{
+        background: linear-gradient(0deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("/oasis/accueil/Rectangle9.png") no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 600px;
+
+    }
     form{
+        font-family: 'Brush Script MT' !important;
+        margin: 0 auto;
+
+        width:350px;
         background-color:#EEEEEE ;
         color: #A9A9A9;
+        border-radius: 20px;
+        box-shadow: -2px 4px 20px rgba(0, 0, 0, 0.7);
+        align-items: center;
     }
     .email,.password{
-        font-family: 'Brush Script MT' !important;
+        margin-left: 45px;
         font-weight: bold;
         font-size: 20px;
+        margin-bottom: 6px !important;
+
 
     }
     #email,#password{
+        border: 0.2px solid #4684BF;
         background-color:#FFFFFF ;
+        width: 300px !important;
+        padding-left: 15px;
+        border-radius: 20px;
+        outline-color:#4684BF;
+        font-size: 16px;
+        height: 30px;
+        margin-bottom: 15px;
+
+
     }
     form a{
         color: #4684BF;
         text-decoration: none;
     }
+    form button{
+        background: #4684BF;
+        box-shadow: -1px 4px 4px rgba(0, 0, 0, 0.39);
+        border-radius: 50px;
+        color: #FFFFFF;
+        border: none;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
 
     /*-----------------------------------------------------------------------*/
+
+     /*-----------------------------accueil------------------------------------------*/
+    .accueil-title{
+        font-family: 'Brush Script MT' !important;
+        font-weight: bold;
+        font-size: 25px;
+    }
+
+    .consulting title{
+        color: #BD9939;
+        font-family: 'Brush Script MT' !important;
+        font-weight: bold;
+        font-size: 25px;
+    }
+      /*-----------------------------------------------------------------------*/

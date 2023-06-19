@@ -55,7 +55,7 @@
     </header> --}}
 
 
-<nav class="navbar navbar-expand-lg pt-0 ">
+<nav class="navbar navbar-expand-lg pt-0 absolute">
     <div class=" container-xl pt-0">
       <a class="navbar-brand col-xl-2 col-lg-1 ms-lg-auto" href="#"><x-partials.logo ></x-partials.logo></a>
       <div class="navbar-toggler float-right" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
@@ -64,7 +64,7 @@
       <div class="collapse navbar-collapse " id="collapsibleNavbar">
         <ul class="navbar-nav ms-sm-2">
           <li class="nav-item">
-            <a class="nav-link" href="#">Accueil</a>
+            <a class="nav-link" href="/">Accueil</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Qui sommes-nous</a>
