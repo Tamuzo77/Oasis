@@ -8,6 +8,6 @@ class ConnexionController extends Controller
 {
     //
     public function connexion() {
-        return view ('connexion');
+        return view ('users/connexion');
     }
 }
