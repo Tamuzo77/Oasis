@@ -31,15 +31,7 @@
         </div>
     </div>
     <div class="row">
-        @if ($services->count() == 0)
-            <div class="empty-state">
-                <h3>Aucun service trouvé</h3>
-                <p>Aucun service n'est disponible pour le moment.</p>
-            </div>
-        @endif
-
-
-        @foreach ($services as $serv)
+        @forelse ($services as $serv)
             <div class="col-xxl-3 col-lg-6 mb-4">
                 <div class="card">
                     <div class="d-flex position-absolute end-0 pe-3 pt-3">
@@ -124,7 +116,12 @@
                 </div>
 
             </div>
-        @endforeach
+            @empty
+            <div class="empty-state">
+                <h3>Aucun service trouvé</h3>
+                <p>Aucun service n'est disponible pour le moment.</p>
+            </div>
+        @endforelse
     </div>
     {{ $services->links() }}
 </div>

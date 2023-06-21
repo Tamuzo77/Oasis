@@ -75,6 +75,10 @@ Route::middleware('can:admin')->prefix('admin')->name('admin.')->group(function(
 
     Route::get('emplois', [AdminController::class, 'emplois'])->name('emplois');
     Route::get('create-emploi', [AdminController::class, 'emplois_create'])->name('emplois-create');
+    Route::post('store-emploi', [AdminController::class, 'store'])->name('emplois-store');
+    Route::put('visible-emploi/{emploi:slug}', [App\Http\Controllers\Admin\EmploiController::class, 'visibleOrNot'])->name('emploi-visible');
+    Route::get('details-emploi/{emploi:slug}', [App\Http\Controllers\Admin\EmploiController::class, 'show'])->name('emploi-details');
+    Route::delete('delete-emploi/{emploi:slug}', [App\Http\Controllers\Admin\EmploiController::class, 'destroy'])->name('emploi-delete');
 
 });
 

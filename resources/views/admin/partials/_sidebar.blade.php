@@ -4,17 +4,17 @@
 
 
 
-    <x-admin.sidebar-item title="Actualités" icon="grid" separator="Site" :toggle="true" data-bs-toggle="collapse">
+    <x-admin.sidebar-item title="Actualités" icon="grid" separator="Application" :toggle="true" data-bs-toggle="collapse">
         <x-admin.sidebar-item class="{{ request()->is('admin/actualites-grid')  ?   'active' : '' }}" title="Toutes Les Actualités" icon="book-open" href="{{ route('admin.actualites-grid') }}" />
         <x-admin.sidebar-item class="{{ request()->is('admin/create-actus')  ?   'active' : '' }}" title="Créer une Actualité" icon="plus-square" href="{{ route('admin.actus-create') }}" />
     </x-admin.sidebar-item>
 
-    <x-admin.sidebar-item title="Partenaires & Services" icon="pocket" href="{{ route('admin.partenaires&services') }}" />
+    <x-admin.sidebar-item title="Services & Partenaires" icon="pocket" href="{{ route('admin.partenaires&services') }}" />
 
-    <x-admin.sidebar-item title="Espace-Emplois"  :toggle="true" data-bs-toggle="collapse">
+    <x-admin.sidebar-item title="Espace-Emplois" icon="briefcase"  :toggle="true" data-bs-toggle="collapse">
         <x-admin.sidebar-item title="Les Emplois" href="{{ route('admin.emplois') }}" />
-        <x-admin.sidebar-item title="Les Recruteurs" />
-        <x-admin.sidebar-item title="Les Demandes d'emplois" />
+        <x-admin.sidebar-item icon="user-check" title="Les Recruteurs" />
+        <x-admin.sidebar-item icon="aperture" title="Les Demandes d'emplois" />
 
     </x-admin.sidebar-item>
 
@@ -22,6 +22,13 @@
         <x-admin.sidebar-item title="Nouvelle " href="" />
         <x-admin.sidebar-item title="Nouvelle " href="" />
     </x-admin.sidebar-item>
+
+    <x-admin.sidebar-item title="Accueil" separator="Pages"  />
+    <x-admin.sidebar-item title="Qui Sommes Nous ?"   />
+    <x-admin.sidebar-item title="Réseau RAC"   />
+    <x-admin.sidebar-item title="Espace Emplois" />
+    <x-admin.sidebar-item title="Formation" />
+    <x-admin.sidebar-item title="Boutique" />
 
 
 

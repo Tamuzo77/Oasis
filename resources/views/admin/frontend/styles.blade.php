@@ -39,3 +39,5 @@
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <link href="https://unpkg.com/filepond@^4/dist/filepond.css" rel="stylesheet" />
+
+<link href="{{ asset('admin/assets/libs/datatables.net-bs5/css/dataTables.bootstrap5.min.css') }}" rel="stylesheet">
