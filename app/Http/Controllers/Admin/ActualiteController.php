@@ -6,21 +6,27 @@ use App\Models\Status;
 use App\Models\Actualite;
 use App\Models\CategoryNew;
 use Illuminate\Http\Request;
+use App\Services\ActusService;
+use App\Actions\DecryptAndFind;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Crypt;
+use App\Http\Requests\StoreActusRequest;
 use Illuminate\Support\Facades\Redirect;
+use App\Http\Requests\UpdateActusRequest;
 
 class ActualiteController extends Controller
 {
+
+    public $actuservice = ActusService::class;
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
         //
-        $categories = CategoryNew::all();
-        $statuses = Status::all();
-        $actualites = Actualite::latest()->filter(request(['search','category', 'status']))->paginate(8)->withQueryString();
+        $categories = CategoryNew::latest()->get(['id', 'name']);
+        $statuses = Status::latest()->get(['id', 'libelle']);
+        $actualites = Actualite::with(['categoryNew', 'status'])->latest()->filter(request(['search','category', 'status']))->paginate(8)->withQueryString();
         if(\request()->is('admin/actualites-list'))
         {
             return \view('admin.actualites.list', compact('actualites','categories','statuses'));
@@ -36,29 +42,17 @@ class ActualiteController extends Controller
     public function create()
     {
         //
-        $categories = CategoryNew::all();
-        $statuses = Status::all();
+        $categories = CategoryNew::latest()->get(['id', 'name']);
+        $statuses = Status::latest()->get(['id', 'libelle']);
         return view('admin.actualites.create', compact('categories', 'statuses'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store()
+    public function store(StoreActusRequest $request, ActusService $actuservice)
     {
-        //
-        $actu = new Actualite();
-        $attributes = request()->validate([
-            'title' => 'required|min:3|unique:actualites,title',
-            'content' => 'required|min:3',
-            'status_id' => 'required|exists:statuses,id',
-            'categoryNew_id' => 'required|exists:category_news,id',
-            'cover_image' => $actu->exists ?['cover_image'] : 'required|image',
-        ]);
-        $attributes['slug'] = \Str::slug($attributes['title']);
-        $attributes['author'] = "OASIS";
-        $attributes['cover_image'] = request()->file('cover_image')->store('actualitesStore', 'public');
-        Actualite::create($attributes);
+        $actuservice->create($request->validated());
 
         return Redirect::route('admin.actualites-grid')->with('success', 'Actualité crée avec succès');
         
@@ -69,7 +63,7 @@ class ActualiteController extends Controller
      */
     public function show(Actualite $actualite)
     {
-        //
+        //A faire bientôt
     }
 
     /**
@@ -78,55 +72,34 @@ class ActualiteController extends Controller
     public function edit($slug)
     {
         //
-        $slug =  Crypt::decrypt($slug);
-        $actus = Actualite::where('slug',$slug)->get()->first();
-        $categories = CategoryNew::all();
-        $statuses = Status::all();
+        $actus = (new DecryptAndFind())->handle(Actualite::class, $slug);
+        $categories = CategoryNew::latest()->get(['id', 'name']);
+        $statuses = Status::latest()->get(['id', 'libelle']);
         return view('admin.actualites.edit', compact('actus', 'categories', 'statuses'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update($slug)
+    public function update($slug, UpdateActusRequest $request, ActusService $service)
     {
-        //
-        $slug =  Crypt::decrypt($slug);
-        $actus = Actualite::where('slug',$slug)->get()->first();
-        $attributes = request()->validate([
-            'title' => 'required|min:3',
-            'content' => 'required|min:3',
-            'status_id' => 'required|exists:statuses,id',
-            'cover_image' => 'image',
-            'categoryNew_id' => 'required|exists:category_news,id',
-        ]);
-
-        if($attributes['cover_image'] ?? false)
-        {
-            $attributes['cover_image'] = request()->file('cover_image')->store('actualitesStore', 'public');
-        }
-        $actus->update($attributes);
-
+        $service->update($slug, $request->validated());
         return Redirect::route('admin.actualites-grid')->with('success', 'Actualité modifiée avec succès !');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy($slug)
+    public function destroy($slug, ActusService $service)
     {
-        //
-        $slug =  Crypt::decrypt($slug);
-        $actus = Actualite::where('slug',$slug)->get()->first();
-        $actus->delete();
+        $service->delete($slug);
         return \redirect()->back()->with('success', 'Actualité supprimé avec success');
     }
 
     public function activeOrNot($slug)
     {
         
-        $slug =  Crypt::decrypt($slug);
-        $actus = Actualite::where('slug',$slug)->get()->first();
+        $actus = (new DecryptAndFind())->handle(Actualite::class ,$slug);
         $actus->status_id == 1 ? $actus->status_id = 2 : $actus->status_id =1;
         if($actus->status_id == 1)
         {

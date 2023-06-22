@@ -77,7 +77,10 @@
                                 <!-- List group -->
                                 <ul class="list-group list-group-flush notification-list-scroll">
                                     <!-- List group item -->
-                                    @forelse ($notifs as $notif )
+                                    @php
+                                        $notifs = $notifs ?? [];
+                                    @endphp
+                                    @forelse ($notifs  as $notif )
                                     <li class="list-group-item bg-light">
 
                                         <a href="#!" class="text-muted">

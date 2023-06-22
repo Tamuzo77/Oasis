@@ -24,7 +24,7 @@
 
 
                     </form>
-                    <a href="{{ route('admin.service-create') }}" class="btn btn-primary ms-3">Ajouter un Service</a>
+                    <a href="{{ route('admin.services.create') }}" class="btn btn-primary ms-3">Ajouter un Service</a>
                 </div>
             </div>
 
@@ -53,7 +53,7 @@
                                     </button>
                                 </form>
                                 <form
-                                    action="{{ route('admin.service-delete', \Illuminate\Support\Facades\Crypt::encrypt($serv->slug)) }}"
+                                    action="{{ route('admin.services.destroy', \Illuminate\Support\Facades\Crypt::encrypt($serv->slug)) }}"
                                     method="post">
                                     @csrf
                                     @method('DELETE')
@@ -108,7 +108,7 @@
 
                     </div>
                     <div class="card-footer text-end">
-                        <a href="{{ route('admin.service-show', \Illuminate\Support\Facades\Crypt::encrypt($serv->slug)) }}"
+                        <a href="{{ route('admin.services.show', \Illuminate\Support\Facades\Crypt::encrypt($serv->slug)) }}"
                             class="btn btn-primary-soft">View Details<i class="ms-1 icon-xs"
                                 data-feather="arrow-right"></i></a>
                     </div>

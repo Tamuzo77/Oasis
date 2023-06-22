@@ -6,7 +6,7 @@
 
     <x-admin.sidebar-item title="Actualités" icon="grid" separator="Application" :toggle="true" data-bs-toggle="collapse">
         <x-admin.sidebar-item class="{{ request()->is('admin/actualites-grid')  ?   'active' : '' }}" title="Toutes Les Actualités" icon="book-open" href="{{ route('admin.actualites-grid') }}" />
-        <x-admin.sidebar-item class="{{ request()->is('admin/create-actus')  ?   'active' : '' }}" title="Créer une Actualité" icon="plus-square" href="{{ route('admin.actus-create') }}" />
+        <x-admin.sidebar-item class="{{ request()->is('admin/actualites/create')  ?   'active' : '' }}" title="Créer une Actualité" icon="plus-square" href="{{ route('admin.actualites.create') }}" />
     </x-admin.sidebar-item>
 
     <x-admin.sidebar-item title="Services & Partenaires" icon="pocket" href="{{ route('admin.partenaires&services') }}" />

@@ -2,11 +2,10 @@
 
 namespace App\Http\Requests;
 
-use App\Models\Actualite;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreActusRequest extends FormRequest
+class StoreServiceRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,16 +22,14 @@ class StoreActusRequest extends FormRequest
      */
     public function rules(): array
     {
-        $actu = new Actualite();
         return [
             //
-            'title' => 'required|min:3|unique:actualites,title',
-            'content' => 'required|min:3',
-            'status_id' => 'required|exists:statuses,id',
-            'categoryNew_id' => 'required|exists:category_news,id',
-            'cover_image' => $actu->exists ?['cover_image'] : 'required|image',
-            'slug' => 'required|',
-            'author' => 'required',
+            'name' =>'required|string|min:3|max:80|unique:services,name',
+            'description' => 'required|string|min:3',
+            'excerpt' => 'required|string|max:200',
+            'cover_image' => 'required|image',
+            'status_id' =>'required|exists:statuses,id',
+            'slug' => 'required|unique:services,slug'
         ];
     }
 }
