@@ -49,10 +49,16 @@
                 </li>
 
                 <li class="dropdown stopevent ms-2">
-                    <a class="btn btn-ghost btn-icon rounded-circle" href="#!" role="button"
+                    <a class="btn btn-ghost btn-icon rounded-circle position-relative" href="#!" role="button"
                         id="dropdownNotification" data-bs-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false">
-                        <i class="icon-xs" data-feather="bell"></i>
+                        <i class="icon-xs" data-feather="bell">
+                            
+                        </i>
+                        <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
+                            <span class="visually-hidden">New alerts</span>
+                        </span>
+                        
                     </a>
                     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end"
                         aria-labelledby="dropdownNotification">
@@ -71,64 +77,22 @@
                                 <!-- List group -->
                                 <ul class="list-group list-group-flush notification-list-scroll">
                                     <!-- List group item -->
+                                    @forelse ($notifs as $notif )
                                     <li class="list-group-item bg-light">
 
-
                                         <a href="#!" class="text-muted">
-                                            <h5 class=" mb-1">Rishi Chopra</h5>
+                                            <h5 class=" mb-1">Nouveau Apprenant Enregistré !</h5>
                                             <p class="mb-0">
-                                                Mauris blandit erat id nunc blandit, ac eleifend dolor pretium.
+                                                [{{ $notif->created_at }}] User {{ $notif->data['name'] }} ({{ $notif->data['email'] }})
                                             </p>
                                         </a>
-
-
-
                                     </li>
-                                    <!-- List group item -->
-                                    <li class="list-group-item">
-
-
-                                        <a href="#!" class="text-muted">
-                                            <h5 class=" mb-1">Neha Kannned</h5>
-                                            <p class="mb-0">
-                                                Proin at elit vel est condimentum elementum id in ante. Maecenas
-                                                et sapien metus.
-                                            </p>
-                                        </a>
-
-
-
+                                    @empty
+                                    <li class="list-group-item bg-light">
+                                        <a>Aucune Nouvelle Notification</a>
                                     </li>
-                                    <!-- List group item -->
-                                    <li class="list-group-item">
-
-
-                                        <a href="#!" class="text-muted">
-                                            <h5 class=" mb-1">Nirmala Chauhan</h5>
-                                            <p class="mb-0">
-                                                Morbi maximus urna lobortis elit sollicitudin sollicitudieget
-                                                elit vel pretium.
-                                            </p>
-                                        </a>
-
-
-
-                                    </li>
-                                    <!-- List group item -->
-                                    <li class="list-group-item">
-
-
-                                        <a href="#!" class="text-muted">
-                                            <h5 class=" mb-1">Sina Ray</h5>
-                                            <p class="mb-0">
-                                                Sed aliquam augue sit amet mauris volutpat hendrerit sed nunc eu
-                                                diam.
-                                            </p>
-                                        </a>
-
-
-
-                                    </li>
+                                    @endforelse
+                                
                                 </ul>
                             </div>
                             <div class="border-top px-3 py-2 text-center">
