@@ -31,7 +31,7 @@
     </header>
 
     <div class="div-form pt-4">
-        <form action="POST" class="pb-5 mt-5">
+        <form action="POST" class="pb-5 mt-5 form-connexion">
             <div class="mb-3 text-center">
                 <x-partials.logo ></x-partials.logo>
             </div>

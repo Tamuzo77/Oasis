@@ -20,7 +20,7 @@
 
     body{
         font-family: 'Open Sans Light', sans-serif;
-        font-size:20px;
+        font-size:18px;
         line-height: 1.4;
         margin:0;
 
@@ -74,6 +74,20 @@
     .dropdown-item{
         color: #4684BF;
     }
+
+
+    .div-ac-title{
+        margin-left:100px;
+        margin-top:80px;
+    }
+    @media screen and (max-width:750px){
+        .div-ac-title{
+            margin-left: 5%;
+            margin-right: 5%;
+            text-align:center !important;
+
+        }
+    }
     /*---------------------------------------------------------------------------*/
 
 
@@ -89,9 +103,7 @@
 
         height: 350px;
     }
-    .footer-bg{
 
-    }
 
     .footer-filigrane img{
         height: 150px;
@@ -121,10 +133,9 @@
         height: 600px;
 
     }
-    form{
+    .form-connexion{
         font-family: 'Brush Script MT' !important;
         margin: 0 auto;
-
         width:350px;
         background-color:#EEEEEE ;
         color: #A9A9A9;
@@ -140,7 +151,7 @@
 
 
     }
-    #email,#password{
+    #email,#password {
         border: 0.2px solid #4684BF;
         background-color:#FFFFFF ;
         width: 300px !important;
@@ -153,11 +164,11 @@
 
 
     }
-    form a{
+    .form-connexion a{
         color: #4684BF;
         text-decoration: none;
     }
-    form button{
+    .form-connexion button{
         background: #4684BF;
         box-shadow: -1px 4px 4px rgba(0, 0, 0, 0.39);
         border-radius: 50px;
@@ -170,16 +181,234 @@
     /*-----------------------------------------------------------------------*/
 
      /*-----------------------------accueil------------------------------------------*/
-    .accueil-title{
+    .accueil-title,h1{
         font-family: 'Brush Script MT' !important;
         font-weight: bold;
         font-size: 25px;
     }
 
-    .consulting title{
+    .consulting .title ,.news .title{
         color: #BD9939;
         font-family: 'Brush Script MT' !important;
         font-weight: bold;
+        font-size: 30px;
+    }
+
+
+    @media (max-width: 767px) {
+        .carousel-inner .carousel-item > div {
+            display: none;
+        }
+        .carousel-inner .carousel-item > div:first-child {
+            display: block !important;
+        }
+        .carousel-item > div{
+            width:100% !important;
+        }
+    }
+    h3{
+        font-family: 'Brush Script MT' !important;
+        font-weight: bold;
         font-size: 25px;
+        color:#4684BF;
+    }
+    h1{
+        font-family: 'Brush Script MT' !important;
+        font-weight: bold;
+        font-size: 30px;
+        color:#4684BF;
+    }
+
+     h2{
+        font-family: 'Brush Script MT' !important;
+        font-weight: bold;
+        font-size: 30px;
+        color: #BD9939;
+    }
+    .carousel-inner .carousel-item.active,
+    .carousel-inner .carousel-item-next,
+    .carousel-inner .carousel-item-prev {
+        display: flex;
+    }
+    .carousel-control-next,.carousel-control-prev {
+        margin-left:15px;
+        background-image:none;
+    }
+    /* medium and up screens */
+
+    .carousel-item > div{
+        width:31%;
+
+    }
+    .card-1 img{
+        background-size: cover;
+        object-fit: cover;
+        background-position: center;
+        height: 300px;
+        width:100%;
+    }
+    .card-1{
+        border: none;
     }
       /*-----------------------------------------------------------------------*/
+    .card-2 img{
+        height:300px;
+        object-fit: cover;
+        background-size: cover;
+        background-position: center;
+    }
+      .card-2 h4{
+        font-family: 'Brush Script MT' !important;
+        font-weight: bold;
+        font-size: 22px;
+
+      }
+      .card-2{
+        width:350px;
+        margin-left: 50px;
+        margin-right: 50px;
+        height: 500px;
+        justify-content: center;
+        padding-bottom: 20px;
+      }
+      .card-container{
+        justify-content: center;
+
+      }
+      .card-2 .button{
+        margin-top: 10px;
+        text-decoration: none;
+        background-color: #4684BF;
+        border-radius: 20px;
+        color: white;
+        font-weight: bold;
+        width:100px;
+        margin: 0 auto;
+
+      }
+      .card-body-2{
+        height: 150px;
+
+      }
+      @media screen and (max-width:767px) {
+        .card-2{
+            margin: 0 auto;
+            margin-top:20px;
+            width:80%;
+          }
+        }
+
+     .link-formation{
+        height: 300px;
+        width: 350px;
+        border: 1px solid;
+        justify-content: center;
+        align-items: center;
+        padding-top: 150px;
+
+     }
+     .forme{
+        width: 340px;
+        height: 135px;
+        background-color: #4684BF;
+        border-radius: 20px;
+        margin-top: 50px;
+        position: relative;
+        position: absolute;
+
+     }
+
+     .forme .svg-2{
+       transform: translateY(-87px);
+
+     }
+
+     .formation-logo{
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        background-color: #4684BF;
+        transform: translateY(-100px);
+        margin-bottom: px;
+        margin-left: 90px;
+        z-index:5;
+        position: absolute;
+        justify-content: center;
+     }
+     .formation-logo img{
+        width: 105px;
+        height: 105px;
+        object-fit: cover;
+        background-position: center;
+     }
+
+     .photos img{
+
+        height: 300px;
+        border-radius: 20px;
+        object-fit: cover;
+        background-position: center;
+     }
+
+     .videos{
+
+       width: 35%;
+     }
+     video{
+        width: 100%;
+        height:auto;
+     }
+     @media screen and (max-width:700px){
+        .videos{
+            width:70%;
+        }
+     }
+     .partenaires img{
+        height: 150px;
+        object-fit: cover;
+        background-position: center;
+        background-size: cover;
+     }
+
+/*------------------------------------------------inscription--------------------------------------------------  */
+
+
+    .inscription-formation label,.depotCV label{
+        color: #8e8d8d;
+        margin-bottom: 10px;
+    }
+
+    .inscription-formation label:hover,.depotCV label:hover{
+        color: #454444;
+    }
+
+
+    .inscription-formation input,.depotCV input{
+        border-radius: 20px;
+        border: 0.5px solid #4684BF;
+        background-color:#FFFFFF ;
+        outline-color: #4684BF;
+        padding-left: 15px;
+        font-size: 16px;
+    }
+    .payement img{
+        height: 75px;
+        width: 150px;
+        object-fit: cover;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .inscrire{
+        border-radius:10px;
+        background-color: #4684BF;
+        padding-left:10px;
+        padding-right: 10px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border: none;
+        color: white;
+        font-weight: bold;
+    }
+
+    

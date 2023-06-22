@@ -67,7 +67,7 @@
             <a class="nav-link" href="/">Accueil</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Qui sommes-nous</a>
+            <a class="nav-link" href="/quisommesnous">Qui sommes-nous</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Réseau RAC</a>

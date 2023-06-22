@@ -30,21 +30,7 @@
         background-position: center;
 
     }
-    .div-footer{
-        background-image:url('oasis/accueil/footer.png');
-    }
-    .div-ac-title{
-        margin-left:100px;
-        margin-top:80px;
-    }
-    @media screen and (max-width:750px){
-        .div-ac-title{
-            margin-left: 5%;
-            margin-right: 5%;
-            text-align:center !important;
 
-        }
-    }
 
 </style>
 
@@ -57,10 +43,10 @@
             <p> sit amet consectetur adipisicing elit  Numquam magnam eveniet repellendus . optio corporis vel id eaque nesciunt voluptatum, aperiam deleniti non tempora necessitatibus tempore </p>
         </div>
     </header>
-    <div class="consulting mt-3">
-        <title class="mt-3 mb-5">OASIS CONSULTING</title>
-        <div class="d-flex container">
-            <div class="logo col-4 "><img src="oasis/accueil/logo Oasis Consulting 1.png" alt="" style="height:auto;width:100%"></div>
+    <div class="consulting mt-4 container">
+        <div class="title text-center mb-5">OASIS CONSULTING</div>
+        <div class="row  align-items-center justify-content-around">
+            <div class="logo col-4"><img src="oasis/accueil/logo Oasis Consulting 1.png" alt="" style="height:100%;width:100%"></div>
             <div class="col-8">
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores facilis doloremque doloribus odit saepe
@@ -69,16 +55,160 @@
             </div>
         </div>
     </div>
-    <div class="caroussel">
+
+    <div class="carroussel container-fluid text-center py-3 text-white" style="background-color: #4684BF; height:auto">
+        <div class="mb-5">
+            <h2 >Souscrivez à nos formations</h2>
+        </div>
+
+
+
+
+        <div class="container text-center my-3">
+            <div class="row mx-auto justify-content-center">
+                <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active">
+                            <div class="col-md-4 mx-3">
+                                <div class="card card-1">
+                                    <div class="card-img card-img-1">
+                                        <img src="oasis/images/bruce-barrow-aI9_9T03OIk-unsplash.jpg" class="img-fluid">
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="col-md-4 mx-3">
+                                <div class="card card-1">
+                                    <div class="card-img card-img-1">
+                                        <img src="oasis/images/mwangi-gatheca-qlKaN7eqay8-unsplash.jpg" class="img-fluid">
+                                    </div>
+
+                                </div>
+                                <div class="">Slide 5</div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="col-md-4 mx-3">
+                                <div class="card card-1">
+                                    <div class="card-img card-img-1">
+                                        <img src="oasis/images/charlesdeluvio-97Ir6ym25N4-unsplash.jpg" class="img-fluid">
+                                    </div>
+
+                                </div>
+                                <div class="">Slide 5</div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="col-md-4 mx-3">
+                                <div class="card card-1">
+                                    <div class="card-img card-img-1">
+                                        <img src="oasis/images/bruce-barrow-aI9_9T03OIk-unsplash.jpg" class="img-fluid">
+                                    </div>
+
+                                </div>
+                                <div class="">Slide 5</div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="col-md-4 mx-3">
+                                <div class="card card-1">
+                                    <div class="card-img card-img-1">
+                                        <img src="oasis/images/charlesdeluvio-97Ir6ym25N4-unsplash.jpg" class="img-fluid">
+                                    </div>
+
+                                </div>
+                                <div class="">Slide 5</div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="col-md-4 mx-3">
+                                <div class="card card-1">
+                                    <div class="card-img card-img-1">
+                                        <img src="images/bruce-barrow-aI9_9T03OIk-unsplash.jpg" class="img-fluid">
+                                    </div>
+
+                                </div>
+                                <div class="">Slide 5</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true" style="background-color :#4684BF;border-radius: 50%;padding:20px"></span>
+                    </a>
+                    <a class="carousel-control-next bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true" style="background-color :#4684BF;border-radius: 50%;padding:20px"></span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
 
     </div>
-    <div class="news">
+
+    <div class="news my-5 container align-items-center">
+        <div class="title text-center mb-3">Nos actualités</div>
+        <div class=" card-container row">
+            <div class="card card-2 text-center col-md-6 mb-4">
+                <img class="card-img-top" src="oasis/accueil/WhatsApp Image 2023-01-05 at 13.54.14 (1).jpeg" alt="">
+                <div class="card-body card-body-2">
+                  <h4 class="card-title">Title news</h4>
+                  <p class="card-text ">llitia distinctio autem?</p>
+
+                </div>
+                <a href="#" class="button">Lire</a>
+              </div>
+
+              <div class="card card-2 text-center col-sm-6 mb-4">
+                <img class="card-img-top" src="oasis/accueil/WhatsApp Image 2023-01-05 at 13.54.14 (1).jpeg" alt="">
+                <div class="card-body card-body-2">
+                  <h4 class="card-title">Title news</h4>
+                  <p class="card-text">Lorem ipsum dolor sit pe officia aliquid quas dicta mollitia distinctio autem?</p>
+
+                </div>
+                <a href="#" class="button">Lire</a>
+              </div>
+              <div class="card card-2 text-center col-sm-6 mb-4">
+                <img class="card-img-top" src="oasis/accueil/WhatsApp Image 2023-01-05 at 13.54.14 (1).jpeg" alt="">
+                <div class="card-body card-body-2">
+                  <h4 class="card-title">Title news</h4>
+                  <p class="card-text">Lorem ipsum dolor sit pe officia aliquid quas dicta mollitia distinctio autem?</p>
+
+                </div>
+                <a href="#" class="button">Lire</a>
+              </div>
+              <div class="card card-2 text-center col-sm-6 col-mb-4">
+                <img class="card-img-top" src="oasis/accueil/WhatsApp Image 2023-01-05 at 13.54.14 (1).jpeg" alt="">
+                <div class="card-body card-body-2">
+                  <h4 class="card-title">Title news</h4>
+                  <p class="card-text">Lorem ipsum dolor sit pe officia aliquid quas dicta mollitia distinctio autem?</p>
+
+                </div>
+                <a href="#" class="button">Lire</a>
+              </div>
+              <div class="card card-2 text-center col-sm-6 mb-4">
+                <img class="card-img-top" src="oasis/accueil/WhatsApp Image 2023-01-05 at 13.54.14 (1).jpeg" alt="">
+                <div class="card-body card-body-2">
+                  <h4 class="card-title">Title news</h4>
+                  <p class="card-text">Lorem ipsum dolor sit pe officia aliquid quas dicta mollitia distinctio autem?</p>
+
+                </div>
+                <a href="#" class="button">Lire</a>
+              </div>
+
+        </div>
+
+
 
     </div>
 
-    <footer class="div-footer pt-5 pb-5">
+    <footer>
         <x-partials.footer></x-partials.footer>
     </footer>
+
+    <script src="{{asset('js/script.js')}}"></script>
 
  {{-- @include('partials._footer') --}}
 </body>
