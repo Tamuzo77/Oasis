@@ -79,7 +79,7 @@
                 <img class="col-lg-2 col-sm-3 col-6 mt-4" src="oasis/images/mwangi-gatheca-qlKaN7eqay8-unsplash.jpg" alt="">
                 <img class="col-lg-2 col-sm-3 col-6 mt-4" src="oasis/images/mwangi-gatheca-qlKaN7eqay8-unsplash.jpg" alt="">
             </div>
-            <div class="text-center">
+            <div class="text-center mt-4">
                 <button class="inscrire">S'inscrire</button>
             </div>
         </div>

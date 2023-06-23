@@ -47,13 +47,12 @@
         <div class="title text-center mb-5">Consultez nos services</div>
         <div class="d-flex container align-items-center">
             <div class="link-formation">
-
-                <div class="formation-logo text-center p-4"> <img src="oasis/accueil/Vector (5).png" alt="" srcset=""></div>
                 <div class="forme">
                     <p>Formations</p>
-                    <svg class="svg-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><defs><linearGradient id="gradient" x1="50%" y1="" x2="50%" y2="97%"><stop offset="70%" stop-color="#ffffff"></stop><stop offset="30%" stop-color="#BD9939"></stop></linearGradient></defs><path fill="url(#gradient)" fill-opacity="1" d="M0,192L80,170.7C160,149,320,107,480,128C640,149,800,235,960,261.3C1120,288,1280,256,1360,240L1440,224L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path></svg>
-                    <svg class="svg-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,192L80,170.7C160,149,320,107,480,128C640,149,800,235,960,261.3C1120,288,1280,256,1360,240L1440,224L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path></svg>
-
+                    <div>
+                        <p class="absolute">formation</p>
+                        <img class="relative" src="oasis/accueil/formation.png" alt="">
+                    </div>
                 </div>
             </div>
 
@@ -62,7 +61,7 @@
     <div class="text-center mt-5 mb-5 p-4 container-fluid" style="background-color: #4684BF; height:auto">
         <div class="container">
             <img src="oasis/accueil/logo Oasis Consulting 2.png" alt="" style="width :290px;height :155px;">
-            <div class="mt-4"><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime doloribus consequuntur id, nostrum aliquid reiciendis adipisci esse exercitationem et vero ducimus minus facere magni odio porro fuga voluptates, at cupiditate.</p></div>
+            <div class="mt-4 text-white"><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime doloribus consequuntur id, nostrum aliquid reiciendis adipisci esse exercitationem et vero ducimus minus facere magni odio porro fuga voluptates, at cupiditate.</p></div>
         </div>
     </div>
 
@@ -89,7 +88,7 @@
             </video>
         </div>
     </div>
-    <div class="partenaires container">
+    <div class="partenaires container mb-5">
         <div class="row justify-content-center">
             <img class="col-lg-2 col-sm-3 col-6 mt-4" src="oasis/images/mwangi-gatheca-qlKaN7eqay8-unsplash.jpg" alt="">
             <img class="col-lg-2 col-sm-3 col-6 mt-4" src="oasis/images/mwangi-gatheca-qlKaN7eqay8-unsplash.jpg" alt="">

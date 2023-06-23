@@ -70,7 +70,7 @@
                     <input class="w-100" type="tel" name="" id="">
                 </div>
             </div>
-            <div class="text-center">
+            <div class="text-center mt-5">
                 <button class="inscrire">
                     Dépôser mon CV
                 </button>

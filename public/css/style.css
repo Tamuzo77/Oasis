@@ -307,14 +307,16 @@
         padding-top: 150px;
 
      }
-     .forme{
-        width: 340px;
-        height: 135px;
+     .forme > p{
         background-color: #4684BF;
-        border-radius: 20px;
+        border-radius:50%;
         margin-top: 50px;
         position: relative;
         position: absolute;
+        padding-top: 60px;
+        padding-bottom: 60px;
+        padding-left: 25px;
+        padding-right: 25px;
 
      }
 
@@ -411,4 +413,4 @@
         font-weight: bold;
     }
 
-    
+
