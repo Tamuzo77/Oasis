@@ -9,6 +9,7 @@
             </div>
         </div>
         <div>
+            <x-admin.flash />
             <!-- row -->
             <div class="row">
                 <div class="col-xl-9 col-md-12 col-12">
@@ -17,7 +18,7 @@
                         <!-- card body -->
                         <div class="card-body">
                             <!-- form -->
-                            <form id="my-form" action="{{ route('admin.actus-store') }}" method="POST"
+                            <form id="my-form" action="{{ route('admin.actualites.store') }}" method="POST"
                                 enctype="multipart/form-data">
                                 @csrf
                                 <div class="row">
@@ -32,6 +33,11 @@
                                                 {{ $message }}
                                             </div>
                                         @enderror
+                                    </div>
+                                    <x-admin.form.label name="slug" :important="true" />
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text" id="slug">https://example.com/</span>
+                                        <input type="text" class="form-control" id="basic-url" name="slug" aria-describedby="slug" placeholder="actus-title">
                                     </div>
                                     <!-- form group -->
                                     <div class="mb-20 col-12">
@@ -72,6 +78,7 @@
                                     </div>
 
 
+                                    <input type="hidden" value="OASIS" name="author">
 
 
 
@@ -156,7 +163,6 @@
                                         </div>
                                     </div>
                                 </div>
-
                             </form>
                         </div>
                     </div>

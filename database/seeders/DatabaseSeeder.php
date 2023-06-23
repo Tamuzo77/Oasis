@@ -4,6 +4,11 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Database\Seeders\RoleSeeder;
+use Database\Seeders\VilleSeeder;
+use Database\Seeders\CommuneSeeder;
+use Database\Seeders\DepartmentSeeder;
+use Database\Seeders\ArrondissementSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -19,6 +24,7 @@ class DatabaseSeeder extends Seeder
              'username' => 'Tamuzo77',
              'email' => 'tamuzo77@example.com',
              'password' =>'tamuzo77' ,
+             'role_id' => 2,
          ]);
 
         \App\Models\Status::factory()->create([
@@ -30,5 +36,11 @@ class DatabaseSeeder extends Seeder
         ]);
 
         \App\Models\Actualite::factory(3)->create();
+
+        $this->call(RoleSeeder::class);
+        $this->call(DepartmentSeeder::class);
+        $this->call(CommuneSeeder::class);
+        $this->call(ArrondissementSeeder::class);
+        $this->call(VilleSeeder::class);
     }
 }

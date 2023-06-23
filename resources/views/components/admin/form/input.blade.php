@@ -1,6 +1,6 @@
-@props(['name', 'type'=>'text','important'=>false])
+@props(['name', 'label', 'type'=>'text','important'=>false])
 <x-admin.form.field>
-    <x-admin.form.label :name="$name" :important="$important" />
+    <x-admin.form.label :name="$label ?? $name" :important="$important" />
     <input type="{{ $type }}" 
             name="{{ $name }}" 
             class="form-control 

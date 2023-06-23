@@ -17,7 +17,7 @@
                         <!-- card body -->
                         <div class="card-body">
                             <!-- form -->
-                            <form id="my-form" action="{{ route('admin.actus-update',\Illuminate\Support\Facades\Crypt::encrypt($actus->slug)) }}" method="post"
+                            <form id="my-form" action="{{ route('admin.actualites.update',\Illuminate\Support\Facades\Crypt::encrypt($actus->slug)) }}" method="post"
                                 enctype="multipart/form-data">
                                 @csrf
                                 @method('PATCH')
@@ -33,6 +33,11 @@
                                                 {{ $message }}
                                             </div>
                                         @enderror
+                                    </div>
+                                    <x-admin.form.label name="slug" :important="true" />
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text" id="slug">https://example.com/</span>
+                                        <input type="text" class="form-control" id="basic-url" name="slug" value="{{ old('slug', $actus->slug) }}" aria-describedby="slug" placeholder="actus-title">
                                     </div>
                                     <!-- form group -->
                                     <div class="mb-20 col-12">
@@ -75,7 +80,7 @@
 
 
 
-
+                                    <input type="hidden" name="author" value="OASIS">
 
 
                                     <div class="col-12 mb-4">
@@ -84,7 +89,7 @@
                                         <div class="fallback d-block dropzone border-dashed min-h-0 rounded-2">
 
                                             <input value="{{ old('cover_image', $actus->cover_image) }}" name="cover_image"
-                                                type="file" required>
+                                                type="file" >
 
                                             @error('cover_image')
                                                 <div class="invalid-feedback">

@@ -20,6 +20,6 @@ class Recruteur extends Model
 
     public function adresse()
     {
-    return $this->hasOne(Adresse::class, 'adresse_id');
+    return $this->belongsTo(Adresse::class, 'adresse_id');
     }
 }

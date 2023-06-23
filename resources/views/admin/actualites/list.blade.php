@@ -123,7 +123,7 @@
                                         <i data-feather="more-vertical" class="icon-xs"></i>
                                     </a>
                                     <div class="dropdown-menu">
-                                      <form action="{{ route('admin.actus-edit',\Illuminate\Support\Facades\Crypt::encrypt($actualite->slug)) }}" method="get">
+                                      <form action="{{ route('admin.actualites.edit',\Illuminate\Support\Facades\Crypt::encrypt($actualite->slug)) }}" method="get">
                                         @csrf
                                         <button type="submit" class="dropdown-item d-flex align-items-center">
                                           <i class=" dropdown-item-icon" data-feather="edit"></i>Edit Details
@@ -153,7 +153,7 @@
                                           {{ ($actualite->status_id === 1) ? 'Désactiver' : 'Activer' }}
                                       </button>
                                       </form>
-                                      <form action="{{ route('admin.actus-delete', \Illuminate\Support\Facades\Crypt::encrypt($actualite->slug)) }}" method="post">
+                                      <form action="{{ route('admin.actualites.destroy', \Illuminate\Support\Facades\Crypt::encrypt($actualite->slug)) }}" method="post">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="dropdown-item d-flex align-items-center">
@@ -215,7 +215,7 @@
             <div class="container">
                 <!-- form -->
 
-                <form id="my-form" action="{{ route('admin.actus-store') }}" method="POST"
+                <form id="my-form" action="{{ route('admin.actualites.store') }}" method="POST"
                     enctype="multipart/form-data">
                     @csrf
                     <div class="row">
@@ -230,6 +230,11 @@
                                     {{ $message }}
                                 </div>
                             @enderror
+                        </div>
+                        <x-admin.form.label name="slug" :important="true" />
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="slug">https://example.com/</span>
+                            <input type="text" class="form-control" id="basic-url" name="slug" aria-describedby="slug" placeholder="actus-title">
                         </div>
                         <!-- form group -->
                         <div class="mb-20 col-12">
@@ -269,7 +274,7 @@
                         </div>
 
 
-
+                        <input type="hidden" name="author" value="OASIS">
 
 
 

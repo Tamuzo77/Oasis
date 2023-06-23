@@ -6,6 +6,12 @@
     <script src="{{ asset('admin/assets/libs/simplebar/dist/simplebar.min.js') }}"></script>
 
 
+  <script src="{{ asset('admin/assets/libs/datatables/media/js/jquery.dataTables.min.js') }}"></script>
+  <script src="{{ asset('admin/assets/libs/datatables.net-bs5/js/dataTables.bootstrap5.min.js') }}"></script>
+  <script src="{{ asset('admin/assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js') }}"></script>
+  <script src="{{ asset('admin/assets/js/vendors/datatable.js') }}"></script>
+
+  <script src="{{ asset('admin/assets/libs/tippy.js/dist/tippy-bundle.umd.min.js') }}"></script>
 
 
     <!-- Theme JS -->
@@ -25,12 +31,13 @@
     <script src="{{ asset('admin/assets/libs/flatpickr/dist/flatpickr.min.js') }}"></script>
     <script src="{{ asset('admin/assets/libs/quill/dist/quill.min.js') }}"></script>
     <script src="{{ asset('admin/assets/libs/%40popperjs/core/dist/umd/popper.min.js') }}"></script>
-    <script src="{{ asset('admin/assets/libs/tippy.js/dist/tippy-bundle.umd.min.js') }}"></script>
     <script src="{{ asset('admin/assets/js/vendors/tooltip.js') }}"></script>
 
     @endif
 
     <script src="https://unpkg.com/filepond@^4/dist/filepond.js"></script>
+
+
    
 
 

@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Gate;
@@ -28,9 +29,9 @@ class AppServiceProvider extends ServiceProvider
         Schema::defaultStringLength(191);
 
         Gate::define('admin', function(User $user) {
-            return $user->username === 'Tamuzo77';
+            return $user->is_admin == true;
         });
-
+        Gate::define('courses_learn', fn(User $user) => $user->role_id == Role::IS_LEARNER);
         Blade::if('admin', function(){
             return request()->user()?->can('admin');
         });

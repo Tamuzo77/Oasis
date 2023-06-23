@@ -21,13 +21,7 @@
             </div>
 
         </div>
-        @if ($partenaires->count() == 0)
-            <div class="empty-state">
-                <h3>Aucun partenaire trouvé</h3>
-                <p>Aucun partenaire n'est disponible pour le moment.</p>
-            </div>
-        @endif
-        @foreach ($partenaires as $partenaire)
+        @forelse ($partenaires as $partenaire)
             <div class="col-xl-3 col-lg-6 col-12 mb-5">
                 <!-- card -->
                 <div class="card">
@@ -87,7 +81,12 @@
                     </div>
                 </div>
             </div>
-        @endforeach
+            @empty
+            <div class="empty-state">
+                <h3>Aucun partenaire trouvé</h3>
+                <p>Aucun partenaire n'est disponible pour le moment.</p>
+            </div>
+        @endforelse
 
         {{ $partenaires->links() }}
     </div>
