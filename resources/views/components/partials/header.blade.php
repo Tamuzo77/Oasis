@@ -1,59 +1,3 @@
-{{--
-
-    <header class="container-fluid m-0">
-        <div class=" header d-flex align-items-center justify-content-between container-fluid w-100">
-            <div class="d-flex align-items-center justify-content-around">
-                <div class="float-left" ><x-partials.logo ></x-partials.logo></div>
-                <div class="menu d-md-none d-block float-right">
-
-                <div class="bar1"></div>
-                <div class="bar2"></div>
-                <div class="bar3"></div>
-              </div>
-            </div>
-            <nav class=" row w-100 align-items-center d-none d-md-block d-flex container-fluid">
-                <div><a href="index.blade.php">Accueil</a></div>
-                <div><a href="#">Qui sommes-nous</a></div>
-                <div><a href="#">Réseau RAC</a></div>
-
-
-                <div class="dropdown">
-                    <a class=" dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Espace emploi
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">CVThèque</a></li>
-                      <li><a class="dropdown-item" href="#">Espace recruteur</a></li>
-                     <li><a class="dropdown-item" href="#">Dépôt de CV</a></li>
-                    </ul>
-                </div>
-                <div class="dropdown">
-                    <a class=" dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Formation
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Formation <br> certifiante</a></li>
-                      <li><a class="dropdown-item" href="#">Formation <br> gratuite</a></li>
-
-                    </ul>
-                </div>
-                <div class="dropdown">
-                    <a class=" dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Boutique
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Kits <br> professionnels</a></li>
-                      <li><a class="dropdown-item" href="#">Livres</a></li>
-
-                    </ul>
-                </div>
-
-                <div><a href=""><img src="oasis/accueil/Vector (1).png" alt="" width="50px" height="50px" style="right:0" > </a></div>
-
-            </nav>
-        </div>
-    </header> --}}
-
 
 <nav class="navbar navbar-expand-lg pt-0 absolute">
     <div class=" container-xl pt-0">
@@ -70,14 +14,14 @@
             <a class="nav-link" href="/quisommesnous">Qui sommes-nous</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Réseau RAC</a>
+            <a class="nav-link" href="reseauRac">Réseau RAC</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Espace emploi</a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">CVThèque</a></li>
               <li><a class="dropdown-item" href="#">Espace recruteur</a></li>
-              <li><a class="dropdown-item" href="#">Dépôt de CV</a></li>
+              <li><a class="dropdown-item" href="/dépôtCV">Dépôt de CV</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
@@ -100,7 +44,48 @@
           </li>
 
         </ul>
-        <a id="icon-connexion" class=" me-auto ms-sm-2"><a  href="/connexion"><img src="oasis/accueil/Vector (1).png" alt="" width="50px" height="50px" style="right:0;list-style:none;" > </a></a>
+        <span id="icon-connexion"class="ms-auto ps-sm-2"  data-bs-toggle="modal" data-bs-target="#myModal"><img src="oasis/accueil/Vector (1).png" alt="" width="50px" height="50px" style="right:0;list-style:none;" ></span>
+
+          <!-- The Modal -->
+          <div class="modal my-5" id="myModal">
+            <div class="modal-dialog">
+              <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header ms-auto">
+                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="mb-3 ">
+                    <form action="POST" class="">
+                        <div class="mb-3 text-center">
+                            <x-partials.logo ></x-partials.logo>
+                        </div>
+                        <div>
+                            <label class="email" for="email">Email</label>
+                                <br>
+                            <div class="text-center">
+                                <input type="email" name="email" id="email">
+                                <br>
+                            </div>
+                            <label class="password" for="password">Mot de passe</label>
+                                <br>
+                            <div class="text-center">
+                                <input type="password text-center" name="password" id="password">
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button class="mt-3 mb-4" type="submit"><a href="/accueilConnexion">Connexion</a></button>
+                                <br>
+                        </div>
+
+                        <div class="text-end me-5"><a  href="">Mot de passe oublié ?</a></div>
+                <div class="modal-footer"></div>
+
+                    </form>
+                </div>
+
+              </div>
+          </div>
 
       </div>
     </div>
