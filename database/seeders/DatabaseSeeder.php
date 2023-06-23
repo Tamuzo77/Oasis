@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
              'username' => 'Tamuzo77',
              'email' => 'tamuzo77@example.com',
              'password' =>'tamuzo77' ,
+             'is_admin' => 1,
              'role_id' => 2,
          ]);
 
@@ -35,7 +36,7 @@ class DatabaseSeeder extends Seeder
             'libelle' => 'Inactif'
         ]);
 
-        \App\Models\Actualite::factory(3)->create();
+        //\App\Models\Actualite::factory(3)->create();
 
         $this->call(RoleSeeder::class);
         $this->call(DepartmentSeeder::class);
