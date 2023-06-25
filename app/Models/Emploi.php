@@ -6,6 +6,7 @@ use App\Models\Ville;
 use App\Models\Commune;
 use App\Models\Candidat;
 use App\Models\Recruteur;
+use App\Models\Structure;
 use App\Models\Department;
 use App\Models\Arrondissement;
 use Illuminate\Database\Eloquent\Model;
@@ -20,7 +21,7 @@ class Emploi extends Model
 
     public function recruteur()
     {
-        return $this->belongsTo(User::class, 'user_id');
+        return $this->belongsTo(Structure::class, 'structure_id');
     }
 
     public function candidats()
@@ -28,7 +29,7 @@ class Emploi extends Model
         return $this->hasMany(User::class, 'demandes_emplois', 'emploi_id', 'user_id');
     }
 
-    public function department()
+/*    public function department()
     {
         return  $this->belongsToThrough(Department::class, [Commune::class, Arrondissement::class, Ville::class]);
     }
@@ -41,7 +42,7 @@ class Emploi extends Model
     public function arrondissement()
     {
         return  $this->belongsToThrough(Arrondissement::class, [Ville::class]);
-    }
+    }*/
 
     public function ville()
     {

@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Ville>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Structure>
  */
-class VilleFactory extends Factory
+class StructureFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,7 +18,6 @@ class VilleFactory extends Factory
     {
         return [
             //
-            'name' => fake()->city()
         ];
     }
 }

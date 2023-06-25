@@ -11,13 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('emplois', function (Blueprint $table) {
-            $table->id();
-            $table->string('slug');
-            $table->string('libelle');
-            $table->text('description');
-            $table->boolean('visible')->default(0);
-            $table->timestamps();
+        Schema::table('emplois', function (Blueprint $table) {
+            //
+            $table->foreignId('structure_id')->constrained();
         });
     }
 
@@ -26,6 +22,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('emplois');
+        Schema::table('emplois', function (Blueprint $table) {
+            //
+        });
     }
 };

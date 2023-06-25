@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Models\Role;
+use App\Models\Structure;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -56,5 +57,10 @@ class User extends Authenticatable
             3 => 'home',
             0 => 'home',
         };
+    }
+
+    public function structure()
+    {
+        return $this->belongsTo(Structure::class);
     }
 }

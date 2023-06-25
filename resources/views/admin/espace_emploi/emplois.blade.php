@@ -36,11 +36,9 @@
                           </div>
                         </th>
                         <th class="ps-1">Poste | Emploi</th>
-                        <th>Departement</th>
-                        <th>Commune</th>
-                        <th>Arrondissement</th>
                         <th>Ville</th>
-                        <th>Status</th>
+                        <th>Description</th>
+                        <th>Statut</th>
                         <th></th>
                       </tr>
                     </thead>
@@ -55,7 +53,7 @@
                               </div>
                             </td>
                             @php
-                                $pic = $emploi->recruteur->picture
+                                $pic = $emploi->recruteur->logo
                             @endphp
                             <td class="ps-0">
                               <div class="d-flex align-items-center">
@@ -65,14 +63,12 @@
                                   <h5 class="mb-0">
                                     <a href="#!" class="text-inherit">{{$emploi->libelle }}</a>
                                   </h5>
-                                    <p class="mb-0 text-muted"> Slug : {{ $emploi->slug }}</p>
+                                    <p class="mb-0 text-muted"> Structure : {{ $emploi->recruteur->name }}</p>
                                 </div>
                               </div>
                             </td>
-                            <td>{{ $emploi->department->name }}</td>
-                            <td>{{ $emploi->commune->name }}</td>
-                            <td>{{ $emploi->arrondissement->name }}</td>
                             <td>{{ $emploi->ville->name }}</td>
+                            <td>{{ \Str::limit($emploi->description,50, '...') }}</td>
                             <td>
                               <span class="badge badge-{{ $emploi->visible ? 'success' : 'danger' }}-soft">
                                 {{ $emploi->visible ? 'Visible' : 'caché' }}

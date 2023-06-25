@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\User;
 use App\Models\Emploi;
+use App\Models\Structure;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Services\EmploiService;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 
@@ -43,7 +45,7 @@ class AdminController extends Controller
 
     public function emplois()
     {
-        $emplois = Emploi::latest()->with(['department', 'commune', 'arrondissement', 'ville', 'recruteur'])->get();
+        $emplois = Emploi::latest()->with(['ville', 'recruteur'])->get();
         return \view('admin.espace_emploi.emplois', compact('emplois'));
     }
 
@@ -54,28 +56,8 @@ class AdminController extends Controller
 
     public function store(Request $request)
     {
-        try {
-        DB::transaction(function () use ($request) {
-            $user = User::updateOrCreate([
-                    'email' => $request->user_email,
-                ], ['firstname' => $request->user_firstname, 'name' => $request->user_name ,  'tel'=>$request->user_tel , 'age' =>$request->user_age , 'picture' => $request->user_picture->store('espace_emploi', 'public') , 'cv_path'=>$request->user_cv_path?->store('espace_emploi/curriculumVitae', 'public')]
-            );
-
-            foreach($request->emplois as $emploi)
-            {
-                $emploi['user_id'] = $user->id;
-                $emploi['slug'] = Str::slug($emploi['libelle']);
-                 Emploi::create($emploi);
-            }
-
-        });
+        (new EmploiService())->store($request);
         return redirect()->route('admin.emplois')->with('success', "Emploi(s) crée(s) avec succès ");
-        } catch (\Throwable $th) {
-            //throw $th;
-            return \redirect()->back()->with('failure', $th->getMessage());
-        }
-        
-
 
     }
 }

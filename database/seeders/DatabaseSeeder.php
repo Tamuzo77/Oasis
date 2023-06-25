@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Ville;
 use Illuminate\Database\Seeder;
 use Database\Seeders\RoleSeeder;
 use Database\Seeders\VilleSeeder;
@@ -39,9 +40,6 @@ class DatabaseSeeder extends Seeder
         //\App\Models\Actualite::factory(3)->create();
 
         $this->call(RoleSeeder::class);
-        $this->call(DepartmentSeeder::class);
-        $this->call(CommuneSeeder::class);
-        $this->call(ArrondissementSeeder::class);
-        $this->call(VilleSeeder::class);
+        Ville::factory(10)->create();
     }
 }
