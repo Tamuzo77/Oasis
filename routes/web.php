@@ -7,11 +7,13 @@ use App\Http\Controllers\EmploiController;
 use App\Http\Controllers\DepotCVController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ConnexionController;
+use App\Http\Controllers\ReseauRacController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\ImageController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\QuiSommesNousController;
 use App\Http\Controllers\Admin\ActualiteController;
+use App\Http\Controllers\AccueilConnexionController;
 use App\Http\Controllers\Admin\PartenaireController;
 use App\Http\Controllers\Admin\CategoryNewController;
 use App\Http\Controllers\InscriptionFormationsController;
@@ -32,7 +34,8 @@ Route::get('/connexion',[ConnexionController::class,'connexion']);
 Route::get('/quisommesnous',[QuiSommesNousController::class,'quisommesnous']);
 Route::get('/inscriptionFormations',[InscriptionFormationsController::class,'inscriptionFormations']);
 Route::get('/dépôtCV',[DepotCVController::class,'dépôtCV']);
-
+Route::get('/reseauRac',[ReseauRacController::class,'reseauRac']);
+Route::get('/accueilConnexion',[AccueilConnexionController::class,'accueilConnexion']);
 /*---------------------------------------------------------------------------------*/
 
 Route::get('/dashboard', function () {

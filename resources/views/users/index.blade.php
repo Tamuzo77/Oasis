@@ -44,7 +44,7 @@
         </div>
     </header>
     <div class="consulting mt-4 container">
-        <div class="title text-center mb-5">OASIS CONSULTING</div>
+        <div class="title text-center ">OASIS CONSULTING</div>
         <div class="row  align-items-center justify-content-around">
             <div class="logo col-4"><img src="oasis/accueil/logo Oasis Consulting 1.png" alt="" style="height:100%;width:100%"></div>
             <div class="col-8">

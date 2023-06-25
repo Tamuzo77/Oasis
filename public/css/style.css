@@ -87,6 +87,7 @@
             text-align:center !important;
 
         }
+        
     }
     /*---------------------------------------------------------------------------*/
 
@@ -127,24 +128,23 @@
         font-size: 25px;
     }
     .div-form{
-        background: linear-gradient(0deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("/oasis/accueil/Rectangle9.png") no-repeat;
         background-position: center;
         background-size: cover;
-        height: 600px;
+
 
     }
-    .form-connexion{
+    .modal-content {
         font-family: 'Brush Script MT' !important;
-        margin: 0 auto;
-        width:350px;
+
+
         background-color:#EEEEEE ;
         color: #A9A9A9;
         border-radius: 20px;
-        box-shadow: -2px 4px 20px rgba(0, 0, 0, 0.7);
+        /* box-shadow: -2px 4px 20px rgba(0, 0, 0, 0.7); */
         align-items: center;
     }
     .email,.password{
-        margin-left: 45px;
+        margin-left: 10px;
         font-weight: bold;
         font-size: 20px;
         margin-bottom: 6px !important;
@@ -164,11 +164,11 @@
 
 
     }
-    .form-connexion a{
+    .modal-content a{
         color: #4684BF;
         text-decoration: none;
     }
-    .form-connexion button{
+    .modal button{
         background: #4684BF;
         box-shadow: -1px 4px 4px rgba(0, 0, 0, 0.39);
         border-radius: 50px;
@@ -270,6 +270,8 @@
         height: 500px;
         justify-content: center;
         padding-bottom: 20px;
+        padding-left: 0;
+        padding-right: 0;
       }
       .card-container{
         justify-content: center;
@@ -297,33 +299,55 @@
             width:80%;
           }
         }
-
+/*
      .link-formation{
         height: 300px;
         width: 350px;
         border: 1px solid;
         justify-content: center;
         align-items: center;
-        padding-top: 150px;
+        padding-top: 150px; */
 
-     }
-     .forme > p{
+     /* } */
+     .forme .circle{
+        width: 150px;
+        height: 150px;
         background-color: #4684BF;
         border-radius:50%;
-        margin-top: 50px;
-        position: relative;
-        position: absolute;
-        padding-top: 60px;
-        padding-bottom: 60px;
-        padding-left: 25px;
-        padding-right: 25px;
+        margin: 0 auto;
+        text-align: center;
+        transform: translateY(20px);
+        padding-top: 25px;
+        padding-bottom: 25px;
 
      }
-
-     .forme .svg-2{
-       transform: translateY(-87px);
-
+     .forme h4{
+        height: 100px;
      }
+     .forme {
+        height: 350px;
+     }
+
+     .forme h4{
+        transform: translate(20px,-60px);
+        height: 50px;
+
+
+    }
+    .forme img{
+        height: 350px;
+
+
+    }
+    @media screen and (max-width:500px) {
+        .forme img,.forme-img{
+            width:80%;
+        }
+
+    }
+    .forme .forme-img{
+        transform: translateY(-200px);
+    }
 
      .formation-logo{
         width: 160px;
@@ -412,5 +436,11 @@
         color: white;
         font-weight: bold;
     }
-
-
+    .photos-rac img{
+        border-radius: 30px;
+    }
+    @media screen and (max-width:575px) {
+        .photos-rac img{
+            width: 70%;
+        }
+    }
