@@ -13,7 +13,8 @@
 
     <x-admin.sidebar-item title="Espace-Emplois" icon="briefcase"  :toggle="true" data-bs-toggle="collapse">
         <x-admin.sidebar-item title="Les Emplois" href="{{ route('admin.emplois') }}" />
-        <x-admin.sidebar-item icon="user-check" title="Les Recruteurs" />
+        <x-admin.sidebar-item icon="user-check" title="Les Recruteurs" href="{{ route('admin.recruteurs.index') }}" />
+        <x-admin.sidebar-item icon="user-check" title="CV - Thèque" />
         <x-admin.sidebar-item icon="aperture" title="Les Demandes d'emplois" />
 
     </x-admin.sidebar-item>

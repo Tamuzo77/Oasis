@@ -46,12 +46,12 @@ class AdminController extends Controller
     public function emplois()
     {
         $emplois = Emploi::latest()->with(['ville', 'recruteur'])->get();
-        return \view('admin.espace_emploi.emplois', compact('emplois'));
+        return \view('admin.espace_emploi.emplois.index', compact('emplois'));
     }
 
     public function emplois_create()
     {
-        return \view('admin.espace_emploi.create2');
+        return \view('admin.espace_emploi.emplois.create');
     }
 
     public function store(Request $request)

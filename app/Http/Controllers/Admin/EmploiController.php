@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Emploi;
 use Illuminate\Http\Request;
+use App\Services\EmploiService;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Crypt;
 
@@ -13,7 +14,14 @@ class EmploiController extends Controller
 
     public function create()
     {
-        return \view('admin.espace_emploi.create2');
+        return \view('admin.espace_emploi.emplois.create');
+    }
+
+    public function store(Request $request)
+    {
+        (new EmploiService())->store($request);
+        return redirect()->route('admin.emplois')->with('success', "Emploi(s) crée(s) avec succès ");
+
     }
 
     public function visibleOrNot($slug)

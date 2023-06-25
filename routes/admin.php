@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\StructureController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\ImageController;
 use App\Http\Controllers\Admin\ServiceController;
@@ -52,6 +53,8 @@ Route::middleware('can:admin')->prefix('admin')->name('admin.')->group(function(
     Route::put('visible-emploi/{emploi:slug}', [App\Http\Controllers\Admin\EmploiController::class, 'visibleOrNot'])->name('emploi-visible');
     Route::get('details-emploi/{emploi:slug}', [App\Http\Controllers\Admin\EmploiController::class, 'show'])->name('emploi-details');
     Route::delete('delete-emploi/{emploi:slug}', [App\Http\Controllers\Admin\EmploiController::class, 'destroy'])->name('emploi-delete');
+
+    Route::resource('recruteurs', StructureController::class)->only(['index', 'show', 'destroy']);
 
 });
 
