@@ -91,15 +91,15 @@
                             <div class="col">
                                 <div>
                                     <h3 class="mb-0 ">345</h3>
-                                    <span>Products</span>
+                                    <span>- - -</span>
                                 </div>
 
                             </div>
                             <div class="vr g-0"></div>
                             <div class="col">
                                 <div>
-                                    <h3 class="mb-0 ">$45,129</h3>
-                                    <span>Wallet Balance</span>
+                                    <h3 class="mb-0 ">45,129</h3>
+                                    <span>- - -</span>
                                 </div>
 
                             </div>

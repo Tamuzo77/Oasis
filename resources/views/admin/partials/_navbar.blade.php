@@ -152,12 +152,13 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="{{ route('logout') }}"
-                                onclick="event.preventDefault();
-                                            this.closest('form').submit();">
-                                    <i class="me-2 icon-xxs dropdown-item-icon" data-feather="power"></i>Sign
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+                                    <button class="dropdown-item d-flex align-items-center" type="submit">
+                                        <i class="me-2 icon-xxs dropdown-item-icon" data-feather="power"></i>Sign
                                     Out
-                                </a>
+                                    </button>
+                                </form>
                             </li>
                         </ul>
 

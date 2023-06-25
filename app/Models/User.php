@@ -46,4 +46,15 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Role::class, 'role_id');
     }
+
+    public function getRedirectRouteName()
+    {
+        return match((int)$this->role_id)
+        {
+            1 => 'home',
+            2 => 'admin.dashboard',
+            3 => 'home',
+            0 => 'home',
+        };
+    }
 }

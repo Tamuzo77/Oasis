@@ -47,7 +47,7 @@ class Actualite extends Model
         return $this->belongsTo(CategoryNew::class, 'categoryNew_id');
     }
 
-    /*public function coverImage() : Attribute
+    public function coverImage() : Attribute
     {
         return Attribute::make(
             set: fn($value) => $value->store('actualitesStore', 'public')
@@ -58,5 +58,5 @@ class Actualite extends Model
         return Attribute::make(
             set: fn($value) => \Str::slug($value)
         );
-    }*/
+    }
 }
