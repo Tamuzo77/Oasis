@@ -56,7 +56,7 @@ class EmploiController extends Controller
     public function show($slug)
     {
         $slug =  Crypt::decrypt($slug);
-        $emploi = Emploi::where('slug', $slug)->with(['recruteur', 'department', 'commune', 'arrondissement', 'ville'])->get()->first();
+        $emploi = Emploi::where('slug', $slug)->with(['ville', 'recruteur'])->get()->first();
 
         return \view('admin.espace_emploi.details', compact('emploi'));
 
