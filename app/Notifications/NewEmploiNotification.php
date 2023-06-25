@@ -2,22 +2,25 @@
 
 namespace App\Notifications;
 
+use App\Models\Emploi;
 use Illuminate\Bus\Queueable;
+use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
-use Illuminate\Notifications\Notification;
 
-class NewUserNotification extends Notification
+class NewEmploiNotification extends Notification
 {
     use Queueable;
+
+    public Emploi $emploi;
 
     /**
      * Create a new notification instance.
      */
-    public function __construct($user)
+    public function __construct($emploi)
     {
         //
-        $this->user = $user;
+        $this->emploi = $emploi;
     }
 
     /**
@@ -36,7 +39,7 @@ class NewUserNotification extends Notification
     public function toMail(object $notifiable): MailMessage
     {
         return (new MailMessage)
-                    ->line("Nouveau Apprenant Enregistré sur la plateforme ($this->user->email) !")
+                    ->line('The introduction to the notification.')
                     ->action('Notification Action', url('/'))
                     ->line('Thank you for using our application!');
     }
@@ -48,10 +51,12 @@ class NewUserNotification extends Notification
      */
     public function toArray(object $notifiable): array
     {
+        $Emploilibelle = $this->emploi->libelle;
+        $author = $this->emploi->author ?? 'Guest';
         return [
             //
-            'libelle' => 'Nouveau Apprenant Enregistré !' , //$this->user->name,
-            'description' => "Utilisateur $this->user->name ($this->user->email) vient d'ếtre enregistré comme un Apprenant ", // $this->user->email,
+            'libelle' => 'Nouvel Emploi Crée',
+            'description' => " $Emploilibelle vient d'être crée par $author"
         ];
     }
 }

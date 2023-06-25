@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Models\Emploi;
 use App\Models\Structure;
+use App\Events\EmploiCreated;
 use Illuminate\Support\Facades\DB;
 
 class EmploiService {
@@ -30,7 +31,9 @@ class EmploiService {
                     $emploi['structure_id'] = $structure->id;
                     $emploi['author'] = auth()->user()->email ?? null;
                     $emploi['slug'] = \Str::slug( $structure->name.' '.$emploi['libelle']);
-                     Emploi::create($emploi);
+                     $emps = Emploi::create($emploi);
+                     EmploiCreated::dispatch($emps);
+
                 }
     
             });

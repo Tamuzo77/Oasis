@@ -84,9 +84,9 @@
                                     <li class="list-group-item bg-light">
 
                                         <a href="#!" class="text-muted">
-                                            <h5 class=" mb-1">Nouveau Apprenant Enregistré !</h5>
+                                            <h5 class=" mb-1">{{ $notif->data['libelle'] }}</h5>
                                             <p class="mb-0">
-                                                [{{ $notif->created_at }}] User {{ $notif->data['name'] }} ({{ $notif->data['email'] }})
+                                                [{{ $notif->created_at }}] {{ $notif->data['description'] }}
                                             </p>
                                         </a>
                                     </li>
