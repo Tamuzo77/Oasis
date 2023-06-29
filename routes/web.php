@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\ImageController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\QuiSommesNousController;
 use App\Http\Controllers\Admin\ActualiteController;
+use App\Http\Controllers\EspaceRecruteurController;
 use App\Http\Controllers\AccueilConnexionController;
 use App\Http\Controllers\Admin\PartenaireController;
 use App\Http\Controllers\Admin\CategoryNewController;
@@ -35,6 +36,7 @@ Route::get('/inscriptionFormations',[InscriptionFormationsController::class,'ins
 Route::get('/dépôtCV',[DepotCVController::class,'dépôtCV']);
 Route::get('/reseauRac',[ReseauRacController::class,'reseauRac']);
 Route::get('/accueilConnexion',[AccueilConnexionController::class,'accueilConnexion']);
+Route::get('/espaceRecruteur',[EspaceRecruteurController::class,'espaceRecruteur']);
 /*---------------------------------------------------------------------------------*/
 
 Route::get('/dashboard', function () {

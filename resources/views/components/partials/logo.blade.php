@@ -1,3 +1,3 @@
 <div>
-    <img src="oasis/accueil/logo Oasis Consulting 1.png" alt="" width="120px;" height="120px;" object-fit="cover">
+    <img src="oasis/accueil/logo Oasis Consulting 1.png" alt="" height="104px;"style="object-fit:cover;background-size:cover;">
 </div>

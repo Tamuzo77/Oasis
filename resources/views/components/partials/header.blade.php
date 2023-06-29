@@ -1,12 +1,12 @@
 
 <nav class="navbar navbar-expand-lg pt-0 absolute">
     <div class=" container-xl pt-0">
-      <a class="navbar-brand col-xl-2 col-lg-1 ms-lg-auto" href="#"><x-partials.logo ></x-partials.logo></a>
+      <a class="navbar-brand col-xl-2 col-lg-2 ms-lg-auto" href="#"><x-partials.logo ></x-partials.logo></a>
       <div class="navbar-toggler float-right" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon" style="color:#4684BF; "></span>
       </div>
       <div class="collapse navbar-collapse " id="collapsibleNavbar">
-        <ul class="navbar-nav ms-sm-2">
+        <ul class="navbar-nav ms-sm-2 ">
           <li class="nav-item">
             <a class="nav-link" href="/">Accueil</a>
           </li>
@@ -20,7 +20,7 @@
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Espace emploi</a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">CVThèque</a></li>
-              <li><a class="dropdown-item" href="#">Espace recruteur</a></li>
+              <li><a class="dropdown-item" href="/espaceRecruteur">Espace recruteur</a></li>
               <li><a class="dropdown-item" href="/dépôtCV">Dépôt de CV</a></li>
             </ul>
           </li>

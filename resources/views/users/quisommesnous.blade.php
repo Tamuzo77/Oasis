@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
@@ -22,13 +22,7 @@
 <style>
 
  .nav-bar{
-        height: 500px;
         background-image:url('oasis/accueil/Rectangle 2 (1).png');
-        background-size:cover;
-        object-fit: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-
     }
 
 
@@ -39,7 +33,7 @@
     <header class="nav-bar">
         <x-partials.header></x-partials.header>
         <div class="div-ac-title col-md-5 text-white opacity-80" style="">
-            <div class="accueil-title">Lorem ipsum  minus .</div>
+            <div class="accueil-title mb-4">Lorem ipsum  minus .</div>
             <p> sit amet consectetur adipisicing elit  Numquam magnam eveniet repellendus . optio corporis vel id eaque nesciunt voluptatum, aperiam deleniti non tempora necessitatibus tempore </p>
         </div>
     </header>
@@ -119,5 +113,9 @@
 <script src="{{asset('js/script.js')}}"></script>
 
 {{-- @include('partials._footer') --}}
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+  </script>
 </body>
 </html>

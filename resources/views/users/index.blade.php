@@ -22,15 +22,16 @@
 <style>
 
  .nav-bar{
-        height: 500px;
         background-image:url('oasis/accueil/Rectangle 2 (1).png');
-        background-size:cover;
-        object-fit: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-
     }
-
+    .card-1{
+        border: none !important;
+        background: none !important;
+    }
+    .card-footer{
+        background: none !important;
+        border: none !important;
+    }
 
 </style>
 
@@ -39,7 +40,7 @@
     <header class="nav-bar">
         <x-partials.header></x-partials.header>
         <div class="div-ac-title col-md-5 text-white opacity-80" style="">
-            <div class="accueil-title">Lorem ipsum  minus .</div>
+            <div class="accueil-title mb-4">Lorem ipsum  minus .</div>
             <p> sit amet consectetur adipisicing elit  Numquam magnam eveniet repellendus . optio corporis vel id eaque nesciunt voluptatum, aperiam deleniti non tempora necessitatibus tempore </p>
         </div>
     </header>
@@ -69,69 +70,68 @@
                 <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner" role="listbox">
                         <div class="carousel-item active">
-                            <div class="col-md-4 mx-3">
+                            <div class="col-md-4 col-sm-6 mx-3">
                                 <div class="card card-1">
                                     <div class="card-img card-img-1">
                                         <img src="oasis/images/bruce-barrow-aI9_9T03OIk-unsplash.jpg" class="img-fluid">
                                     </div>
-
+                                    <div class="mt-2 card-footer">Slide 56</div>
                                 </div>
 
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <div class="col-md-4 mx-3">
+                            <div class="col-md-4 mx-3 col-sm-6">
                                 <div class="card card-1">
                                     <div class="card-img card-img-1">
                                         <img src="oasis/images/mwangi-gatheca-qlKaN7eqay8-unsplash.jpg" class="img-fluid">
                                     </div>
-
+                                    <div class="mt-2 card-footer">Slide 56</div>
                                 </div>
-                                <div class="">Slide 5</div>
+
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <div class="col-md-4 mx-3">
+                            <div class="col-md-4 mx-3 col-sm-6">
                                 <div class="card card-1">
                                     <div class="card-img card-img-1">
                                         <img src="oasis/images/charlesdeluvio-97Ir6ym25N4-unsplash.jpg" class="img-fluid">
                                     </div>
-
+                                    <div class="mt-2 card-footer">Slide 56dgdsgdgdgfvbcvbcbcvbvcbvcccccccccccccccccccbfgfghfhfhffgfgfg</div>
                                 </div>
-                                <div class="">Slide 5</div>
+
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <div class="col-md-4 mx-3">
+                            <div class="col-md-4 mx-3 col-sm-6">
                                 <div class="card card-1">
                                     <div class="card-img card-img-1">
                                         <img src="oasis/images/bruce-barrow-aI9_9T03OIk-unsplash.jpg" class="img-fluid">
                                     </div>
-
+                                    <div class="mt-2 card-footer">Slide 56</div>
                                 </div>
-                                <div class="">Slide 5</div>
+
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <div class="col-md-4 mx-3">
+                            <div class="col-md-4 mx-3 col-sm-6">
                                 <div class="card card-1">
                                     <div class="card-img card-img-1">
                                         <img src="oasis/images/charlesdeluvio-97Ir6ym25N4-unsplash.jpg" class="img-fluid">
                                     </div>
-
+                                    <div class="mt-2 card-footer">Slide 56</div>
                                 </div>
-                                <div class="">Slide 5</div>
+
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <div class="col-md-4 mx-3">
+                            <div class="col-md-4 mx-3 col-sm-6">
                                 <div class="card card-1">
                                     <div class="card-img card-img-1">
                                         <img src="images/bruce-barrow-aI9_9T03OIk-unsplash.jpg" class="img-fluid">
                                     </div>
-
+                                    <div class="mt-2 card-footer">Slide 56</div>
                                 </div>
-                                <div class="">Slide 5</div>
                             </div>
                         </div>
                     </div>
