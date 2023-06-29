@@ -27,10 +27,16 @@ class AppServiceProvider extends ServiceProvider
     {
         //
         Schema::defaultStringLength(191);
+        
+
+        Gate::after(function($user){
+            return $user->hasRole('Super Admin');
+        });
 
         Gate::define('admin', function(User $user) {
             return $user->is_admin == true;
         });
+
         Gate::define('courses_learn', fn(User $user) => $user->role_id == Role::IS_LEARNER);
         Blade::if('admin', function(){
             return request()->user()?->can('admin');

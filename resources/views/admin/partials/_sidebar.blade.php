@@ -14,7 +14,7 @@
     <x-admin.sidebar-item title="Espace-Emplois" icon="briefcase"  :toggle="true" data-bs-toggle="collapse">
         <x-admin.sidebar-item title="Les Emplois" href="{{ route('admin.emplois') }}" />
         <x-admin.sidebar-item icon="user-check" title="Les Recruteurs" href="{{ route('admin.recruteurs.index') }}" />
-        <x-admin.sidebar-item icon="user-check" title="CV - Thèque" />
+        <x-admin.sidebar-item icon="user-check" href="{{ route('admin.cv-theque.index') }}" title="CV - Thèque" />
         <x-admin.sidebar-item icon="aperture" title="Les Demandes d'emplois" />
 
     </x-admin.sidebar-item>
@@ -39,5 +39,14 @@
     </x-admin.sidebar-item>
 
     <x-admin.sidebar-item title="Banque d'Images" icon="image" class="{{ request()->is('admin/library') ? 'active' : '' }}" href="{{ route('admin.library') }}" />
-    
+
+    <x-admin.sidebar-item title="Administration" icon="" :toggle="true" data-bs-toggle="collapse" >
+        <x-admin.sidebar-item title="Les Administrateurs" href="{{ route('admin.administrateurs.index') }}" />
+        @can('manage admins')
+            
+        <x-admin.sidebar-item title="Rôles" href="{{ route('admin.roles.index') }}" />
+        <x-admin.sidebar-item title="Permissions" href="{{ route('admin.permissions.index') }}" />
+        @endcan
+    </x-admin.sidebar-item>
+    <br><br><br>
 </x-admin.sidebar>

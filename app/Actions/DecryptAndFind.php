@@ -8,7 +8,7 @@ use Illuminate\Contracts\Encryption\DecryptException;
 
 class DecryptAndFind {
 
-    public function handle($model, $value)
+    public function handle($model, $value, $field ="slug")
     {
         try {
             $decrypted = Crypt::decrypt($value);
@@ -16,6 +16,6 @@ class DecryptAndFind {
             return \response($e->getMessage());
         };
 
-        return $model::where('slug', $decrypted)->get()->first();
+        return $model::where($field, $decrypted)->get()->first();
     }
 }

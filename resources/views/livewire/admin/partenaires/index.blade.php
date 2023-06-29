@@ -49,8 +49,7 @@
                         <div class="dropdown dropstart">
                             <a href="#!" class="btn btn-ghost btn-icon btn-sm rounded-circle" id="dropdownMenuOne"
                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="icon-xs" data-feather="more-horizontal"></i>
-                            </a>
+                                <i class="bi bi-three-dots"></i>                            </a>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuOne">
                                 <a class="dropdown-item d-flex align-items-center" onclick="hide()" href="#!"><i
                                         class="me-2

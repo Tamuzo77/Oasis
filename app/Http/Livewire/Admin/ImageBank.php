@@ -12,6 +12,8 @@ class ImageBank extends Component
     use WithFileUploads;
 
     public $images ;
+    public $image;
+    public $libelle;
     public $newImage ;
 
     public function mount()
@@ -54,6 +56,11 @@ class ImageBank extends Component
         ImageModel::create($attributes);
 
         $this->images = ImageModel::latest()->get();
+    }
+
+    public function save()
+    {
+        dd($this->image);
     }
     public function render()
     {

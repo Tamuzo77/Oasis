@@ -7,6 +7,7 @@ use App\Models\Ville;
 use Illuminate\Database\Seeder;
 use Database\Seeders\RoleSeeder;
 use Database\Seeders\VilleSeeder;
+use Spatie\Permission\Models\Role;
 use Database\Seeders\CommuneSeeder;
 use Database\Seeders\DepartmentSeeder;
 use Database\Seeders\ArrondissementSeeder;
@@ -20,14 +21,18 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         \App\Models\Actualite::truncate();
-        \App\Models\User::factory()->create([
+        $user = \App\Models\User::factory()->create([
              'name' => 'Tamuzo',
              'username' => 'Tamuzo77',
              'email' => 'tamuzo77@example.com',
              'password' =>'tamuzo77' ,
              'is_admin' => 1,
-             'role_id' => 2,
          ]);
+
+         $role = Role::create(
+            ['name' => 'Super Admin',]
+         );
+         $user->assignRole($role);
 
         \App\Models\Status::factory()->create([
             'libelle' => 'Actif'
@@ -38,8 +43,6 @@ class DatabaseSeeder extends Seeder
         ]);
 
         //\App\Models\Actualite::factory(3)->create();
-
-        $this->call(RoleSeeder::class);
         Ville::factory(10)->create();
     }
 }

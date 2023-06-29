@@ -5,7 +5,7 @@
         <div class="col-12 mb-4">
             <x-admin.form.input name="libelle" :important="true" />
             <h5 class="mb-2">Image </h5>
-            <input value="{{ old('image') }}" name="image" type="file" required>
+            <input  name="image" id="image" type="file" required>
 
             @error('image')
                 <div class="invalid-feedback">
@@ -29,8 +29,8 @@
         FilePond.registerPlugin(FilePondPluginImagePreview);
 
         // Get a reference to the file input element
-        const inputElement = document.querySelector('input[type="file"]');
-
+        const inputElement = document.querySelector('#image');
+        console.log(inputElement);
         // Create a FilePond instance
         const pond = FilePond.create(inputElement);
 

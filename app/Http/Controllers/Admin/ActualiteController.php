@@ -24,6 +24,7 @@ class ActualiteController extends Controller
     public function index()
     {
         //
+        $this->authorize('viewAny', Actualite::class);
         $categories = CategoryNew::latest()->get(['id', 'name']);
         $statuses = Status::latest()->get(['id', 'libelle']);
         $actualites = Actualite::with(['categoryNew', 'status'])->latest()->filter(request(['search','category', 'status']))->paginate(8)->withQueryString();
@@ -42,6 +43,7 @@ class ActualiteController extends Controller
     public function create()
     {
         //
+        $this->authorize('create', Actualite::class);
         $categories = CategoryNew::latest()->get(['id', 'name']);
         $statuses = Status::latest()->get(['id', 'libelle']);
         return view('admin.actualites.create', compact('categories', 'statuses'));
@@ -63,6 +65,7 @@ class ActualiteController extends Controller
      */
     public function show(Actualite $actualite)
     {
+        $this->authorize('view', Actualite::class);
         //A faire bientôt
     }
 

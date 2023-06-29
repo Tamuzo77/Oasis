@@ -15,6 +15,8 @@
      @include('user.partials._header') 
     {{ $slot }}
     
+
+    @include('user.partials._footer')
     @include('user.frontend.script')
     @livewireScripts
 </body>

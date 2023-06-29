@@ -1,4 +1,18 @@
 <ul class="navbar-nav ms-sm-2">
+
+    @foreach ($pages as $page )
+        @if ($page['toggled'] == true)
+        <x-user.nav-item :title="$page['title']" :toggled="true" >
+            @foreach ($page['pages'] as $p )
+            <x-user.nav-sub-link :title="$p['title']" :href="$p['href']" />
+
+            @endforeach
+        </x-user.nav-item>
+        @else
+        <x-user.nav-item :title="$page['title']" :href="$page['href']" />
+
+        @endif
+    @endforeach
     <x-user.nav-item title="Accueil" href="/" />
 
     <x-user.nav-item title="Qui sommes-nous" href="" />

@@ -16,7 +16,7 @@ class ServiceController extends Controller
 {
     public function create()
     {
-        Gate::allows('admin');
+       // Gate::allows('admin');
         $statuses = Status::all();
         return \view('admin.p&s.services.create', compact( 'statuses'));
     }

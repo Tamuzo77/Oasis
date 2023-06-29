@@ -1,7 +1,19 @@
-<x-admin.layout title="Les Emplois">
-    <x-admin.header title="Les Emplois " subtitle="Liste des différents emplois enrgistrer dans la plateforme" />
-    <x-admin.flash />
+<x-admin.layout title="Roles">
+    @php
+    $badges = ['success', 'warning', 'danger', 'info', 'secondary', 'primary'];
+@endphp
+    <x-admin.header title="Administration OASIS: Les Rôles" />
+    <!-- Styles -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" />
+<!-- Or for RTL support -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.rtl.min.css" />
 
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.0/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.full.min.js"></script>
+<x-admin.flash />
     <div>
         <!-- row -->
         <div class="row">
@@ -9,7 +21,10 @@
                 <div class="card">
                     <div class="card-header d-md-flex border-bottom-0">
                         <div class="flex-grow-1">
-                            <a href="{{ url('admin/create-emploi') }}" class="btn btn-primary">+ Ajouter Emplois</a>
+                            <button type="button" class="btn btn-primary ms-3" data-bs-toggle="modal"
+                                data-bs-target="#partenaireModalCenter">
+                                + Ajouter un Rôle
+                            </button>
                         </div>
                         <div class="mt-3 mt-md-0">
                             <a href="#!" class="btn btn-ghost btn-icon btn-sm rounded-circle texttooltip"
@@ -34,15 +49,14 @@
                                                 </label>
                                             </div>
                                         </th>
-                                        <th class="ps-1">Poste | Emploi</th>
-                                        <th>Ville</th>
-                                        <th>Description</th>
-                                        <th>Statut</th>
+                                        <th>Titre</th>
+                                        <th>Model</th>
+                                        <th>Permissions</th>
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @forelse ($emplois as $emploi)
+                                    @foreach ($roles as $role)
                                         <tr>
                                             <td class="pe-0">
                                                 <div class="form-check">
@@ -52,30 +66,14 @@
                                                     </label>
                                                 </div>
                                             </td>
-                                            @php
-                                                $pic = $emploi->recruteur->logo;
-                                            @endphp
-                                            <td class="ps-0">
-                                                <div class="d-flex align-items-center">
-                                                    <img src="{{ asset("storage/$pic") }}" alt=""
-                                                        class="img-4by3-sm img-fluid  rounded-3">
-                                                    <div class="ms-3">
-                                                        <h5 class="mb-0">
-                                                            <a href="#!"
-                                                                class="text-inherit">{{ $emploi->libelle }}</a>
-                                                        </h5>
-                                                        <p class="mb-0 text-muted"> Structure :
-                                                            {{ $emploi->recruteur->name }}</p>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>{{ $emploi->ville->name }}</td>
-                                            <td>{{ \Str::limit($emploi->description, 50, '...') }}</td>
+                                            <td>{{ $role->name }}</td>
+                                            <td>{{ '' }}</td>
                                             <td>
-                                                <span
-                                                    class="badge badge-{{ $emploi->visible ? 'success' : 'danger' }}-soft">
-                                                    {{ $emploi->visible ? 'Visible' : 'caché' }}
-                                                </span>
+                                                @forelse ($role->permissions as $permission )
+                                                <span class="badge bg-{{ $badges[random_int(0, 5)] }}">{{ $permission->name }}</span>
+                                                @empty
+                                                    {{ 'None' }}
+                                                @endforelse
                                             </td>
                                             <td class="text-end">
                                                 <div class="dropdown dropstart">
@@ -83,33 +81,18 @@
                                                         class="btn-icon btn btn-ghost btn-sm rounded-circle"
                                                         data-bs-toggle="dropdown" aria-haspopup="true"
                                                         aria-expanded="false">
-                                                        <i class="bi bi-three-dots-vertical"></i>                                                    </a>
+                                                        <i class="bi bi-three-dots-vertical"></i> </a>
+                                                    </a>
                                                     <div class="dropdown-menu">
-                                                        <form
-                                                            action="{{ route('admin.emploi-details', \Illuminate\Support\Facades\Crypt::encrypt($emploi->slug)) }}"
-                                                            method="get">
+                                                        <form action="" method="get">
                                                             @csrf
                                                             <button type="submit"
                                                                 class="dropdown-item d-flex align-items-center">
-                                                                <i class=" dropdown-item-icon"
-                                                                    data-feather="edit"></i>Details
+                                                                <i class=" dropdown-item-icon" data-feather="edit"></i>
                                                             </button>
                                                         </form>
                                                         <div class="dropdown-divider"></div>
-                                                        <form
-                                                            action="{{ route('admin.emploi-visible', \Illuminate\Support\Facades\Crypt::encrypt($emploi->slug)) }}"
-                                                            method="post">
-                                                            @csrf
-                                                            @method('PUT')
-                                                            <button type="submit"
-                                                                class="dropdown-item d-flex align-items-center">
-                                                                <i class="dropdown-item-icon" data-feather="eye"></i>
-                                                                {{ $emploi->visible ? 'Désactiver la visibilité' : 'Activer la visibilité' }}
-                                                            </button>
-                                                        </form>
-                                                        <form
-                                                            action="{{ route('admin.emploi-delete', \Illuminate\Support\Facades\Crypt::encrypt($emploi->slug)) }}"
-                                                            method="post">
+                                                        <form action="" method="post">
                                                             @csrf
                                                             @method('DELETE')
                                                             <button type="submit"
@@ -119,14 +102,12 @@
                                                             </button>
                                                         </form>
 
-
-
                                                     </div>
                                                 </div>
                                             </td>
                                         </tr>
-                                    @empty
-                                    @endforelse
+                                    @endforeach
+
 
 
                                 </tbody>
@@ -137,4 +118,51 @@
             </div>
         </div>
     </div>
+
+
+
+
+
+
+    <div class="modal fade" id="partenaireModalCenter" tabindex="-1" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true" style="display: none;">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">
+                        Ajouter un Role</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+
+                    </button>
+                </div>
+                <form action="{{ route('admin.roles.store') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <div class="modal-body">
+                        <x-admin.form.input name="name" label="Titre" :important="true" placeholder="" />
+
+                    </div>
+                    <div class="modal-body">
+                        <x-admin.form.label name="Attribuer des permissions (optionel)" />
+                        <select name="permissions" class="form-select" id="multiple-select-field" data-placeholder="Choose anything" multiple>
+                            @foreach ($permissions as $permission )
+                                <option value="{{ $permission->id }}">{{ $permission->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Enregistrer</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        $( '#multiple-select-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+} );
+    </script>
 </x-admin.layout>
