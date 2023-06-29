@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('slug');
             $table->string('libelle');
             $table->text('description');
-            $table->foreignId('user_id')->constrained();
             $table->boolean('visible')->default(0);
             $table->timestamps();
         });

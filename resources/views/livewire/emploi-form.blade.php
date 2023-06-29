@@ -6,38 +6,36 @@
             <div class="card-body">
                 <form action="{{ route('admin.emplois-store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
-                    <x-admin.header ptitle="Informations sur le Recruteur" />
+                    <x-admin.header ptitle="Informations sur la Structure" />
                     <x-admin.form.field class="row g-3">
-                        <div class="col-md-4">
-                            <x-admin.form.input wire:model="user.name" id="name" name="user.name" label="nom"  :important="true"  />
+                        <div class="col-md-6">
+                            <x-admin.form.input wire:model="structure.name" id="name" name="structure.name" label="nom de la structure"  :important="true"  />
 
                         </div>
-                        <div class="col-md-4">
-                            <x-admin.form.input wire:model="user.firstname" id="firstname" name="user.firstname" label="Prénom"  :important="true"  />
-                            
-                        </div>
-                        <div class="col-md-4">
-                            <x-admin.form.input wire:model="user.email" label="Email" name="user.email" type="mail"  :important="true"  />
-
-                    
+                        <div class="col-md-6">
+                            <x-admin.form.input wire:model="structure.email" label="Email" name="structure.email" type="mail"  :important="true"  />
                         </div>
                         <div class="col-md-2">
-                            <x-admin.form.input wire:model="user.tel" type="tel" id="tel" label="Téléphone" name="user.tel"  :important="true"  />
+                            <x-admin.form.input wire:model="structure.tel" type="tel" id="tel" label="Téléphone" name="structure.tel"  :important="true"  />
 
                         </div>
                         <div class="col-md-2">
-                            <x-admin.form.input wire:model="user.age" type="number" id="age" label="Age" name="user.age"  :important="true"  />
+                            <x-admin.form.input wire:model="structure.ifu" type="number" id="ifu" label="numéro IFU" name="structure.ifu"  :important="true"  />
 
                         </div>
                     
                         <div class="col-8">
-                            <x-admin.form.input wire:model="user.picture" type="file" id="picture" name="user.picture" label="Votre Photo"  :important="true"  />
+                            <x-admin.form.input wire:model="structure.logo" type="file" id="picture" name="structure.logo" label="Logo | Photo du Recruteur"  :important="true"  />
                         </div>
-                        @if ($candidat)
-                        <div class="col-12">
-                            <x-admin.form.input wire:model="user.cv_path" type="file" id="cv" label="Votre CV" name="user.cv_path"  :important="true"  />
+                        <div class="col-4">
+                            <x-admin.form.input wire:model="structure.lien_facebook" type="url" id="facebook" label="Lien Facebook" name="structure.lien_facebook"/>
                         </div>
-                        @endif
+                        <div class="col-4">
+                            <x-admin.form.input wire:model="structure.lien_github" type="url" id="github" label="Lien Github" name="structure.lien_github"/>
+                        </div>
+                        <div class="col-4">
+                            <x-admin.form.input wire:model="structure.lien_linkedin" type="url" id="linkedin" label="Lien Linkedin" name="structure.lien_linkedin"/>
+                        </div>
                         
                     </x-admin.form.field>
 
@@ -46,37 +44,9 @@
                         <div class="card mb-5">
                             <!-- card body -->
                             <div class="card-body">
-                                <x-admin.header ptitle="Informations sur le poste ou l'emplois" />
+                                <x-admin.header ptitle="Informations sur le(s) poste(s) ou l'emplois" />
                                 <x-admin.form.field class="row g-3">
-                                    <div class="col-md-4 mb-2">
-                                        <select wire:model="dept" class="form-select" name="">
-                                            <option  selected> _ _ _ </option>
-                                            @foreach ($departments as $dpt)
-                                                <option value="{{ $dpt->id }} ">{{ $dpt->name }}</option>
-                                            @endforeach
-                                        </select>
-    
-                                    </div>
-                                    <div class="col-md-4 mb-2">
-                                        <select wire:model="com" class="form-select" name="">
-                                            <option selected>_ _ _</option>
-                                            @forelse ($communes as $dpt)
-                                                <option value="{{ $dpt->id }} ">{{ $dpt->name }}</option>
-                                                @empty
-                                            @endforelse
-                                        </select>
-    
-                                    </div>
-                                    <div class="col-md-4 mb-2">
-                                        <select wire:model="arr" class="form-select" name="">
-                                            <option selected>_ _ _</option>
-                                            @forelse ($arrondissements as $dpt)
-                                                <option value="{{ $dpt->id }} ">{{ $dpt->name }}</option>
-                                                @empty
-                                            @endforelse
-                                        </select>
-    
-                                    </div>
+
                                 </x-admin.form.field>
                                 
                                 <div class="responsive">
@@ -102,7 +72,6 @@
                                             <td> <textarea wire:model="emplois.{{ $index }}.description" class="form-control" name="emplois[{{ $index }}][description]" id="" cols="30" rows="5"></textarea></td>
                                             <td>
                                              <select wire:model="emplois.{{ $index }}.ville" class="form-select" name="emplois[{{ $index }}][ville_id]" id="">
-                                                 <option selected>_ _ _</option>
                                                  @forelse ($villes as $dpt)
                                                      <option value="{{ $dpt->id }} ">{{ $dpt->name }}</option>
                                                      @empty

@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::table('emplois', function (Blueprint $table) {
             //
             $table->string('ville_id')->constrained();
+            $table->string('author');
             $table->double('lattitude')->nullable();
             $table->double('longitude')->nullable();
         });

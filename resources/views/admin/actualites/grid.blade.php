@@ -90,8 +90,7 @@
                         <div class="dropdown dropstart">
                             <a href="#!" class="btn-icon btn btn-ghost btn-sm rounded-circle"
                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i data-feather="more-vertical" class="icon-xs"></i>
-                            </a>
+                                <i class="bi bi-three-dots-vertical"></i>                            </a>
                             <div class="dropdown-menu">
                                 <form
                                     action="{{ route('admin.actualites.edit', \Illuminate\Support\Facades\Crypt::encrypt($actualite->slug)) }}"

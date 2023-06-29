@@ -4,14 +4,16 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Models\Role;
+use App\Models\Structure;
 use Laravel\Sanctum\HasApiTokens;
+use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable, HasRoles;
 
     /**
      * The attributes that are mass assignable.
@@ -42,8 +44,20 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function role()
+
+    public function getRedirectRouteName()
     {
-        return $this->belongsTo(Role::class, 'role_id');
+        return match((int)$this->role_id)
+        {
+            1 => 'home',
+            2 => 'admin.dashboard',
+            3 => 'home',
+            0 => 'home',
+        };
+    }
+
+    public function structure()
+    {
+        return $this->belongsTo(Structure::class);
     }
 }

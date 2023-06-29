@@ -39,8 +39,7 @@
                         <div class="dropdown dropstart">
                             <a href="#!" class="btn-icon btn btn-ghost btn-sm rounded-circle"
                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i data-feather="more-vertical" class="icon-xs"></i>
-                            </a>
+                                <i class="bi bi-three-dots-vertical"></i>                            </a>
                             <div class="dropdown-menu">
                                 <form
                                     action="{{ route('admin.service-active', \Illuminate\Support\Facades\Crypt::encrypt($serv->slug)) }}"
@@ -91,15 +90,15 @@
                             <div class="col">
                                 <div>
                                     <h3 class="mb-0 ">345</h3>
-                                    <span>Products</span>
+                                    <span>- - -</span>
                                 </div>
 
                             </div>
                             <div class="vr g-0"></div>
                             <div class="col">
                                 <div>
-                                    <h3 class="mb-0 ">$45,129</h3>
-                                    <span>Wallet Balance</span>
+                                    <h3 class="mb-0 ">45,129</h3>
+                                    <span>- - -</span>
                                 </div>
 
                             </div>

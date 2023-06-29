@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Ville;
 use App\Models\Commune;
 use Livewire\Component;
+use App\Models\Structure;
 use App\Models\Department;
 use Livewire\WithFileUploads;
 use App\Models\Arrondissement;
@@ -14,35 +15,33 @@ class EmploiForm extends Component
 {
     use WithFileUploads;
 
-    public User $user;
+    public Structure $structure;
     public $candidat;
     public $increment = 1;
     public $emplois = [];
-    public $dept, $com, $arr;
-    public $departments = [];
-    public $communes = [];
-    public $arrondissements = [];
     public $villes = [];
     
     protected $rules = [
-        'user.name' => 'required|min:3|max:255|string',
-        'user.firstname' => 'required|min:3|max:255|string',
-        'user.email' => 'required|email|max:255',
-        'user.tel' => 'required|phone:BJ',
-        'user.age' => 'required | min:16 | max:99|numeric',
-        'user.picture' => 'required|image',
-        'user.cv_path' => '',
-        'dept' => '',
-        'com' => '',
-        'arr' => '',
+        'structure.name' => 'required|min:3|max:255|string',
+        'structure.email' => 'required|email|max:255',
+        'structure.tel' => 'required|phone:BJ',
+        'structure.ifu' => 'required | digits:13 | regex:/^[0-9]{13}$/ |numeric',
+        'structure.logo' => 'required|image',
+        'structure.lien_facebook' => 'url',
+        'structure.lien_github' => 'url',
+        'structure.lien_linkedin' => 'url',
+       
     ];
     
+    protected $messages = [
+        'user.ifu' => 'Entrer un numéro IFU valide',
+    ];
 
-    public function mount(User $user)
+    public function mount(Structure $structure)
     {
-        $this->user = User::findOrNew($user->id);
+        $this->structure = Structure::findOrNew($structure->id);
         $this->candidat = false;
-        $this->departments = Department::latest()->get();
+        $this->villes = Ville::latest()->get();
         $this->emplois = [['libelle'=>'', 'description'=>'', 'ville'=>'' ]];
     }
 
@@ -59,51 +58,33 @@ class EmploiForm extends Component
         
     }
 
-    public function updatedUserName()
+    public function updatedStructureName()
     {
-        $this->validateOnly('user.name');
+        $this->validateOnly('structure.name');
     }
 
-    public function updatedUserFirstname()
+
+    public function updatedStructureEmail()
     {
-        $this->validateOnly('user.firstname');
+        $this->validateOnly('structure.email');
     }
 
-    public function updatedUserEmail()
+    public function updatedStructureTel()
     {
-        $this->validateOnly('user.email');
+        $this->validateOnly('structure.tel');
     }
 
-    public function updatedUserTel()
+    public function updatedStructureIfu()
     {
-        $this->validateOnly('user.tel');
+        $this->validateOnly('structure.ifu');
     }
 
-    public function updatedUserAge()
+    public function updatedStructureLogo()
     {
-        $this->validateOnly('user.age');
-    }
-
-    public function updatedUserPicture()
-    {
-        $this->validateOnly('user.picture');
+        $this->validateOnly('structure.logo');
     }
 
     
-    public function updatedDept($value)
-    {
-        $this->communes = Commune::where('department_id', $value)->get();
-    }
-
-    public function updatedCom($value)
-    {
-        $this->arrondissements = Arrondissement::where('commune_id', $value)->get();
-    }
-
-    public function updatedArr($value)
-    {
-        $this->villes = Ville::where('arrondissement_id', $value)->get();
-    }
     public function render()
     {
         return view('livewire.emploi-form');

@@ -18,6 +18,7 @@ class VilleFactory extends Factory
     {
         return [
             //
+            'name' => fake()->city()
         ];
     }
 }

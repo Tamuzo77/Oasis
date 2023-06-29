@@ -4,10 +4,15 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\User;
 use App\Models\Emploi;
+use App\Models\Structure;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Services\AdminService;
+use App\Services\EmploiService;
 use Illuminate\Support\Facades\DB;
+use Spatie\Permission\Models\Role;
 use App\Http\Controllers\Controller;
+use Spatie\Permission\Models\Permission;
 
 class AdminController extends Controller
 {
@@ -43,39 +48,59 @@ class AdminController extends Controller
 
     public function emplois()
     {
-        $emplois = Emploi::latest()->with(['department', 'commune', 'arrondissement', 'ville', 'recruteur'])->get();
-        return \view('admin.espace_emploi.emplois', compact('emplois'));
+        $emplois = Emploi::latest()->with(['ville', 'recruteur'])->get();
+        return \view('admin.espace_emploi.emplois.index', compact('emplois'));
     }
 
     public function emplois_create()
     {
-        return \view('admin.espace_emploi.create2');
+        return \view('admin.espace_emploi.emplois.create');
+    }
+
+
+    public function index()
+    {
+        $admins = User::where('is_admin', true)->get();
+        $users = User::where('is_admin', false)->get();
+        $roles = Role::all();
+        $permissions = Permission::all();
+        return \view('admin.administrators.index', compact('admins', 'users', 'roles', 'permissions'));
     }
 
     public function store(Request $request)
     {
-        try {
-        DB::transaction(function () use ($request) {
-            $user = User::updateOrCreate([
-                    'email' => $request->user_email,
-                ], ['firstname' => $request->user_firstname, 'name' => $request->user_name ,  'tel'=>$request->user_tel , 'age' =>$request->user_age , 'picture' => $request->user_picture->store('espace_emploi', 'public') , 'cv_path'=>$request->user_cv_path?->store('espace_emploi/curriculumVitae', 'public')]
-            );
+            (new AdminService())->createAdmin($request);
+            return \redirect()->back()->with('success', "Administrateur(s) crée(s) avec succès");
+    }
+    public function removeRole($userId, Request $request)
+    {
+        if($request->roles)
+        {
+            (new AdminService())->removeRole($userId, $request->roles);
 
-            foreach($request->emplois as $emploi)
-            {
-                $emploi['user_id'] = $user->id;
-                $emploi['slug'] = Str::slug($emploi['libelle']);
-                 Emploi::create($emploi);
-            }
-
-        });
-        return redirect()->route('admin.emplois')->with('success', "Emploi(s) crée(s) avec succès ");
-        } catch (\Throwable $th) {
-            //throw $th;
-            return \redirect()->back()->with('failure', $th->getMessage());
         }
-        
+        if($request->permissions)
+        {
+            (new AdminService())->revokePermission($userId, $request->permissions);
 
+        }
 
+        return redirect()->back()->with('success','Successfully removed');
+
+    }
+
+    public function addRoles($userId, Request $request)
+    {
+        if($request->roles)
+        {
+            (new AdminService())->addRoles($userId, $request->roles);
+
+        }
+        if($request->permissions)
+        {
+            (new AdminService())->addPermissions($userId, $request->permissions);
+
+        }
+        return \redirect()->back()->with('success','Successfully added');
     }
 }

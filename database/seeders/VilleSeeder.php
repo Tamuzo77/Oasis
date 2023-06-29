@@ -17,32 +17,19 @@ class VilleSeeder extends Seeder
 
         Ville::create([
             'name' => 'Ville 1',
-            'arrondissement_id' => 1
         ]);
 
         Ville::create([
             'name' => 'Ville 1',
-            'arrondissement_id' => 4
         ]);
 
         Ville::create([
             'name' => 'Ville 1',
-            'arrondissement_id' => 5
         ]);
 
         Ville::create([
             'name' => 'Ville 2',
-            'arrondissement_id' => 5
         ]);
 
-        Ville::create([
-            'name' => 'Ville 3',
-            'arrondissement_id' => 5
-        ]);
-
-        Ville::create([
-            'name' => 'Ville 1',
-            'arrondissement_id' => 6
-        ]);
     }
 }

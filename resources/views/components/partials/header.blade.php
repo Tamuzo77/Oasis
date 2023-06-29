@@ -31,7 +31,8 @@
               <li><a class="dropdown-item" href="#">Formation <br> gratuite</a></li>
 
             </ul>
-          </li>
+            <a id="icon-connexion" class=" me-auto ms-sm-2"><a href="/connexion"><img src="oasis/accueil/Vector (1).png"
+                        alt="" width="50px" height="50px" style="right:0;list-style:none;"> </a></a>
 
 
           <li class="nav-item dropdown">
@@ -89,9 +90,4 @@
 
       </div>
     </div>
-  </nav>
-
-
-
-
-
+</nav>

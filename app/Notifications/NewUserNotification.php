@@ -48,10 +48,12 @@ class NewUserNotification extends Notification
      */
     public function toArray(object $notifiable): array
     {
+        $userName = $this->user->name;
+        $userEmail = $this->user->email;
         return [
             //
-            'name' =>$this->user->name,
-            'email' => $this->user->email,
+            'libelle' => 'Nouveau Apprenant Enregistré !' , //$this->user->name,
+            'description' => "Utilisateur $userName ($userEmail) vient d'ếtre enregistré comme un Apprenant ", // $this->user->email,
         ];
     }
 }

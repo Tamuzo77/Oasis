@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MainController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\EmploiController;
 use App\Http\Controllers\DepotCVController;
@@ -48,8 +49,12 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+Route::get( '/home', [MainController::class, 'home'])->name('home');
 
 
+/*Route::middleware(['guest', 'auth'])->group(function(){
+    Route::get( '/home', [MainController::class, 'home'])->name('home');
+});*/
 
 Route::middleware(['guest'])->prefix('espace_emplois')->as('emplois.')->group(function(){
     Route::resource('emplois', EmploiController::class);
