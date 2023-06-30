@@ -57,8 +57,8 @@
                                     <br>
                                 </div>
 
-                                <div class="text-center mx-0 mb-4"><a href="">Inscription | Mot de passe
-                                        oublié?</a></div>
+                                <div class="text-center mx-0 mb-4"><a href="{{ route('register') }}">Inscription </a>| Mot de passe
+                                        oublié?</div>
                                 <div class="modal-footer"></div>
 
                             </form>
