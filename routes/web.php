@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\PageController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\EmploiController;
 use App\Http\Controllers\DepotCVController;
@@ -30,7 +31,7 @@ use App\Http\Controllers\InscriptionFormationsController;
 |
 */
 
-Route::get('/',[IndexController::class,'index']);
+Route::get( '/', [MainController::class, 'home'])->name('home');
 Route::get('/connexion',[ConnexionController::class,'connexion']);
 Route::get('/quisommesnous',[QuiSommesNousController::class,'quisommesnous']);
 Route::get('/inscriptionFormations',[InscriptionFormationsController::class,'inscriptionFormations']);
@@ -50,7 +51,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 Route::get( '/home', [MainController::class, 'home'])->name('home');
-
+Route::get('/qui-sommes-nous', [MainController::class, 'qsn'])->name('qsn');
+Route::get('/reseau-rac', [MainController::class, 'reseauRac'])->name('reseauRac');
+//Route::get('{page:href}', [PageController::class, 'view'] )->name('pages');
 
 /*Route::middleware(['guest', 'auth'])->group(function(){
     Route::get( '/home', [MainController::class, 'home'])->name('home');
