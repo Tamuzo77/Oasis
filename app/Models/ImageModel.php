@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Page;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class ImageModel extends Model
 {
@@ -11,5 +12,8 @@ class ImageModel extends Model
 
     protected $guarded = [];
 
-    
+    public function pages()
+    {
+        return $this->belongsToMany(Page::class);
+    }
 }

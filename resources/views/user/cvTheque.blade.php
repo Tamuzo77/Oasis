@@ -1,4 +1,4 @@
-<x-user.layout title="Réseau RAC">
+<x-user.layout title="CV - Thèque">
     <x-slot name="headerText">
         <div class="accueil-title mb-4">Lorem ipsum minus .</div>
             <p> sit amet consectetur adipisicing elit Numquam magnam eveniet repellendus . optio corporis vel id eaque
@@ -13,5 +13,5 @@
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid reprehenderit ipsam beatae nemo quas eius cum officiis omnis, nisi ipsum. Eligendi blanditiis aliquam sapiente velit. Magni nemo ab nihil facere?
         </p>
     </div>
-    <livewire:user.reseau-rac />
+
 </x-user.layout>

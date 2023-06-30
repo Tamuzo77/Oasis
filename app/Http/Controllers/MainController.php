@@ -22,4 +22,9 @@ class MainController extends Controller
     {
         return \view('user.reseauRac');
     }
+
+    public function cvTheque()
+    {
+        return \view('user.cvTheque');
+    }
 }

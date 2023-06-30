@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\ImageModel;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Page extends Model
 {
@@ -19,5 +20,10 @@ class Page extends Model
     public function children()
     {
         return $this->hasMany(Page::class, 'parent_id');
+    }
+
+    public function imageModels()
+    {
+        return $this->belongsToMany(ImageModel::class);
     }
 }
