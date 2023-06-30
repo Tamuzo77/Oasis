@@ -33,7 +33,7 @@
 
 <body>
 
-    <div class="justify-items-center text-center pt-3 pb-3 text-white welcome ">
+    <div class="justify-items-center text-center pt-3 pb-3 h-auto text-white welcome ">
         <p>Bienvenue Monsieur John Doe</p>
     </div>
 

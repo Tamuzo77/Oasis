@@ -25,7 +25,7 @@
     <header class="nav-bar">
         <x-partials.header></x-partials.header>
     </header>
-    <div class=" justify-items-center text-center pt-3 pb-3 text-white welcome">
+    <div class=" justify-items-center text-center pt-3 pb-3 h-auto text-white welcome">
         <p>Offres d'emplois >> Dépôt de CV </p>
     </div>
     <div class="depotCV pt-4 mx-5 pb-5" style="background-image:url('oasis/accueil/Oasis-filigrane 1.png'); color:#A9A9A9;object-fit:cover;background-size:cover;background-position:center; ">
@@ -34,15 +34,19 @@
 
             <div class="justify-content-center row">
                 <h3 class="mt-4 ">I - Présentation</h3>
-                <div class="col-md-4 col-sm-6 mt-3 mt-md-1">
+                <div class="col-md-3 col-sm-6 mt-3 mt-md-1">
                     <label  for="name">Nom et Prénoms</label><br>
                     <input class="w-100"  type="text" name="name" id="">
+                </div>
+                <div class="col-md-2 col-sm-6 mt-3 mt-md-1">
+                    <label  for="age">Age</label><br>
+                    <input class="w-100"  type="number" name="age" id="">
                 </div>
                 <div class="col-md-4 col-sm-6 mt-3 mt-md-1">
                     <label for="email">Email</label><br>
                     <input class="w-100" type="email" name="email" id="">
                 </div>
-                <div class="col-md-4 col-sm-6 mt-3 mt-md-1">
+                <div class="col-md-3 col-sm-6 mt-3 mt-md-1">
                     <label for="tel">Téléphone</label><br>
                     <input class="w-100" type="tel" name="tel" id="">
                 </div>
@@ -60,14 +64,14 @@
                     <label for="ville">Ville/Pays</label><br>
                     <input class="w-100" type=" " name="ville" id="">
                 </div>
-                <h3 class="mt-4">III - Lorem i Lorem i Lorem i </h3>
+                <h3 class="mt-4">III -Autres </h3>
                 <div class="col-md-4 col-sm-6 mt-3 mt-md-1">
                     <label for="cv">Importer mon CV</label><br>
                     <input class="w-100" type="file" name="cv" id="">
                 </div>
                 <div class="col-md-4 col-sm-6 mt-3 mt-md-1">
-                    <label for=" ">Lorem ipsum</label><br>
-                    <input class="w-100" type="tel" name="" id="">
+                    <label for=" ">Importer ma photo</label><br>
+                    <input class="w-100" type="file" name="" id="">
                 </div>
             </div>
             <div class="text-center mt-5">
