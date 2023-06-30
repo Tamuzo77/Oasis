@@ -2,15 +2,17 @@
 
 namespace App\Http\Livewire\User;
 
+use App\Models\Page;
 use Livewire\Component;
 
 class NavList extends Component
 {
     public $pages = [];
+    public $mages = [];
 
     public function mount()
     {
-        $this->pages = [
+        $this->mages = [
             '0' => [
                 'title' => 'Titre',
                 'href' => '',
@@ -27,6 +29,7 @@ class NavList extends Component
                 'pages' => null
             ],
         ];
+        $this->pages = Page::with(['children'])->where('parent_id', null)->get();
     }
     public function render()
     {

@@ -107,11 +107,11 @@ class ImageController extends Controller
             $file_name = $image->getClientOriginalName();
             $folder = uniqid('img', true);
             $image->storeAs('library/tmp/' . $folder, $file_name);
-            TemporaryModel::create([
+            $tmp = TemporaryModel::create([
                 'folder' => $folder,
                 'file' => $file_name
             ]);
-            return $folder;
+            return $tmp->folder;
         }
         return '';
     }

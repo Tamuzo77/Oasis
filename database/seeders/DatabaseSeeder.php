@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Ville;
 use Illuminate\Database\Seeder;
+use Database\Seeders\PageSeeder;
 use Database\Seeders\RoleSeeder;
 use Database\Seeders\VilleSeeder;
 use Spatie\Permission\Models\Role;
@@ -44,5 +45,6 @@ class DatabaseSeeder extends Seeder
 
         //\App\Models\Actualite::factory(3)->create();
         Ville::factory(10)->create();
+        $this->call(PageSeeder::class);
     }
 }

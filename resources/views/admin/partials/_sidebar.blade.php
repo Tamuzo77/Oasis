@@ -23,13 +23,18 @@
         <x-admin.sidebar-item title="Nouvelle " href="" />
         <x-admin.sidebar-item title="Nouvelle " href="" />
     </x-admin.sidebar-item>
+    <x-admin.sidebar-item title="Toutes Les Pages" href="{{ route('admin.pages-all') }}" separator="Pages"  />
 
-    <x-admin.sidebar-item title="Accueil" separator="Pages"  />
+@foreach (\App\Models\Page::all() as $page )
+    <x-admin.sidebar-item :title="$page->title" href="/admin/pages{{ $page->href }}" />
+
+@endforeach
+    {{--<x-admin.sidebar-item title="Accueil"  />
     <x-admin.sidebar-item title="Qui Sommes Nous ?"   />
     <x-admin.sidebar-item title="Réseau RAC"   />
     <x-admin.sidebar-item title="Espace Emplois" />
     <x-admin.sidebar-item title="Formation" />
-    <x-admin.sidebar-item title="Boutique" />
+    <x-admin.sidebar-item title="Boutique" />--}}
 
 
 

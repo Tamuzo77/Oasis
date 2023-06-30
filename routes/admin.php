@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\ImageController;
@@ -49,7 +50,7 @@ Route::middleware('admin')->prefix('admin')->name('admin.')->group(function(){
     Route::post('store-image',[ImageController::class, 'store'])->name('image-store');
     Route::post('tmp-upload',[ImageController::class, 'tmpUpload'])->name('tmpUpload');
     Route::delete('tmp-delete',[ImageController::class, 'tmpDelete'])->name('tmpDelete');
-
+    
     Route::get('emplois', [AdminController::class, 'emplois'])->name('emplois');
     Route::get('create-emploi', [AdminController::class, 'emplois_create'])->name('emplois-create');
     Route::post('store-emploi', [App\Http\Controllers\Admin\EmploiController::class, 'store'])->name('emplois-store');
@@ -68,5 +69,7 @@ Route::middleware('admin')->prefix('admin')->name('admin.')->group(function(){
     Route::resource('administrateurs', AdminController::class);
     Route::resource('cv-theque', CustomerController::class);
 
+    Route::get('pages/{page:href}', [PageController::class, 'view'] )->name('pages');
+    Route::get('pages-all', [PageController::class, 'index'] )->name('pages-all');
 });
 

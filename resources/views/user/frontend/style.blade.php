@@ -10,12 +10,12 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
-@if (\request()->is('home'))
+@if (\request()->is('home') || \request()->is('qui-sommes-nous') || \request()->is('/'))
 <style>
 
     .nav-bar{
            height: 500px;
-           background-image:url('oasis/accueil/Rectangle 2 (1).png');
+           background-image:url("{{ asset('oasis/accueil/Rectangle 2 (1).png') }}");
            background-size:cover;
            object-fit: cover;
            background-repeat: no-repeat;
