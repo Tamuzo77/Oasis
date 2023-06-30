@@ -422,7 +422,9 @@
                             <input type="text" class="form-control" id="basic-url" name="slug" aria-describedby="slug" placeholder="actus-title">
                         </div>
                         <!-- form group -->
-                        <div class="mb-20 col-12">
+                        <x-admin.form.textarea label="Description" name="content" required />
+
+                        {{--<div class="mb-20 col-12">
                             <label class="form-label">Description</label>
                             <div name="description" id="editor">
                                 <p> Type something here </p>
@@ -433,7 +435,7 @@
                                     {{ $message }}
                                 </div>
                             @enderror
-                        </div>
+                        </div>--}}
 
                         <br>
                         <br>
@@ -498,9 +500,9 @@
 
     <script>
         function submitForm() {
-            var description = document.getElementById('editor').innerHTML;
-            document.getElementById('description').value = description;
-            document.forms[0].submit();
+            /*var description = document.getElementById('editor').innerHTML;
+                document.getElementById('description').value = description;
+                document.forms[0].submit();*/
 
             Dropzone.options.myDropzone = {
                 url: document.getElementById('myForm').getAttribute('action'),
