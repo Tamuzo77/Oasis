@@ -34,7 +34,7 @@
         <x-partials.header></x-partials.header>
         <div class="div-ac-title col-md-5 text-white opacity-80" style="">
             <div class="accueil-title mb-4">Lorem ipsum  minus .</div>
-            <p> sit amet consectetur adipisicing elit  Numquam magnam eveniet repellendus . optio corporis vel id eaque nesciunt voluptatum, aperiam deleniti non tempora necessitatibus tempore </p>
+            <p class=" "> sit amet consectetur adipisicing elit  Numquam magnam eveniet repellendus . optio corporis vel id eaque nesciunt voluptatum, aperiam deleniti non tempora necessitatibus tempore </p>
         </div>
     </header>
     <div class="consulting mt-4 me-3 ms-3">
@@ -67,7 +67,7 @@
     </div>
     <div class="text-center mt-5 mb-5 p-4 container-fluid" style="background-color: #4684BF; height:auto">
         <div class="container">
-            <img src="oasis/accueil/logo Oasis Consulting 2.png" alt="" style="width :290px;height :155px;">
+            <img src="oasis/accueil/logo Oasis Consulting 2.png" alt="" style="width :auto;height :155px;">
             <div class="mt-4 text-white"><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime doloribus consequuntur id, nostrum aliquid reiciendis adipisci esse exercitationem et vero ducimus minus facere magni odio porro fuga voluptates, at cupiditate.</p></div>
         </div>
     </div>
@@ -75,7 +75,7 @@
 
         <div class="photos mb-4 container">
             <div class="text-center"><h2>Photos</h2></div>
-            <div class="row justify-content-center mx-sm-5">
+            <div class="row justify-content-center mx-sm-5 mx-2">
                 <img class="col-xl-3 col-xl-3 col-lg-4 col-sm-6 col-12 mt-4" src="oasis/images/bruce-barrow-aI9_9T03OIk-unsplash.jpg" alt="">
                 <img class="col-xl-3 col-lg-4 col-sm-6 col-12 mt-4" src="oasis/images/mwangi-gatheca-qlKaN7eqay8-unsplash.jpg" alt="">
                 <img class="col-xl-3 col-lg-4 col-sm-6 col-12 mt-4" src="oasis/images/charlesdeluvio-97Ir6ym25N4-unsplash.jpg" alt="">
@@ -96,6 +96,7 @@
         </div>
     </div>
     <div class="partenaires container mb-5">
+        <h2 class="text-center">Nos partenaires</h2>
         <div class="row justify-content-center">
             <img class="col-lg-2 col-sm-3 col-6 mt-4" src="oasis/images/mwangi-gatheca-qlKaN7eqay8-unsplash.jpg" alt="">
             <img class="col-lg-2 col-sm-3 col-6 mt-4" src="oasis/images/mwangi-gatheca-qlKaN7eqay8-unsplash.jpg" alt="">

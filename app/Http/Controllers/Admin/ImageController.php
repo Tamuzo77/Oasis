@@ -34,7 +34,6 @@ class ImageController extends Controller
     public function store(Request $request)
     {
         //
-        dd($request);
         $validator = Validator::make($request->all(), [
             'libelle' => 'required|min:2',
         ]);
