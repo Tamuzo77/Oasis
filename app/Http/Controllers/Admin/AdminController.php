@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\User;
 use App\Models\Emploi;
+use App\Models\Customer;
 use App\Models\Structure;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -21,7 +22,12 @@ class AdminController extends Controller
     public function dashboard()
     {
         $notifications = auth()->user()->unreadNotifications;
-        return \view('admin/dashboard', compact('notifications'));
+        $emplois = Emploi::latest()->withCount('recruteur')->get();
+        $recruteurs = Structure::latest()->withCount('emplois')->get();
+        $emploiNonVisibles = Emploi::where('visible', false)->get();
+        $cvs = Customer::count();
+        $cvNonVisibles = Customer::where('visible', false)->count();
+        return \view('admin/dashboard', compact('notifications', 'emplois', 'recruteurs', 'emploiNonVisibles', 'cvs', 'cvNonVisibles'));
     }
 
     public function markNotification(Request $request)

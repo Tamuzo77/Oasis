@@ -25,7 +25,7 @@
     </x-admin.sidebar-item>
     <x-admin.sidebar-item title="Toutes Les Pages" href="{{ route('admin.pages-all') }}" separator="Pages"  />
 
-@foreach (\App\Models\Page::all() as $page )
+@foreach (\App\Models\Page::where('href', '!=', null)->get() as $page )
     <x-admin.sidebar-item :title="$page->title" href="/admin/pages{{ $page->href }}" />
 
 @endforeach
