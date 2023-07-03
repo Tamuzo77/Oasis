@@ -4,7 +4,7 @@
 <script src="{{ asset('admin/assets/libs/feather-icons/dist/feather.min.js') }}"></script>
 <script src="{{ asset('admin/assets/libs/simplebar/dist/simplebar.min.js') }}"></script>
 
-@if (request()->is('admin/actualites/create'))
+@if (request()->is('admin/actualites/create') || request()->is('admin/formations/create'))
 <script src="{{ asset('admin/assets/libs/tippy.js/dist/tippy-bundle.umd.min.js') }}"></script>
 <script src="{{ asset('admin/assets/js/vendors/choice.js') }}"></script>
 <script src="{{ asset('admin/assets/libs/choices.js/public/assets/scripts/choices.min.js') }}"></script>
@@ -24,7 +24,7 @@
     <script src="{{ asset('admin/assets/libs/prismjs/plugins/toolbar/prism-toolbar.min.js') }}"></script>
 @endif
 
-@if (request()->is('admin/actualites-grid') || request()->is('admin/actualites-list') || request()->is('admin/actualites/create'))
+@if (request()->is('admin/actualites-grid') || request()->is('admin/actualites-list') || request()->is('admin/actualites/create') || request()->is('admin/formations/create'))
     <script src="{{ asset('admin/assets/libs/dropzone/dist/min/dropzone.min.js') }}"></script>
     <script src="{{ asset('admin/assets/libs/flatpickr/dist/flatpickr.min.js') }}"></script>
     <script src="{{ asset('admin/assets/libs/quill/dist/quill.min.js') }}"></script>

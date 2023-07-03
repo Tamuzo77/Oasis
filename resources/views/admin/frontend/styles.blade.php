@@ -29,7 +29,7 @@
 <link href="{{ asset('admin/assets/libs/prismjs/themes/prism-okaidia.min.css') }}" rel="stylesheet">
 @endif
 
-@if (request()->is('admin/actualites-grid') || request()->is('admin/actualites-list') || request()->is('admin/actualites/create'))
+@if (request()->is('admin/actualites-grid') || request()->is('admin/actualites-list') || request()->is('admin/actualites/create') || request()->is('admin/formations/create'))
 <link href="{{ asset('admin/assets/libs/dropzone/dist/dropzone.css') }}" rel="stylesheet">
 <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
 <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />

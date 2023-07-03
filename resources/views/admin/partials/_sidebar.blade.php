@@ -20,8 +20,8 @@
     </x-admin.sidebar-item>
 
     <x-admin.sidebar-item title="Formations"  :toggle="true" data-bs-toggle="collapse">
-        <x-admin.sidebar-item title="Nouvelle " href="" />
-        <x-admin.sidebar-item title="Nouvelle " href="" />
+        <x-admin.sidebar-item title="Toutes les Formations " href="{{ route('admin.formations.index') }}" />
+        <x-admin.sidebar-item title="Ajouter des Formations " href="{{ route('admin.formations.create') }}" />
     </x-admin.sidebar-item>
     <x-admin.sidebar-item title="Toutes Les Pages" href="{{ route('admin.pages-all') }}" separator="Pages"  />
 
@@ -40,7 +40,7 @@
 
     <x-admin.sidebar-item title="Site"  separator="Base de Données"  :toggle="true" data-bs-toggle="collapse">
         <x-admin.sidebar-item class="{{ request()->is('admin/actualites/categories') ? 'active' : '' }}" title="Categories d'Actualités " href="{{ route('admin.categories-news') }}" />
-        <x-admin.sidebar-item title="Nouvelle " href="" />
+        <x-admin.sidebar-item title="Catégories de Formations " href="{{ route('admin.categoriesForms.index') }}" />
     </x-admin.sidebar-item>
 
     <x-admin.sidebar-item title="Banque d'Images" icon="image" class="{{ request()->is('admin/library') ? 'active' : '' }}" href="{{ route('admin.library') }}" />
