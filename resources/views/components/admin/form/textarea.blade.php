@@ -5,6 +5,6 @@
               name="{{ $name }}"
               id="{{ $name }}" 
               {{ $attributes(['rows'=>'5', 'required' ]) }}
-              >{{ $slot ?? old($name)  }}</textarea>
+              >{{  old($name) ?? $slot   }}</textarea>
 </x-admin.form.field>
 <x-admin.form.error :name="$name" />

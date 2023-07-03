@@ -8,10 +8,12 @@ use App\Http\Controllers\Admin\ImageController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\CustomerController;
 use App\Http\Controllers\Admin\ActualiteController;
+use App\Http\Controllers\Admin\FormationController;
 use App\Http\Controllers\Admin\StructureController;
 use App\Http\Controllers\Admin\PartenaireController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\CategoryNewController;
+use App\Http\Controllers\Admin\CategoryFormController;
 
 /*
 |--------------------------------------------------------------------------
@@ -71,5 +73,10 @@ Route::middleware('admin')->prefix('admin')->name('admin.')->group(function(){
 
     Route::get('pages/{page:href}', [PageController::class, 'view'] )->name('pages');
     Route::get('pages-all', [PageController::class, 'index'] )->name('pages-all');
+
+    Route::resource('categoriesForms', CategoryFormController::class)->only(['index', 'store', 'update', 'destroy']);
+
+    Route::resource('formations', FormationController::class);
+    Route::put('formations/activeOrNot/{formations:slug}', [FormationController::class, 'activeOrNot'])->name('formations.activeOrNot');
 });
 

@@ -3,7 +3,7 @@
     <div class="navbar-custom navbar navbar-expand-lg">
         <div class="container-fluid px-0">
             <a class="navbar-brand d-block d-md-none" href="/">
-                <img src="{{ asset('admin/assets/images/brand/logo/logo-2.svg') }}" alt="Image">
+                <x-partials.logo class="ms-4" />
             </a>
 
 
@@ -40,13 +40,6 @@
             <!--Navbar nav -->
             <ul
                 class="navbar-nav navbar-right-wrap ms-lg-auto d-flex nav-top-wrap align-items-center ms-4 ms-lg-0">
-                <a href="#"
-                    class="form-check form-switch theme-switch btn btn-ghost btn-icon rounded-circle mb-0 ">
-                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-                    <label class="form-check-label" for="flexSwitchCheckDefault"></label>
-
-                </a>
-                </li>
 
                 <li class="dropdown stopevent ms-2">
                     <a class="btn btn-ghost btn-icon rounded-circle position-relative" href="#!" role="button"
@@ -79,6 +72,7 @@
                                     <!-- List group item -->
                                     @php
                                         $notifs = $notifs ?? [];
+                                        $pic = auth()->user()->picture;
                                     @endphp
                                     @forelse ($notifs  as $notif )
                                     <li class="list-group-item bg-light">
@@ -111,7 +105,7 @@
                     <a class="rounded-circle" href="#!" role="button" id="dropdownUser"
                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <div class="avatar avatar-md avatar-indicators avatar-online">
-                            <img alt="avatar" src="{{ asset('admin/assets/images/avatar/avatar-11.jpg') }}"
+                            <img alt="avatar" src="{{ asset("storage/$pic" ) }}"
                                 class="rounded-circle">
                         </div>
                     </a>
