@@ -12,7 +12,7 @@ class PageController extends Controller
 
     public function index()
     {
-        $pages = Page::all();
+        $pages = Page::where('href', '!=', null)->get();
         return view('admin.pages.all', compact('pages'));
     }
 

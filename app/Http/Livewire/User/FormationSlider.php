@@ -4,6 +4,7 @@ namespace App\Http\Livewire\User;
 
 use Livewire\Component;
 use App\Models\Formation;
+use Illuminate\Contracts\Database\Query\Builder;
 
 class FormationSlider extends Component
 {
@@ -11,7 +12,9 @@ class FormationSlider extends Component
 
     public function mount()
     {
-       $this->formations = Formation::latest()->take(9)->get();
+       $this->formations = Formation::whereHas('categoryForm', function(Builder $query){
+        $query->where('archived', 0);
+       })->where('status_id', 1)->latest()->take(9)->get();
     }
     public function render()
     {

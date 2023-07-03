@@ -130,7 +130,7 @@
                 <tr>
                     <td colspan="7">
                         <div class="d-flex align-items-center">
-                            <a href="#!" class="text-muted border border-2 rounded-3 card-dashed-hover"
+                            <a href="#!" class="text-muted  border-2 rounded-3 card-dashed-hover"
                                 data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
                                 <div class="icon-shape icon-lg fs-3 ">
                                     +

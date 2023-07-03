@@ -34,9 +34,11 @@ class ImageController extends Controller
     public function store(Request $request)
     {
         //
+        $request->image = \substr($request->image,0,26);
         $validator = Validator::make($request->all(), [
             'libelle' => 'required|min:2',
         ]);
+        
         $tmp_file = TemporaryModel::where('folder', $request->image)->first();
 
         if($validator->fails() && $tmp_file)

@@ -374,7 +374,7 @@
 
         <div class="col-xxl-3 col-xl-4 col-lg-6 col-md-6 col-sm-12 mb-5">
             <a href="#!" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
-                <div class="card h-100 border border-2 shadow-none card-dashed-hover p-12">
+                <div class="card h-100  border-2 shadow-none card-dashed-hover p-12">
                     <div class="card-body d-flex flex-column justify-content-center text-center">
                         <i class="mdi mdi-plus text-secondary mb-3 fs-2" aria-hidden="true"></i>
                     </div>
