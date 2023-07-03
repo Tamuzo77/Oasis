@@ -39,7 +39,7 @@
             <x-partials.whatsapp></x-partials.whatsapp>
         </div>
     </header>
-    <main class="mt-5 offres-emploi">
+    <main class="mt-5 offres-emploi"  data-aos="fade-up" data-aos-duration="3000">
         <h2 class="text-center mb-4">Offres d'emploi</h2>
         @foreach ($emplois as $emploi )
         @php
@@ -80,7 +80,7 @@
     </footer>
 
     <script src="{{asset('js/script.js')}}"></script>
-
+    <script>AOS.init();</script>
  {{-- @include('partials._footer') --}}
 </body>
 </html>

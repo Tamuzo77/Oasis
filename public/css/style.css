@@ -168,17 +168,12 @@
 
 
     }
-    .hide1,.hide2{
-        position: absolute;
-        margin-top:6px;
-        right:75px
-    }
+
 
     .eye{
+        margin-top: 5.5px;
         position: absolute;
-        margin-top:6px;
-        right:75px
-
+        right:15%;
     }
     #hide1{
         display: none;
@@ -203,6 +198,7 @@
     .modal button a{
         color: #FFFFFF;
     }
+
 
     /*-----------------------------------------------------------------------*/
 
@@ -474,6 +470,9 @@
     @media screen and (max-width:575px) {
         .photos-rac img{
             width: 70%;
+        }
+        .whatsapp .fa-whatsapp{
+            height: 45px !important;
         }
     }
     .offres-emploi{

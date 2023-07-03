@@ -7,7 +7,7 @@
             data-bs-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon" style="color:#4684BF; "></span>
         </div>
-        <div class="collapse navbar-collapse " id="collapsibleNavbar">
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav ms-sm-2 ">
                 <li class="nav-item">
                     <a class="nav-link" href="/">Accueil</a>
@@ -35,10 +35,6 @@
                         <li><a class="dropdown-item" href="#">Formation <br> gratuite</a></li>
 
                     </ul>
-                    <a id="icon-connexion" class=" me-auto ms-sm-2"><a href="/connexion"><img
-                                src="oasis/accueil/Vector (1).png" alt="" width="50px" height="50px"
-                                style="right:0;list-style:none;"> </a></a>
-
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button"
@@ -56,8 +52,8 @@
                     style="right:0;list-style:none;"></span>
 
             <!-- The Modal -->
-            <div class="modal m-auto mt-5" id="myModal">
-                <div class="modal-dialog">
+            <div class="modal fade m-auto" id="myModal">
+                <div class=" modal-dialog modal-dialog-centered">
                     <div class="modal-content mx-0">
 
                         <!-- Modal Header -->
@@ -87,14 +83,11 @@
                                        </span>
                                 </div>
                                 <div>
-                                    <input type="checkbox" name="" id=""> <span>Se souvenir de
-                                        moi</span>
-
+                                    <input type="checkbox" name="" id=""> <span>Se souvenir demoi</span>
                                 </div>
                             </div>
                             <div class="text-center button">
-                                <button class="mt-4 mb-3 w-100 m-0" type="submit"><a href="/accueilConnexion">Se
-                                        connecter</a></button>
+                                <button class="mt-4 mb-3 w-100 m-0" type="submit"><a href="/accueilConnexion">Se connecter</a></button>
                                 <br>
                             </div>
 
