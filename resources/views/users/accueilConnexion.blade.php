@@ -45,7 +45,7 @@
             <x-partials.whatsapp></x-partials.whatsapp>
         </div>
     </header>
-    <main class="mx-4">
+    <main class="mx-4"  data-aos="fade-up" data-aos-duration="3000">
         <div class="mt-5 mb-3">
             <h3>Présentation</h3>
             <div class=" row align-items-center justify-content-center">
@@ -83,7 +83,7 @@
             </p>
         </div>
     </main>
-    <div class="text-center mb-5">
+    <div class="text-center mb-5"  data-aos="fade-up" data-aos-duration="3000">
         <button class="inscrire mt-5 mb-5">Consulter la formation</button>
         <h3 class="">Conditions et modalités de participation</h3>
         <div class="photos row justify-content-center mx-5">
@@ -120,7 +120,6 @@
     </footer>
 
     <script src="{{asset('js/script.js')}}"></script>
-
     {{-- @include('partials._footer') --}}
 </body>
 </html>

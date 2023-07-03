@@ -114,7 +114,7 @@
             </video>
         </div>
     </div>
-    <div class="partenaires container mb-5">
+    <div class="partenaires container mb-5" >
         <h2 class="text-center">Nos partenaires</h2>
         <div class="row justify-content-center">
             @foreach ($partenaires as $partenaire)
@@ -137,9 +137,7 @@
 
     {{-- @include('partials._footer') --}}
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
+    <script>AOS.init()</script>
 </body>
 
 </html>

@@ -1,3 +1,4 @@
+const { AOS } = NodeRequire("aos");
 
 function myFunction() {
     var y = document.getElementById("hide1");
@@ -34,4 +35,4 @@ items.forEach((el) => {
     }
 })
 
-
+AOS.init();

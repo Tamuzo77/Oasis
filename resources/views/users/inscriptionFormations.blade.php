@@ -29,7 +29,7 @@
         <p>Formation >> Inscription </p>
     </div>
     <x-partials.whatsapp></x-partials.whatsapp>
-    <div class="inscription-formation pt-4 mx-5 mb-5">
+    <div class="inscription-formation pt-4 mx-5 mb-5"  data-aos="fade-up" data-aos-duration="3000">
         <form action="POST" class="pb-5 mt-5">
             <h1 class="text-center">Remplissez ce formulaire</h1>
 
@@ -90,7 +90,7 @@
     </footer>
 
     <script src="{{asset('js/script.js')}}"></script>
-
+   
          {{-- @include('partials._footer') --}}
 </body>
 </html>

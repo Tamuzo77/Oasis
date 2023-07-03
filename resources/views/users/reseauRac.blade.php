@@ -39,14 +39,14 @@
         </div>
 
     </header>
-    <div class="presentation container text-center mt-4 mb-4">
+    <div class="presentation container text-center mt-4 mb-4"  data-aos="fade-up" data-aos-duration="3000">
         <img src="oasis/accueil/logo Oasis Consulting 1 (1).png" alt="" class="col-4">
         <p>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam quam, et modi eos laudantium doloribus, possimus cumque officia ut nobis exercitationem corrupti. Impedit, tenetur. Expedita distinctio placeat alias architecto! Quae.
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid reprehenderit ipsam beatae nemo quas eius cum officiis omnis, nisi ipsum. Eligendi blanditiis aliquam sapiente velit. Magni nemo ab nihil facere?
         </p>
     </div>
-    <div class="photos-rac mb-5 container">
+    <div class="photos-rac mb-5 container"  data-aos="fade-up" data-aos-duration="3000">
         <div class="text-center"><h2>Photos</h2></div>
         <div class="row justify-content-center mx-sm-5 photos-rac">
             <img class="col-xl-3 col-lg-4 col-sm-6 col-12 mt-4" src="oasis/reseauRac/1.jpg" alt="">
@@ -81,7 +81,7 @@
     </footer>
 
     <script src="{{asset('js/script.js')}}"></script>
-
+    
     {{-- @include('partials._footer') --}}
     </body>
     </html>

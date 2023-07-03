@@ -56,7 +56,7 @@
                 <x-partials.whatsapp></x-partials.whatsapp>
         </div>
     </header>
-    <div class="consulting mt-4 container">
+    <div class="consulting mt-4 container"  data-aos="fade-up" data-aos-duration="3000">
         <div class="title text-center ">OASIS CONSULTING</div>
         <div class="row  align-items-center justify-content-around">
             <div class="logo col-4"><img src="oasis/accueil/logo Oasis Consulting 1.png" alt=""
@@ -80,7 +80,7 @@
 
 
 
-        <div class="container text-center my-3">
+        <div class="container text-center my-3"  data-aos="fade-up" data-aos-duration="3000">
             <div class="row mx-auto justify-content-center">
                 <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner" role="listbox">
@@ -171,7 +171,7 @@
 
     </div>
 
-    <div class="news my-5 container align-items-center">
+    <div class="news my-5 container align-items-center"  data-aos="fade-up" data-aos-duration="3000">
         <div class="title text-center mb-3">Nos actualités</div>
         <div class=" card-container row">
             @forelse ($actus as $actu )
@@ -190,50 +190,6 @@
             @endforelse
 
 
-            {{--<div class="card card-2 text-center col-sm-6 mb-4">
-                <img class="card-img-top" src="oasis/accueil/WhatsApp Image 2023-01-05 at 13.54.14 (1).jpeg"
-                    alt="">
-                <div class="card-body card-body-2">
-                    <h4 class="card-title">Title news</h4>
-                    <p class="card-text">Lorem ipsum dolor sit pe officia aliquid quas dicta mollitia distinctio autem?
-                    </p>
-
-                </div>
-                <a href="#" class="button">Lire</a>
-            </div>
-            <div class="card card-2 text-center col-sm-6 mb-4">
-                <img class="card-img-top" src="oasis/accueil/WhatsApp Image 2023-01-05 at 13.54.14 (1).jpeg"
-                    alt="">
-                <div class="card-body card-body-2">
-                    <h4 class="card-title">Title news</h4>
-                    <p class="card-text">Lorem ipsum dolor sit pe officia aliquid quas dicta mollitia distinctio autem?
-                    </p>
-
-                </div>
-                <a href="#" class="button">Lire</a>
-            </div>
-            <div class="card card-2 text-center col-sm-6 col-mb-4">
-                <img class="card-img-top" src="oasis/accueil/WhatsApp Image 2023-01-05 at 13.54.14 (1).jpeg"
-                    alt="">
-                <div class="card-body card-body-2">
-                    <h4 class="card-title">Title news</h4>
-                    <p class="card-text">Lorem ipsum dolor sit pe officia aliquid quas dicta mollitia distinctio autem?
-                    </p>
-
-                </div>
-                <a href="#" class="button">Lire</a>
-            </div>
-            <div class="card card-2 text-center col-sm-6 mb-4">
-                <img class="card-img-top" src="oasis/accueil/WhatsApp Image 2023-01-05 at 13.54.14 (1).jpeg"
-                    alt="">
-                <div class="card-body card-body-2">
-                    <h4 class="card-title">Title news</h4>
-                    <p class="card-text">Lorem ipsum dolor sit pe officia aliquid quas dicta mollitia distinctio autem?
-                    </p>
-
-                </div>
-                <a href="#" class="button">Lire</a>
-            </div>--}}
 
         </div>
 
@@ -246,7 +202,7 @@
     </footer>
 
     <script src="{{ asset('js/script.js') }}"></script>
-
+    
     {{-- @include('partials._footer') --}}
     <style>
         .ql-hidden {
@@ -258,7 +214,6 @@
             width: 100%;
             height: auto;
             max-height: 150px;
-            /* Spécifiez ici la hauteur maximale souhaitée */
             object-fit: cover;
         }
     </style>

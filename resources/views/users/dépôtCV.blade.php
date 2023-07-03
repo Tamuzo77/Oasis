@@ -29,7 +29,7 @@
         <p>Offres d'emplois >> Dépôt de CV </p>
     </div>
     <x-partials.whatsapp></x-partials.whatsapp>
-    <div class="depotCV pt-4 mx-5 pb-5" style="background-image:url('oasis/accueil/Oasis-filigrane 1.png'); color:#A9A9A9;object-fit:cover;background-size:cover;background-position:center; ">
+    <div class="depotCV pt-4 mx-5 pb-5"  data-aos="fade-up" data-aos-duration="3000" style="background-image:url('oasis/accueil/Oasis-filigrane 1.png'); color:#A9A9A9;object-fit:cover;background-size:cover;background-position:center; ">
         <form action="POST" class="pb-5 mt-5">
             <h1 class="text-center">Remplissez ce formulaire</h1>
 
@@ -90,7 +90,6 @@
     </footer>
 
     <script src="{{asset('js/script.js')}}"></script>
-
          {{-- @include('partials._footer') --}}
 </body>
 </html>
