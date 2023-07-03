@@ -12,8 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('formations', function (Blueprint $table) {
-            $table->date('dateDebut');
-            $table->date('dateFin');
+            $table->foreignId('status_id');
         });
     }
 

@@ -92,13 +92,19 @@
                                 <label class="form-label"> Prix de la formation</label>
                                 <div class="input-group me-3 " readonly="readonly">
 
-                                    <input type="number" class="form-control" placeholder=" 4900"
+                                    <input type="number" name="price" class="form-control" placeholder=" 4900"
                                         aria-describedby="basic-addon2">
                                     <span class="input-group-text text-muted" id="basic-addon2">FCFA</span>
 
                                 </div>
                             </div>
                         </div>
+                        <label class="form-label">Statut</label>
+                        <select name="status_id" class="form-select">
+                            @foreach ($statuses as $status)
+                                <option value="{{ $status->id }}">{{ $status->libelle }}</option>
+                            @endforeach
+                        </select>
                     </div>
 
                 </div>

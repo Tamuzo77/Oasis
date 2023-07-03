@@ -84,8 +84,12 @@
                     </div>
                     <!-- project number -->
                     <div class="lh-1">
-                        <h1 class="  mb-1 fw-bold">132</h1>
-                        <p class="mb-0"><span class="text-dark me-2">28</span>Completed</p>
+                        <h1 class="  mb-1 fw-bold">{{ $formationsCount }}</h1>
+                        <p class="mb-0">
+                            <span class="text-dark me-2">28</span>Inactives
+                            <span class="text-dark me-2">28</span>Candidats
+                            <span class="text-dark me-2">28</span>Resources
+                        </p>
                     </div>
                 </div>
             </div>

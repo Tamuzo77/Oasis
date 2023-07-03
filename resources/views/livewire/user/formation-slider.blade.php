@@ -10,75 +10,20 @@
         <div class="row mx-auto justify-content-center">
             <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner" role="listbox">
-                    <div class="carousel-item active">
+                    @foreach ($formations as $formation )
+                        <div class="carousel-item active">
                         <div class="col-md-4 col-sm-6 mx-3">
                             <div class="card card-1">
                                 <div class="card-img card-img-1">
-                                    <img src="oasis/images/bruce-barrow-aI9_9T03OIk-unsplash.jpg" class="img-fluid">
+                                    <img src="{{ asset("storage/$formation->cover_image") }}" class="img-fluid">
                                 </div>
-                                <div class="mt-2 card-footer">Slide 56</div>
+                                <div class="mt-2 card-footer">{{ $formation->name }}</div>
                             </div>
 
                         </div>
                     </div>
-                    <div class="carousel-item">
-                        <div class="col-md-4 mx-3 col-sm-6">
-                            <div class="card card-1">
-                                <div class="card-img card-img-1">
-                                    <img src="oasis/images/mwangi-gatheca-qlKaN7eqay8-unsplash.jpg"
-                                        class="img-fluid">
-                                </div>
-                                <div class="mt-2 card-footer">Slide 56</div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="col-md-4 mx-3 col-sm-6">
-                            <div class="card card-1">
-                                <div class="card-img card-img-1">
-                                    <img src="{{ asset('storage/user-profile.jpg') }}"
-                                        class="img-fluid">
-                                </div>
-                                <div class="mt-2 card-footer">Slide
-                                    56dgdsgdgdgfvbcvbcbcvbvcbvcccccccccccccccccccbfgfghfhfhffgfgfg</div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="col-md-4 mx-3 col-sm-6">
-                            <div class="card card-1">
-                                <div class="card-img card-img-1">
-                                    <img src="oasis/images/bruce-barrow-aI9_9T03OIk-unsplash.jpg" class="img-fluid">
-                                </div>
-                                <div class="mt-2 card-footer">Slide 56</div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="col-md-4 mx-3 col-sm-6">
-                            <div class="card card-1">
-                                <div class="card-img card-img-1">
-                                    <img src="oasis/images/charlesdeluvio-97Ir6ym25N4-unsplash.jpg"
-                                        class="img-fluid">
-                                </div>
-                                <div class="mt-2 card-footer">Slide 56</div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="col-md-4 mx-3 col-sm-6">
-                            <div class="card card-1">
-                                <div class="card-img card-img-1">
-                                    <img src="images/bruce-barrow-aI9_9T03OIk-unsplash.jpg" class="img-fluid">
-                                </div>
-                                <div class="mt-2 card-footer">Slide 56</div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
+                    
                 </div>
                 <a class="carousel-control-prev bg-transparent w-aut" href="#recipeCarousel" role="button"
                     data-bs-slide="prev">
@@ -98,7 +43,6 @@
 </div>
 
 <style>
-
     .card-1 {
         border: none !important;
         background: none !important;

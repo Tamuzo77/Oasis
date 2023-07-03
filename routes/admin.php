@@ -77,5 +77,6 @@ Route::middleware('admin')->prefix('admin')->name('admin.')->group(function(){
     Route::resource('categoriesForms', CategoryFormController::class)->only(['index', 'store', 'update', 'destroy']);
 
     Route::resource('formations', FormationController::class);
+    Route::put('formations/activeOrNot/{formations:slug}', [FormationController::class, 'activeOrNot'])->name('formations.activeOrNot');
 });
 

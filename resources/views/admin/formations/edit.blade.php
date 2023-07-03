@@ -1,5 +1,5 @@
-<x-admin.layout title="Enregistrement d'une formation">
-    <x-admin.header title="Enregistrement d'une Formation" />
+<x-admin.layout title="Modification d'une formation">
+    <x-admin.header title="Modification d'une Formation" />
     <x-admin.flash />
 
     <form action="{{ route('admin.formations.update', $formation->slug) }}" method="post" enctype="multipart/form-data">
@@ -20,7 +20,7 @@
                             <div class="mb-4 col-md-6 col-12">
                                 <label class="form-label">Date du Début <span class="text-danger">*</span></label>
                                 <div class="input-group me-3 " readonly="readonly">
-                                    <input class="form-control " value="{{ old('dateDebut') ?? $formation->dateDebut }}" type="date" required name="dateDebut"
+                                    <input class="form-control " value="{{ $formation->dateDebut }}" type="date"   name="dateDebut"
                                         placeholder="Select Date" aria-describedby="basic-addon2">
                                   @error('dateDebut')
                                         <div class="invalid-feedback">
@@ -34,7 +34,7 @@
                             <div class="mb-4 col-md-6 col-12">
                                 <label class="form-label">Date de Fin <span class="text-danger">*</span></label>
                                 <div class="input-group me-3 " readonly="readonly">
-                                    <input class="form-control " value="{{ old('dateFin')  }}" type="date" required name="dateFin"
+                                    <input class="form-control " value="{{ old('dateFin') ?? $formation->dateFin  }}" type="date"   name="dateFin"
                                         placeholder="Select Date" aria-describedby="basic-addon3">
                                         @error('dateFin')
                                         <div class="invalid-feedback">
@@ -44,11 +44,11 @@
                                 </div>
                             </div>
 
-                            <x-admin.form.textarea required :important="true" name="presentation" label="Texte Présentatif">{{ $formation->presentation }}</x-admin.form.textarea>
-                            <x-admin.form.textarea required :important="true" name="objectif" label="Objectifs">{{ $formation->objectif }}</x-admin.form.textarea>
-                            <x-admin.form.textarea required :important="true" name="public" label="Public Cible">{{ $formation->public }}</x-admin.form.textarea>
-                            <x-admin.form.textarea required :important="true" name="avantage" label="Avantages">{{ $formation->avantage }}</x-admin.form.textarea>
-                            <x-admin.form.textarea required :important="true" name="modalite" label="Modalités de Participations">{{ $formation->modalite }}</x-admin.form.textarea>
+                            <x-admin.form.textarea   :important="true" name="presentation" label="Texte Présentatif">{{ $formation->presentation }}</x-admin.form.textarea>
+                            <x-admin.form.textarea   :important="true" name="objectif" label="Objectifs">{{ $formation->objectif }}</x-admin.form.textarea>
+                            <x-admin.form.textarea   :important="true" name="public" label="Public Cible">{{ $formation->public }}</x-admin.form.textarea>
+                            <x-admin.form.textarea   :important="true" name="avantage" label="Avantages">{{ $formation->avantage }}</x-admin.form.textarea>
+                            <x-admin.form.textarea   :important="true" name="modalite" label="Modalités de Participations">{{ $formation->modalite }}</x-admin.form.textarea>
 
 
                             <div class="col-12 mb-4">
@@ -57,7 +57,7 @@
                                 <div class="fallback d-block dropzone border-dashed min-h-0 rounded-2">
 
                                     <input value="{{ old('cover_image') ?? '' }}" name="cover_image" type="file"
-                                        required>
+                                         >
                                     @error('cover_image')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -93,20 +93,26 @@
                                 <label class="form-label"> Prix de la formation</label>
                                 <div class="input-group me-3 " readonly="readonly">
 
-                                    <input type="number" value="{{ $formation->price }}" class="form-control" placeholder=" 4900"
+                                    <input name="price" type="number" value="{{ $formation->price }}" class="form-control" placeholder=" 4900"
                                         aria-describedby="basic-addon2">
                                     <span class="input-group-text text-muted" id="basic-addon2">FCFA</span>
 
                                 </div>
                             </div>
                         </div>
+                        <label class="form-label">Statut</label>
+                        <select name="status_id" class="form-select">
+                            @foreach ($statuses as $status)
+                                <option value="{{ $status->id }}">{{ $status->libelle }}</option>
+                            @endforeach
+                        </select>
                     </div>
 
                 </div>
 
                 <div class="d-grid mt-4">
                     <button type="submit" class="btn btn-primary">
-                        Enregistrer la formation
+                        Modifier la formation
                     </button>
                 </div>
             </div>

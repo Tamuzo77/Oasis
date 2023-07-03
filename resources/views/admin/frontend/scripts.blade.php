@@ -32,7 +32,7 @@
     <script src="{{ asset('admin/assets/js/vendors/tooltip.js') }}"></script>
 @endif
 
-@if (request()->is('admin/emplois') || request()->is('admin/recruteurs') || request()->is('admin/roles') || request()->is('admin/permissions'))
+@if (request()->is('admin/emplois') || request()->is('admin/recruteurs') || request()->is('admin/roles') || request()->is('admin/permissions')|| request()->is('admin/formations'))
 <script src="{{ asset('admin/assets/libs/%40popperjs/core/dist/umd/popper.min.js') }}"></script>
 <script src="{{ asset('admin/assets/libs/tippy.js/dist/tippy-bundle.umd.min.js') }}"></script>
 <script src="{{ asset('admin/assets/js/vendors/tooltip.js') }}"></script>

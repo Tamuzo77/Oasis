@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\User;
 use App\Models\Emploi;
 use App\Models\Customer;
+use App\Models\Formation;
 use App\Models\Structure;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -26,8 +27,9 @@ class AdminController extends Controller
         $recruteurs = Structure::latest()->withCount('emplois')->get();
         $emploiNonVisibles = Emploi::where('visible', false)->get();
         $cvs = Customer::count();
+        $formationsCount = Formation::count();
         $cvNonVisibles = Customer::where('visible', false)->count();
-        return \view('admin/dashboard', compact('notifications', 'emplois', 'recruteurs', 'emploiNonVisibles', 'cvs', 'cvNonVisibles'));
+        return \view('admin/dashboard', compact('notifications', 'emplois', 'recruteurs', 'emploiNonVisibles', 'formationsCount', 'cvs', 'cvNonVisibles'));
     }
 
     public function markNotification(Request $request)
