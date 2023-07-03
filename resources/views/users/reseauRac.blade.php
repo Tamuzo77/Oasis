@@ -35,7 +35,9 @@
         <div class="div-ac-title col-md-5 text-white opacity-80" style="">
             <div class="accueil-title mb-4">Lorem ipsum  minus .</div>
             <p> sit amet consectetur adipisicing elit  Numquam magnam eveniet repellendus . optio corporis vel id eaque nesciunt voluptatum, aperiam deleniti non tempora necessitatibus tempore </p>
+            <x-partials.whatsapp></x-partials.whatsapp>
         </div>
+
     </header>
     <div class="presentation container text-center mt-4 mb-4">
         <img src="oasis/accueil/logo Oasis Consulting 1 (1).png" alt="" class="col-4">

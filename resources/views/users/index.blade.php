@@ -53,6 +53,7 @@
             <div class="accueil-title mb-4">Lorem ipsum minus .</div>
             <p> sit amet consectetur adipisicing elit Numquam magnam eveniet repellendus . optio corporis vel id eaque
                 nesciunt voluptatum, aperiam deleniti non tempora necessitatibus tempore </p>
+                <x-partials.whatsapp></x-partials.whatsapp>
         </div>
     </header>
     <div class="consulting mt-4 container">
@@ -185,9 +186,9 @@
                 <a href="#" class="button">Lire</a>
             </div>
             @empty
-                
+
             @endforelse
-            
+
 
             {{--<div class="card card-2 text-center col-sm-6 mb-4">
                 <img class="card-img-top" src="oasis/accueil/WhatsApp Image 2023-01-05 at 13.54.14 (1).jpeg"

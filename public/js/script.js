@@ -1,4 +1,23 @@
 
+function myFunction() {
+    var y = document.getElementById("hide1");
+    var z = document.getElementById("hide2");
+
+    var x = document.getElementById("password")
+    if (x.type === "password") {
+      x.type = "text";
+      y.style.display="block";
+      z.style.display="none";
+    } else {
+      x.type = "password";
+      y.style.display="none";
+      z.style.display="block";
+    }
+}
+
+
+
+
 let items = document.querySelectorAll('.carousel .carousel-item')
 
 items.forEach((el) => {
@@ -15,13 +34,4 @@ items.forEach((el) => {
     }
 })
 
-function myFunction() {
-    var x = document.getElementById("password");
-    if (x.type === "password") {
-      x.type = "text";
-    } else {
-      x.type = "password";
-    
-    }
-}
 

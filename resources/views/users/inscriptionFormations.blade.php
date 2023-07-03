@@ -28,6 +28,7 @@
     <div class=" justify-items-center text-center pt-3 pb-3 text-white welcome">
         <p>Formation >> Inscription </p>
     </div>
+    <x-partials.whatsapp></x-partials.whatsapp>
     <div class="inscription-formation pt-4 mx-5 mb-5">
         <form action="POST" class="pb-5 mt-5">
             <h1 class="text-center">Remplissez ce formulaire</h1>

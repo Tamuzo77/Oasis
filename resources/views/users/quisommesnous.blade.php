@@ -39,9 +39,13 @@
 
     <header class="nav-bar">
         <x-partials.header></x-partials.header>
-        <div class="div-ac-title col-md-5 text-white opacity-80" style="">
-            <div class="accueil-title mb-4">Lorem ipsum  minus .</div>
-            <p> sit amet consectetur adipisicing elit  Numquam magnam eveniet repellendus . optio corporis vel id eaque nesciunt voluptatum, aperiam deleniti non tempora necessitatibus tempore </p>
+        <div>
+            <div class="div-ac-title col-md-5 text-white opacity-80" style="">
+                <div class="accueil-title mb-4">Lorem ipsum  minus .</div>
+                <p> sit amet consectetur adipisicing elit  Numquam magnam eveniet repellendus . optio corporis vel id eaque nesciunt voluptatum, aperiam deleniti non tempora necessitatibus tempore </p>
+            </div>
+
+               <x-partials.whatsapp></x-partials.whatsapp>
         </div>
     </header>
     <div class="consulting mt-4 me-3 ms-3">

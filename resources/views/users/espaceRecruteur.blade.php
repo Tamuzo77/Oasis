@@ -36,7 +36,7 @@
             <div class="accueil-title mb-4">Lorem ipsum  minus .</div>
             <p class="inscrire col-5 text-center">Envoyer mon cv</p>
             <p class="inscrire col-5 text-center">Espace recruteur</p>
-
+            <x-partials.whatsapp></x-partials.whatsapp>
         </div>
     </header>
     <main class="mt-5 offres-emploi">

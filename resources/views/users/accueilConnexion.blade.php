@@ -42,6 +42,7 @@
         <div class="div-ac-title col-sm-10 col-md-5 text-white opacity-80"  style="">
             <div class="accueil-title mb-4">Lorem ipsum  minus .</div>
             <p class="inscrire col-5 text-center">Consulter la formation</p>
+            <x-partials.whatsapp></x-partials.whatsapp>
         </div>
     </header>
     <main class="mx-4">

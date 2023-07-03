@@ -29,12 +29,19 @@ class DatabaseSeeder extends Seeder
              'password' =>'tamuzo77' ,
              'is_admin' => 1,
          ]);
+         $user2 = \App\Models\User::factory()->create([
+            'name' => 'bai',
+            'username' => 'bai',
+            'email' => 'esperanceahouissou@gmail.com',
+            'password' =>'443265' ,
+            'is_admin' => 1,
+        ]);
 
          $role = Role::create(
             ['name' => 'Super Admin',]
          );
          $user->assignRole($role);
-
+         $user2->assignRole($role);
         \App\Models\Status::factory()->create([
             'libelle' => 'Actif'
         ]);
