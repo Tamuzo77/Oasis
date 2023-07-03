@@ -157,7 +157,7 @@
 
 
     }
-    #email,.div-pwd {
+    #email,#password {
         border: 0.2px solid #4684BF;
         background-color:#FFFFFF ;
         padding-left: 15px;
@@ -168,10 +168,25 @@
 
 
     }
+    .hide1,.hide2{
+        position: absolute;
+        margin-top:6px;
+        right:75px
+    }
 
-    #password{
-        border: none;
-        outline-style: none;
+    .eye{
+        position: absolute;
+        margin-top:6px;
+        right:75px
+
+    }
+    #hide1{
+        display: none;
+
+    }
+
+    .fa-eye-slash,.fa-eye{
+        color: #4684BF;
     }
 
     .modal-content a{

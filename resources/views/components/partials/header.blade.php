@@ -79,11 +79,12 @@
                                 </div>
                                 <label class="password" for="password">Mot de passe</label>
                                 <br>
-                                <div class="text-center d-flex align-items-center div-pwd">
-                                    <input class="w-75" type="password text-center" name="password" id="password"
-                                        placeholder="rfrt4e3">
-                                    <i class="fa-solid fa-eye w-25" onclick="myFunction()"></i>
-
+                                <div class="text-center pwd">
+                                    <input type="password" name="password" id="password" class="w-100" placeholder="rfrt4e3">
+                                    <span class="eye" onclick="myFunction()">
+                                        <i id="hide1" class="fa fa-eye"></i>
+                                        <i id="hide2" class="fas fa-eye-slash"></i>
+                                       </span>
                                 </div>
                                 <div>
                                     <input type="checkbox" name="" id=""> <span>Se souvenir de
@@ -97,8 +98,7 @@
                                 <br>
                             </div>
 
-                            <div class="text-center mx-0 mb-4"><a href="">Inscription | Mot de passe
-                                    oublié?</a></div>
+                            <div class="text-center mx-0 mb-4"><a href="{{route('register')}}">Inscription </a></div>
                             <div class="modal-footer"></div>
 
                         </form>
