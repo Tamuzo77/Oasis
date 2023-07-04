@@ -73,6 +73,8 @@ Route::middleware('admin')->prefix('admin')->name('admin.')->group(function(){
 
     Route::get('pages/{page:href}', [PageController::class, 'view'] )->name('pages');
     Route::get('pages-all', [PageController::class, 'index'] )->name('pages-all');
+    Route::post('pages', [PageController::class, 'store'])->name('pages.store');
+    Route::put('pages-update/{page:href}', [PageController::class, 'update'])->name('pages.update');
 
     Route::resource('categoriesForms', CategoryFormController::class)->only(['index', 'store', 'update', 'destroy']);
 

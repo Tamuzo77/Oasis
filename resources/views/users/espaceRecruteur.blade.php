@@ -34,8 +34,8 @@
         <x-partials.header></x-partials.header>
         <div class="div-ac-title col-md-5 text-white opacity-80" style="">
             <div class="accueil-title mb-4">Lorem ipsum  minus .</div>
-            <p class="inscrire col-5 text-center">Envoyer mon cv</p>
-            <p class="inscrire col-5 text-center">Espace recruteur</p>
+            <a href=""><p class="inscrire col-5 text-center">Envoyer mon cv</p></a>
+            <a href=""><p class="inscrire col-5 text-center">Espace recruteur</p></a>
             <x-partials.whatsapp></x-partials.whatsapp>
         </div>
     </header>

@@ -10,7 +10,7 @@ class PageController extends Controller
     //
     public function view($pageHref)
     {
-        $page = Page::where('href', "/$pageHref")->get()->first();
-        return view('user.pages.view', compact('page'));
+        $page = Page::with('imageModels')->where('href', "/$pageHref")->get()->first();
+        return view("user.$page->view", compact('page'));
     }
 }

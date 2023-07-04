@@ -14,6 +14,6 @@ class ImageModel extends Model
 
     public function pages()
     {
-        return $this->belongsToMany(Page::class);
+        return $this->belongsToMany(Page::class,'images_pages','imageModel_id', 'page_id');
     }
 }

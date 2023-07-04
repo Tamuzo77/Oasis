@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Page;
 use Illuminate\Http\Request;
 
 class MainController extends Controller
@@ -10,7 +11,8 @@ class MainController extends Controller
 
     public function home()
     {
-        return \view('user.home');
+        $page = Page::where('href', '/home')->get()->first();
+        return \view("user.$page->view", compact('page'));
     }
 
     public function qsn()

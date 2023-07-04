@@ -50,11 +50,11 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-Route::get( '/home', [MainController::class, 'home'])->name('home');
+/*Route::get( '/home', [MainController::class, 'home'])->name('home');
 Route::get('/qui-sommes-nous', [MainController::class, 'qsn'])->name('qsn');
 Route::get('/reseau-rac', [MainController::class, 'reseauRac'])->name('reseauRac');
-Route::get('/cv-thèque', [MainController::class, 'cvTheque'])->name('cvTheque');
-//Route::get('{page:href}', [PageController::class, 'view'] )->name('pages');
+Route::get('/cv-thèque', [MainController::class, 'cvTheque'])->name('cvTheque');*/
+Route::get('{page:href}', [PageController::class, 'view'] )->name('pages');
 
 /*Route::middleware(['guest', 'auth'])->group(function(){
     Route::get( '/home', [MainController::class, 'home'])->name('home');

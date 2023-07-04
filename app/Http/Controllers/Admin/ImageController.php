@@ -55,7 +55,7 @@ class ImageController extends Controller
 
         if($tmp_file)
         {
-             Storage::copy('library/tmp/'.$tmp_file->folder.'/' . $tmp_file->file,'library/' . $tmp_file->folder.'/'. $tmp_file->file);
+            Storage::copy('library/tmp/'.$tmp_file->folder.'/' . $tmp_file->file,'library/' . $tmp_file->folder.'/'. $tmp_file->file);
             ImageModel::create([
                 'name' => $request->libelle,
                 'image_url' =>$tmp_file->folder . '/' . $tmp_file->file

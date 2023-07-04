@@ -10,9 +10,9 @@ class ReseauRac extends Component
 {
     public $imagesRac;
 
-    public function mount()
+    public function mount($images)
     {
-       $this->imagesRac = Page::all();
+       $this->imagesRac = $images;
     }
     public function render()
     {
