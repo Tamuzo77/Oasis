@@ -77,12 +77,13 @@
             </div>
         </div>
         <a href=""><button class="inscrire mt-4 mb-5">Téléchargez notre catalogue de formation</button></a>
-        <h2>Déposer une requête de formation</h2>
-        <div>
-            <input type="text" name="" id="" placeholder="Votre Nom">
-            <input type="email" name="" id="" placeholder="Votre Email">
-            <input type="tel" name="" id="" placeholder="Votre Téléphone">
-        </div>
+        <h2> Déposer une requête de formation</h2>
+        <form class="formation justify-content-center mx-5 row mt-4">
+            <input class="col-md-3 mx-2 col-sm-5 col-10" type="text" name="" id="" placeholder="Votre Nom">
+            <input class="col-md-3 mx-2 col-sm-5 col-10" type="email" name="" id="" placeholder="Votre Email">
+            <input class="col-md-3 mx-2 col-sm-5 col-10" type="tel" name="" id="" placeholder="Votre Téléphone">
+            <textarea name="" id="" cols="30" rows="10" placeholder="Votre requête de formation"></textarea>
+        </form>
     </main>
 
 
