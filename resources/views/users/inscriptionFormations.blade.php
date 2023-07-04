@@ -81,7 +81,7 @@
                 <img class="col-lg-2 col-md-3 col-sm-4 col-6 mt-4" src="oasis/images/mwangi-gatheca-qlKaN7eqay8-unsplash.jpg" alt="">
             </div>
             <div class="text-center mt-4">
-                <button class="inscrire">S'inscrire</button>
+                <button class="inscrire"><a href="">S'inscrire</a></button>
             </div>
         </div>
 
@@ -90,7 +90,7 @@
     </footer>
 
     <script src="{{asset('js/script.js')}}"></script>
-   
+
          {{-- @include('partials._footer') --}}
 </body>
 </html>

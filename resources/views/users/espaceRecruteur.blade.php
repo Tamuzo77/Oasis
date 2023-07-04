@@ -34,8 +34,8 @@
         <x-partials.header></x-partials.header>
         <div class="div-ac-title col-md-5 text-white opacity-80" style="">
             <div class="accueil-title mb-4">Lorem ipsum  minus .</div>
-            <p class="inscrire col-5 text-center">Envoyer mon cv</p>
-            <p class="inscrire col-5 text-center">Espace recruteur</p>
+            <a href=""><p class="inscrire col-5 text-center">Envoyer mon cv</p></a>
+            <a href=""><p class="inscrire col-5 text-center">Espace recruteur</p></a>
             <x-partials.whatsapp></x-partials.whatsapp>
         </div>
     </header>
@@ -54,7 +54,7 @@
                 <p class="col-md-3">{{ $emploi->created_at->diffForHumans() }}</p>
                 <p class="bold">{{ $emploi->ville->name }}</p>
             </div>
-            <button class="inscrire col-md-2 col-xl-1 h-25 col-sm-3 col-5 m-auto m-md-none">voir plus</button>
+            <a href=""><button class="inscrire col-md-2 col-xl-1 h-25 col-sm-3 col-5 m-auto m-md-none">voir plus</button></a>
         </div>
         @endforeach
 
@@ -68,7 +68,7 @@
                 <p class="col-md-3">le 12 mai 2023</p>
                 <span class="bold">Région</span>
             </div>
-            <button class="inscrire col-md-2 col-xl-1 h-25 col-sm-3 col-5 m-auto m-md-none">voir plus</button>
+            <a href="" class="inscrire col-md-2 col-xl-1 h-25 col-sm-3 col-5 m-auto m-md-none text-center">voir plus</a>
         </div>
     </main>
 

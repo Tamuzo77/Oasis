@@ -8,6 +8,7 @@ use App\Http\Controllers\EmploiController;
 use App\Http\Controllers\DepotCVController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ConnexionController;
+use App\Http\Controllers\FormationController;
 use App\Http\Controllers\ReseauRacController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\ImageController;
@@ -39,6 +40,7 @@ Route::get('/dépôtCV',[DepotCVController::class,'dépôtCV']);
 Route::get('/reseauRac',[ReseauRacController::class,'reseauRac']);
 Route::get('/accueilConnexion',[AccueilConnexionController::class,'accueilConnexion']);
 Route::get('/espaceRecruteur',[EspaceRecruteurController::class,'espaceRecruteur']);
+Route::get('/formation',[FormationController::class,'formation']);
 /*---------------------------------------------------------------------------------*/
 
 Route::get('/dashboard', function () {
