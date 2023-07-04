@@ -11,17 +11,22 @@
         <div class="col-12 mb-4">
             <x-admin.form.input name="libelle" :important="true" />
             <h5 class="mb-2">Image </h5>
-            <input name="img" type="file" />
+            <input name="image" type="file" />
         </div>
         <div class="col-12 mb-8 ">
             <button class="btn btn-primary" type="submit">Enregistrer</button>
         </div>
     </form>
+    <link
+    href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css"
+    rel="stylesheet"
+/>
+<script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
     
     <script>
         document.addEventListener('DOMContentLoaded', function() {
     // Register any plugins
-    //FilePond.registerPlugin(FilePondPluginImagePreview);
+    FilePond.registerPlugin(FilePondPluginImagePreview);
 
     // Create FilePond object
     const inputElement = document.querySelector('input[type="file"]');
