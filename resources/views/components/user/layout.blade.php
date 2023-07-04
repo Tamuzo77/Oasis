@@ -8,13 +8,13 @@
 
     @livewireStyles
     @include('user.frontend.style')
-   <title> Oasis - {{ $title }}</title>
+   <title> Oasis - {{$title }}</title>
 </head>
 <body>
 
-     @include('user.partials._header') 
+     @include('user.partials._header')
     {{ $slot }}
-    
+
 
     @include('user.partials._footer')
     @include('user.frontend.script')
