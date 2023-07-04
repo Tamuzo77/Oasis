@@ -56,8 +56,8 @@ Route::middleware('auth')->group(function () {
 Route::get('/qui-sommes-nous', [MainController::class, 'qsn'])->name('qsn');
 Route::get('/reseau-rac', [MainController::class, 'reseauRac'])->name('reseauRac');
 Route::get('/cv-thèque', [MainController::class, 'cvTheque'])->name('cvTheque');*/
-Route::get('{page:href}', [PageController::class, 'view'] )->name('pages');
-
+Route::get('{page:href}_oasis', [PageController::class, 'view'] )->name('pages');
+Route::get('/formations/{formation}' , [FormationController::class, 'show'])->name('formation.show');
 /*Route::middleware(['guest', 'auth'])->group(function(){
     Route::get( '/home', [MainController::class, 'home'])->name('home');
 });*/

@@ -85,7 +85,7 @@
                         <select name="categoryForm_id" class="form-select">
                             <option value="null" selected disabled>Select Categories</option>
                             @foreach ($categories as $category)
-                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                <option value="{{ $category->id }}" {{ $category->id == $formation->categoryForm_id ? 'selected' : '' }}>{{ $category->name }}</option>
                             @endforeach
                         </select>
                         <div class="mt-4">
@@ -93,9 +93,10 @@
                                 <label class="form-label"> Prix de la formation</label>
                                 <div class="input-group me-3 " readonly="readonly">
 
-                                    <input name="price" type="number" value="{{ $formation->price }}" class="form-control" placeholder=" 4900"
+                                    <input required name="price" type="number" value="{{ $formation->price }}" class="form-control @error($name) is-invalid @enderror" placeholder="_ _ _"
                                         aria-describedby="basic-addon2">
                                     <span class="input-group-text text-muted" id="basic-addon2">FCFA</span>
+                                    <x-admin.form.error name="price" />
 
                                 </div>
                             </div>

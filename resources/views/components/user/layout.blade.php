@@ -1,4 +1,4 @@
-@props(['title' => 'Titre', 'headerText'])
+@props(['title' => 'Titre', 'headerText', 'imageAccueil'])
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +9,20 @@
     @livewireStyles
     @include('user.frontend.style')
    <title> Oasis - {{$title }}</title>
+    <style>
+
+        .nav-bar{
+            height: 500px;
+            background-image:url("{{ asset('storage/library/'.$imageAccueil) }}");
+            background-size:cover;
+            object-fit: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+    
+        }
+    
+    
+    </style>
 </head>
 <body>
 
