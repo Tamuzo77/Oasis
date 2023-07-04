@@ -8,7 +8,7 @@
 
     @livewireStyles
     @include('user.frontend.style')
-   <title>{{ Oasis - $title }}</title>
+   <title> Oasis - {{ $title }}</title>
 </head>
 <body>
 
