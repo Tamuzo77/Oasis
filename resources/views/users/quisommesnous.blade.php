@@ -48,43 +48,21 @@
                <x-partials.whatsapp></x-partials.whatsapp>
         </div>
     </header>
-    <div class="consulting mt-4 me-3 ms-3">
-        <div class="title text-center mb-5">Consultez nos services</div>
-        <div class="row align-items-center justify-content-center">
-            <div class="forme col-xl-4 col-md-6">
-                <div class="circle text-center align-items-center">
-                    <p>Formations</p>
-                </div>
-                <div class="forme-img" style="width: 300px; margin:0 auto;">
-                    <img class="" src="oasis/accueil/formation.png" alt="">
-                    <h4 class="text-white text-break">formation</h4>
-                </div>
-            </div>
-            <div class="forme col-xl-4 col-md-6">
-                <div class="circle text-center align-items-center">
-                    <p>Formations</p>
-                </div>
-                <div class="forme-img" style="width: 300px; margin:0 auto;">
-                    <img class="" src="oasis/accueil/formation.png" alt="">
-                    <h4 class="text-white text-break">formation </h4>
-                </div>
-            </div>
-            <div class="forme col-xl-4 col-md-6">
-                <div class="circle text-center align-items-center">
-                    <p>Formations</p>
-                </div>
-                <div class="forme-img" style="width: 300px; margin:0 auto;">
-                    <img class="" src="oasis/accueil/formation.png" alt="">
-                    <h4 class="text-white text-break">formation </h4>
-                </div>
-            </div>
-
-
+    <div class="mb-4 container">
+        <div class="text-center mt-4"><h2>Consulter nos services</h2></div>
+        <div class="row justify-content-center mx-5">
+            <a href="" class="col-xl-3 col-lg-4 col-sm-6 col-12 mt-4" ><img class="w-100" src="oasis/quisommesnous/photo1688464820 (1).jpeg" alt=""></a>
+            <a href="" class="col-xl-3 col-lg-4 col-sm-6 col-12 mt-4"><img class="w-100" src="oasis/quisommesnous/photo1688464820 (2).jpeg" alt=""></a>
+            <a href="" class="col-xl-3 col-lg-4 col-sm-6 col-12 mt-4"><img class="w-100" src="oasis/quisommesnous/photo1688464820 (3).jpeg" alt=""></a>
+            <a href="" class="col-xl-3 col-lg-4 col-sm-6 col-12 mt-4"><img class="w-100" src="oasis/quisommesnous/photo1688464820 (4).jpeg" alt=""></a>
+            <a href="" class="col-xl-3 col-lg-4 col-sm-6 col-12 mt-4"><img class="w-100" src="oasis/quisommesnous/photo1688464820 (5).jpeg" alt=""></a>
+            <a href="" class="col-xl-3 col-lg-4 col-sm-6 col-12 mt-4"><img class="w-100"  src="oasis/quisommesnous/photo1688464820.jpeg" alt=""></a>
         </div>
     </div>
+
     <div class="text-center mt-5 mb-5 p-4 container-fluid" style="background-color: #4684BF; height:auto">
         <div class="container">
-            <img src="oasis/accueil/logo Oasis Consulting 2.png" alt="" style="width :290px;height :155px;">
+            <img src="oasis/accueil/logo Oasis Consulting 2.png" alt="" style="width :35%;height :auto;">
             <div class="mt-4 text-white"><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime doloribus consequuntur id, nostrum aliquid reiciendis adipisci esse exercitationem et vero ducimus minus facere magni odio porro fuga voluptates, at cupiditate.</p></div>
         </div>
     </div>
@@ -93,7 +71,7 @@
         <div class="photos mb-4 container">
             <div class="text-center"><h2>Photos</h2></div>
             <div class="row justify-content-center mx-sm-5">
-                <img class="col-xl-3 col-xl-3 col-lg-4 col-sm-6 col-12 mt-4" src="oasis/images/bruce-barrow-aI9_9T03OIk-unsplash.jpg" alt="">
+                <img class="col-xl-3 col-lg-4 col-sm-6 col-12 mt-4" src="oasis/images/bruce-barrow-aI9_9T03OIk-unsplash.jpg" alt="">
                 <img class="col-xl-3 col-lg-4 col-sm-6 col-12 mt-4" src="oasis/images/mwangi-gatheca-qlKaN7eqay8-unsplash.jpg" alt="">
                 <img class="col-xl-3 col-lg-4 col-sm-6 col-12 mt-4" src="oasis/images/charlesdeluvio-97Ir6ym25N4-unsplash.jpg" alt="">
                 <img class="col-xl-3 col-lg-4 col-sm-6 col-12 mt-4" src="oasis/images/mwangi-gatheca-qlKaN7eqay8-unsplash.jpg" alt="">
