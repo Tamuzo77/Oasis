@@ -55,8 +55,8 @@
         color:#4684BF !important;
     }
     nav a:hover{
-        transition: 3s;
-        text-decoration: underline;
+        transition: 1s;
+
     }
 
      .nav-bar{
