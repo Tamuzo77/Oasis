@@ -51,12 +51,12 @@
     <div class="mb-4 container">
         <div class="text-center mt-4"><h2>Consulter nos services</h2></div>
         <div class="row justify-content-center mx-5">
-            <a href="" ><img class="col-xl-3 col-lg-4 col-sm-6 col-12 mt-4" src="oasis/quisommesnous/photo1688464820 (1).jpeg" alt=""></a>
-            <a href=""><img class="col-xl-3 col-lg-4 col-sm-6 col-12 mt-4" src="oasis/quisommesnous/photo1688464820 (2).jpeg" alt=""></a>
-            <a href=""><img class="col-xl-3 col-lg-4 col-sm-6 col-12 mt-4" src="oasis/quisommesnous/photo1688464820 (3).jpeg" alt=""></a>
-            <a href=""><img class="col-xl-3 col-lg-4 col-sm-6 col-12 mt-4" src="oasis/quisommesnous/photo1688464820 (4).jpeg" alt=""></a>
-            <a href=""><img class="col-xl-3 col-lg-4 col-sm-6 col-12 mt-4" src="oasis/quisommesnous/photo1688464820 (5).jpeg" alt=""></a>
-            <a href=""><img class="col-xl-3 col-lg-4 col-sm-6 col-12 mt-4" src="oasis/quisommesnous/photo1688464820.jpeg" alt=""></a>
+            <a href="" class="col-xl-3 col-lg-4 col-sm-6 col-12 mt-4" ><img class="w-100" src="oasis/quisommesnous/photo1688464820 (1).jpeg" alt=""></a>
+            <a href="" class="col-xl-3 col-lg-4 col-sm-6 col-12 mt-4"><img class="w-100" src="oasis/quisommesnous/photo1688464820 (2).jpeg" alt=""></a>
+            <a href="" class="col-xl-3 col-lg-4 col-sm-6 col-12 mt-4"><img class="w-100" src="oasis/quisommesnous/photo1688464820 (3).jpeg" alt=""></a>
+            <a href="" class="col-xl-3 col-lg-4 col-sm-6 col-12 mt-4"><img class="w-100" src="oasis/quisommesnous/photo1688464820 (4).jpeg" alt=""></a>
+            <a href="" class="col-xl-3 col-lg-4 col-sm-6 col-12 mt-4"><img class="w-100" src="oasis/quisommesnous/photo1688464820 (5).jpeg" alt=""></a>
+            <a href="" class="col-xl-3 col-lg-4 col-sm-6 col-12 mt-4"><img class="w-100"  src="oasis/quisommesnous/photo1688464820.jpeg" alt=""></a>
         </div>
     </div>
 
