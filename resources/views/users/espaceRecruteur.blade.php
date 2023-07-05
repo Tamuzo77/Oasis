@@ -71,8 +71,7 @@
             <a href="" class="inscrire col-md-2 col-xl-1 h-25 col-sm-3 col-5 m-auto m-md-none text-center">voir plus</a>
         </div>
     </main>
-
-
+                <x-partials.vide></x-partials.vide>
 
 
     <footer>
