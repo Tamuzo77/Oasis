@@ -1,8 +1,9 @@
-@auth
+@if(Session::has('logged'))
 <div class="justify-items-center text-center pt-3 pb-3 text-white welcome ">
     <p>Bienvenue {{ auth()->user()->name }}</p>
 </div>
-@endauth
+@endif
+
 
 <header class="nav-bar">
     {{-- <x-partials.header></x-partials.header> --}}

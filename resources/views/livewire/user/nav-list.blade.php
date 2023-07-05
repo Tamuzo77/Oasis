@@ -4,12 +4,12 @@
         @if ($page->toggled == true)
         <x-user.nav-item :title="$page->title" :toggled="true" >
             @foreach ($page->children as $p )
-            <x-user.nav-sub-link :title="$p->title" :href="$p->href" />
+            <x-user.nav-sub-link :title="$p->title" :href="$p->href.'_oasis'" />
 
             @endforeach
         </x-user.nav-item>
         @else
-        <x-user.nav-item :title="$page->title" :href="$page->href" />
+        <x-user.nav-item :title="$page->title" :href="$page->href.'_oasis'" />
 
         @endif
     @endforeach

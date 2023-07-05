@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\ImageController;
+use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\CustomerController;
 use App\Http\Controllers\Admin\ActualiteController;
@@ -13,6 +14,7 @@ use App\Http\Controllers\Admin\StructureController;
 use App\Http\Controllers\Admin\PartenaireController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\CategoryNewController;
+use App\Http\Controllers\Admin\ProductTypeController;
 use App\Http\Controllers\Admin\CategoryFormController;
 
 /*
@@ -80,5 +82,8 @@ Route::middleware('admin')->prefix('admin')->name('admin.')->group(function(){
 
     Route::resource('formations', FormationController::class);
     Route::put('formations/activeOrNot/{formations:slug}', [FormationController::class, 'activeOrNot'])->name('formations.activeOrNot');
+
+    Route::resource('boutiques', ProductController::class);
+    Route::resource('product_types', ProductTypeController::class);
 });
 

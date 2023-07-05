@@ -16,16 +16,18 @@
                         style="right:0;list-style:none;"></span>
 
                 <!-- The Modal -->
-                <div class="modal m-auto mt-5" id="myModal">
-                    <div class="modal-dialog">
+                <div class="modal fade m-auto" id="myModal">
+                    <div class=" modal-dialog modal-dialog-centered">
                         <div class="modal-content mx-0">
 
                             <!-- Modal Header -->
                             <div class="modal-header ms-auto">
                                 <button type="button" class="btn-close text-white" data-bs-dismiss="modal"></button>
                             </div>
+                            <x-auth-session-status class="mb-4" :status="session('status')" />
 
-                            <form action="POST" class="mb-3 w-75">
+                            <form method="POST" action="{{ route('login') }}" class="mb-3 w-75">
+                                @csrf
                                 <div class="mb-3 text-center">
                                     <x-partials.logo></x-partials.logo>
                                 </div>
@@ -33,32 +35,38 @@
                                     <label class="email" for="email">Identifiant ou adresse e-mail</label>
                                     <br>
                                     <div class="text-center">
-                                        <input type="email" name="email" id="email" placeholder="oasis"
-                                            class="w-100">
+                                        <input type="text" name="input_type" value="{{ old('input_type') }}" required
+                                            autofocus autocomplete="username" class="w-100">
                                         <br>
+                                        <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                                        <x-input-error :messages="$errors->get('username')" class="mt-2" />
                                     </div>
                                     <label class="password" for="password">Mot de passe</label>
                                     <br>
-                                    <div class="text-center d-flex align-items-center div-pwd">
-                                        <input class="w-75" type="password text-center" name="password" id="password"
-                                            placeholder="rfrt4e3">
-                                        <i class="fa-solid fa-eye w-25" onclick="myFunction()"></i>
+                                    <div class="text-center pwd">
+                                        <input type="password" name="password" id="password" class="w-100" required
+                                            autocomplete="current-password">
+                                        <span class="eye" onclick="myFunction()">
+                                            <i id="hide1" class="fa fa-eye"></i>
+                                            <i id="hide2" class="fas fa-eye-slash"></i>
+                                        </span>
+                                        <x-input-error :messages="$errors->get('password')" class="mt-2" />
 
                                     </div>
                                     <div>
-                                        <input type="checkbox" name="" id=""> <span>Se souvenir de
-                                            moi</span>
-
+                                        <input type="checkbox" name="remember" id="remember_me"> <span>Se souvenir
+                                            de moi</span>
                                     </div>
                                 </div>
                                 <div class="text-center button">
-                                    <button class="mt-4 mb-3 w-100 m-0" type="submit"><a href="/accueilConnexion">Se
-                                            connecter</a></button>
+                                    <button class="mt-4 mb-3 w-100 m-0" type="submit">Se
+                                            connecter
+                                    </button>
                                     <br>
                                 </div>
 
-                                <div class="text-center mx-0 mb-4"><a href="{{ route('register') }}">Inscription </a>| <a href="">Mot de passe
-                                        oublié? </a></div>
+                                <div class="text-center mx-0 mb-4"><a href="{{ route('register') }}">Inscription </a>
+                                </div>
                                 <div class="modal-footer"></div>
 
                             </form>
@@ -73,8 +81,7 @@
                 <ul class="navbar-nav ms-auto ps-sm-2">
                     <x-user.nav-item title="{{ auth()->user()->username }}" :toggled="true">
                         @if (auth()->user()->hasRole('Super Admin'))
-                        <x-user.nav-sub-link title="Admin Dashboard" href="/admin/dashboard" />
-
+                            <x-user.nav-sub-link title="Admin Dashboard" href="/admin/dashboard" />
                         @endif
                         <x-user.nav-sub-link title="Profile" href="" />
                         <li>
@@ -82,7 +89,7 @@
                                 @csrf
                                 <button class="dropdown-item d-flex align-items-center" type="submit">
                                     <i class="me-2 icon-xxs dropdown-item-icon" data-feather="power"></i>Sign
-                                Out
+                                    Out
                                 </button>
                             </form>
                         </li>

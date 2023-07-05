@@ -29,7 +29,7 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->route(auth()->user()->getRedirectRouteName());
+        return redirect()->route(auth()->user()->getRedirectRouteName())->with('logged', 'réussie');
     }
 
     /**

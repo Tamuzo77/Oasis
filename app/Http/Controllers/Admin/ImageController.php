@@ -115,6 +115,18 @@ class ImageController extends Controller
             ]);
             return $tmp->folder;
         }
+        if($request->hasFile('image_products'))
+        {
+            $images = $request->file('image_products');
+            $file_name = $images->getClientOriginalName();
+            $folder = uniqid('image-', true);
+            $images->storeAs('products/tmp/'.$folder, $file_name);
+            TemporaryModel::create([
+                'folder' => $folder,
+                'file' => $file_name
+            ]);
+            return $folder;
+        }
         return '';
     }
 
