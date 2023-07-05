@@ -13,7 +13,7 @@
             <a href="#" class="button">Lire</a>
         </div>
         @empty
-            
+            <x-partials.vide />
         @endforelse
 
     </div>

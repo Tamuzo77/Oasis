@@ -1,8 +1,8 @@
     <main class="mt-4 text-center text-lg-start">
 
         <div class="row justify-content-center mx-sm-0 mx-2">
-            @foreach ($cvs as $cv )
-                            <div class="row col-sm-5 col-10 align-items-center shadow mx-2 mt-4 py-4">
+            @forelse ($cvs as $cv)
+                <div class="row col-sm-5 col-10 align-items-center shadow mx-2 mt-4 py-4">
                 <img class="col-lg-5 col-7 m-auto rounded-circle"
                     src="{{ asset("storage/$cv->picture") }}" alt="">
                 <div class="col-lg-7 mt-3 mt-lg-0">
@@ -15,6 +15,8 @@
                     <a href="" class="inscrire mt-3">Télécharger le CV</a>
                 </div>
             </div>
-            @endforeach
+            @empty
+                <x-partials.vide />
+            @endforelse 
         </div>
     </main>

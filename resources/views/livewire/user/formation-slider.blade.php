@@ -10,7 +10,7 @@
         <div class="row mx-auto justify-content-center">
             <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner" role="listbox">
-                    @foreach ($formations as $formation )
+                    @forelse ($formations as $formation )
                         <div class="carousel-item active">
                         <div class="col-md-4 col-sm-6 mx-3">
                             <div class="card card-1">
@@ -22,7 +22,10 @@
 
                         </div>
                     </div>
-                    @endforeach
+                    @empty
+                        <x-partials.vide />
+
+                    @endforelse
                     
                 </div>
                 <a class="carousel-control-prev bg-transparent w-aut" href="#recipeCarousel" role="button"

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('email')->unique()->nullable();
             $table->string('phone')->nullable();
             $table->integer('age')->nullable();
-            $table->string('biography')->nullable();
+            $table->text('biography')->nullable();
             $table->string('picture')->default('user-profile.jpg');
             $table->string('cv_path');
             $table->boolean('visible')->default(false);
