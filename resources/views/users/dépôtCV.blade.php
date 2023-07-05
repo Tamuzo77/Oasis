@@ -34,45 +34,41 @@
             <h1 class="text-center">Remplissez ce formulaire</h1>
 
             <div class="justify-content-center row">
-                <h3 class="mt-4 ">I - Présentation</h3>
-                <div class="col-md-3 col-sm-6 mt-3 mt-md-1">
-                    <label  for="name">Nom et Prénoms</label><br>
+                <div class="col-md-4 col-sm-6 mt-3">
+                    <label  for="name">Nom</label><br>
                     <input class="w-100"  type="text" name="name" id="">
                 </div>
-                <div class="col-md-2 col-sm-6 mt-3 mt-md-1">
-                    <label  for="age">Age</label><br>
-                    <input class="w-100"  type="number" name="age" id="">
+                <div class="col-md-4 col-sm-6 mt-3">
+                    <label  for="name">Prénom</label><br>
+                    <input class="w-100"  type="text" name="age" id="">
                 </div>
-                <div class="col-md-4 col-sm-6 mt-3 mt-md-1">
+                <div class="col-md-4 col-sm-6 mt-3">
                     <label for="email">Email</label><br>
                     <input class="w-100" type="email" name="email" id="">
                 </div>
-                <div class="col-md-3 col-sm-6 mt-3 mt-md-1">
+                <div class="col-md-4 col-sm-6 mt-3">
                     <label for="tel">Téléphone</label><br>
                     <input class="w-100" type="tel" name="tel" id="">
                 </div>
-
-                <h3 class="mt-4">II - Expérience professionnelle</h3>
-                <div class="col-md-4 col-sm-6 mt-3 mt-md-1">
-                    <label for="profession">Profession actuelle</label><br>
-                    <input class="w-100" type="text" name="profession" id="">
+                <div class="col-md-4 col-sm-6 mt-3">
+                    <label for="age">Age</label><br>
+                    <input class="w-100" type="number" name="profession" id="">
                 </div>
-                <div class="col-md-4 col-sm-6 mt-3 mt-md-1">
-                    <label for="structure">Structure</label><br>
-                    <input class="w-100" type="text" name="structure" id="">
-                </div>
-                <div class="col-md-4 col-sm-6 mt-3 mt-md-1">
-                    <label for="ville">Ville/Pays</label><br>
-                    <input class="w-100" type=" " name="ville" id="">
-                </div>
-                <h3 class="mt-4">III -Autres </h3>
-                <div class="col-md-4 col-sm-6 mt-3 mt-md-1">
-                    <label for="cv">Importer mon CV</label><br>
-                    <input class="w-100" type="file" name="cv" id="">
-                </div>
-                <div class="col-md-4 col-sm-6 mt-3 mt-md-1">
+                <div class="col-md-4 col-sm-6 mt-3">
                     <label for=" ">Importer ma photo</label><br>
-                    <input class="w-100" type="file" name="" id="">
+                    <div class="input-group w-100">
+                        <span class="input-group-addon browser" x-on:click.prevent="$refs.file.click()"><i class="fas fa-cloud-upload" ></i></span>
+                        <input class=" p-0" type="file" name="" id="">
+
+                    </div>
+                </div>
+                <div class=" mt-4 mb-2 mt-md-4">
+                    <label for="biographie">Biographie Professionnelle </label><br>
+                    <textarea name="" id="" cols="30" rows="10" class="w-100"></textarea>
+                </div>
+                <div class="col-md-4 col-sm-6 mt-3 w-100">
+                    <label for="cv">Importer mon CV</label><br>
+                    <input class="w-100 p-0" type="file" name="cv" id="">
                 </div>
             </div>
             <div class="text-center mt-5">
@@ -92,6 +88,10 @@
     </footer>
 
     <script src="{{asset('js/script.js')}}"></script>
+    <script>
+
+
+    </script>
          {{-- @include('partials._footer') --}}
 </body>
 </html>

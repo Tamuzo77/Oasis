@@ -36,3 +36,5 @@ items.forEach((el) => {
 })
 
 AOS.init();
+
+    

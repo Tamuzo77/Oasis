@@ -30,7 +30,6 @@
         font-family: 'Arial' !important;
         font-weight: bold;
         background-color: rgba(255, 255, 255, 0.75)!important;
-
      }
      /* nav{
         display: block !important;
@@ -91,11 +90,13 @@
     .div-ac-title{
         margin-left:6% !important;
         margin-top:80px;
+
     }
     @media screen and (max-width:750px){
         .div-ac-title{
 
             text-align:center !important;
+            
 
         }
         .div-ac-title p{
@@ -328,12 +329,12 @@
             margin-top:20px;
             width:80%;
           }
-          .formation img{
+          .formations img{
             margin-bottom: 20px !important;
             margin-top: 20px !important;
           }
         }
-        .formation img{
+        .formations img{
             border-radius: 25px;
           }
 /*
@@ -447,13 +448,30 @@
     }
 
 
-    .inscription-formation input,.depotCV input{
-        border-radius: 20px;
+    .inscription-formation input,.depotCV input,.depotCV textarea{
+        border-radius: 5px;
         border: 0.5px solid #4684BF;
         background-color:#FFFFFF ;
         outline-color: #4684BF;
         padding-left: 15px;
         font-size: 16px;
+        height: 30px;
+    }
+    .depotCV textarea{
+        height: 150px !important;
+    }
+
+    ::-webkit-file-upload-button{
+        background-color: #4684BF;
+        color: #FFFFFF;
+        border-style: none;
+        height: 100%;
+
+
+    }
+
+    #upload{
+        padding-left: 0 !important;
     }
     .payement img{
         height: 100px;
@@ -474,6 +492,9 @@
         border: none;
         color: white;
         font-weight: bold;
+    }
+    .inscrire:hover{
+        color: white;
     }
     .photos-rac img{
         border-radius: 30px;

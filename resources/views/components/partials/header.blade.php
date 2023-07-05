@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg pt-0 absolute">
+<nav class="navbar navbar-expand-lg pt-0">
     <div class=" container-xl pt-0">
         <a class="navbar-brand col-xl-2 col-lg-2 ms-lg-auto" href="#">
             <x-partials.logo></x-partials.logo>
@@ -22,7 +22,7 @@
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Espace
                         emploi</a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">CVThèque</a></li>
+                        <li><a class="dropdown-item" href="/cvTheque">CVThèque</a></li>
                         <li><a class="dropdown-item" href="/espaceRecruteur">Espace recruteur</a></li>
                         <li><a class="dropdown-item" href="/dépôtCV">Dépôt de CV</a></li>
                     </ul>
@@ -31,8 +31,8 @@
                     <a class="nav-link dropdown-toggle" href="#" role="button"
                         data-bs-toggle="dropdown">Formation</a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Formation <br> certifiante</a></li>
-                        <li><a class="dropdown-item" href="#">Formation <br> gratuite</a></li>
+                        <li><a class="dropdown-item" href="/formation">Formation <br> certifiante</a></li>
+                        <li><a class="dropdown-item" href="/formation">Formation <br> gratuite</a></li>
 
                     </ul>
 
@@ -83,7 +83,7 @@
                                        </span>
                                 </div>
                                 <div>
-                                    <input type="checkbox" name="" id=""> <span>Se souvenir demoi</span>
+                                    <input type="checkbox" name="" id=""> <span>Se souvenir de moi</span>
                                 </div>
                             </div>
                             <div class="text-center button">

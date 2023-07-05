@@ -51,15 +51,7 @@
     <main class="text-center mt-4">
         <h2>Nos Formations</h2>
         <div class="row justify-content-center mx-4">
-            <div class="row col-md-5 col-12 align-items-center shadow mx-2 mt-4 p-3 formation">
-                <img class="col-sm-5 col-10 m-auto" src="oasis/accueil/WhatsApp Image 2023-01-05 at 13.54.13 (1).jpeg" alt="">
-                <div class="col-sm-7">
-                    <h4>Devenez Consultant Professionnel</h4>
-                    <p>Lorem ipsum dolor dignissimos similique eligendi fuga ipsam unde numquam sunt debitis, illo ipsum excepturi quos. Ab, corporis voluptas!</p>
-                    <a href=""><button class="inscrire">Consulter la formation</button></a>
-                </div>
-            </div>
-            <div class="row col-md-5 align-items-center shadow mx-2 mt-4 col-12 p-3 formation">
+            <div class="row col-md-5 col-12 align-items-center shadow mx-2 mt-4 p-3 formations">
                 <img class="col-sm-5 col-10 m-auto" src="oasis/accueil/WhatsApp Image 2023-01-05 at 13.54.13 (1).jpeg" alt="">
                 <div class="col-sm-7">
                     <h4>Devenez Consultant Professionnel</h4>
@@ -67,7 +59,15 @@
                     <a href=""><button class="inscrire mt-3">Consulter la formation</button></a>
                 </div>
             </div>
-            <div class="row col-md-5 align-items-center shadow mx-2 mt-4 col-12 p-3 formation">
+            <div class="row col-md-5 align-items-center shadow mx-2 mt-4 col-12 p-3 formations">
+                <img class="col-sm-5 col-10 m-auto" src="oasis/accueil/WhatsApp Image 2023-01-05 at 13.54.13 (1).jpeg" alt="">
+                <div class="col-sm-7">
+                    <h4>Devenez Consultant Professionnel</h4>
+                    <p>Lorem ipsum dolor dignissimos similique eligendi fuga ipsam unde numquam sunt debitis, illo ipsum excepturi quos. Ab, corporis voluptas!</p>
+                    <a href=""><button class="inscrire mt-3">Consulter la formation</button></a>
+                </div>
+            </div>
+            <div class="row col-md-5 align-items-center shadow mx-2 mt-4 col-12 p-3 formations">
                 <img class="col-sm-5 col-10 m-auto" src="oasis/accueil/WhatsApp Image 2023-01-05 at 13.54.13 (1).jpeg" alt="">
                 <div class="col-sm-7">
                     <h4>Devenez Consultant Professionnel</h4>
