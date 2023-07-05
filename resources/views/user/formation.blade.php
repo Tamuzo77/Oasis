@@ -1,6 +1,6 @@
 <x-user.layout :title="$formation->name" :imageAccueil="$page->imageModels[0]->image_url ?? 'img64a2fe60842bf8.38281879/bg1.webp'">
     <x-slot name="headerText">
-        <div class="accueil-title">Lorem ipsum minus .</div>
+        <div class="accueil-title">OASIS Consulting</div>
         <p class="inscrire col-5 text-center">Consulter la formation</p>
     </x-slot>
 
