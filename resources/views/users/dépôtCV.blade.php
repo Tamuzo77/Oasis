@@ -83,7 +83,7 @@
                     </div>
                 </div>
             </div>
-            <div class="text-center mt-5">
+            <div class="text-center">
             <a href="">
                 <button class="inscrire">
                     Dépôser mon CV
