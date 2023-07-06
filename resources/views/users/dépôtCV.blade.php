@@ -18,18 +18,20 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>Document</title>
 </head>
-<body>
+<body style="background-image:url('oasis/accueil/Oasis-filigrane 1.png'); color:#A9A9A9;object-fit:cover;background-size:cover;background-position:center; ">
 
 
 
-    <header class="nav-bar">
+    <header>
         <x-partials.header></x-partials.header>
     </header>
-    <div class=" justify-items-center text-center pt-3 pb-3 h-auto text-white welcome">
+    <div class=" justify-items-center text-center pt-3 pb-3 baniere h-auto text-white welcome">
         <p>Offres d'emplois >> Dépôt de CV </p>
     </div>
-    <x-partials.whatsapp></x-partials.whatsapp>
-    <div class="depotCV pt-4 mx-5 pb-5"  data-aos="fade-up" data-aos-duration="3000" style="background-image:url('oasis/accueil/Oasis-filigrane 1.png'); color:#A9A9A9;object-fit:cover;background-size:cover;background-position:center; ">
+
+
+
+    <div class="depotCV pt-4 mx-5 pb-5"  data-aos="fade-up" data-aos-duration="3000">
         <form action="POST" class="pb-5 mt-5">
             <h1 class="text-center">Remplissez ce formulaire</h1>
 
@@ -55,10 +57,14 @@
                     <input class="w-100" type="number" name="profession" id="">
                 </div>
                 <div class="col-md-4 col-sm-6 mt-3">
-                    <label for=" ">Importer ma photo</label><br>
-                    <div class="input-group w-100">
-                        <span class="input-group-addon browser" x-on:click.prevent="$refs.file.click()"><i class="fas fa-cloud-upload" ></i></span>
-                        <input class=" p-0" type="file" name="" id="">
+                        <label for="cv">Importer mon CV</label><br>
+                        <div class="file-upload w-100">
+                            <div class="file-upload-select align-items-center row">
+                            <div class="file-select-button col-sm-6" ><a class="btn btn-primary btn-icon-up-file w-100">Add File</a></div>
+                            <div class="file-select-name col-sm-6">No file chosen...</div>
+                            <input type="file" name="file-upload-input" id="file-upload-input">
+                            </div>
+                        </div>
 
                     </div>
                 </div>
@@ -68,7 +74,13 @@
                 </div>
                 <div class="col-md-4 col-sm-6 mt-3 w-100">
                     <label for="cv">Importer mon CV</label><br>
-                    <input class="w-100 p-0" type="file" name="cv" id="">
+                    <div class="file-upload w-100">
+                        <div class="file-upload-select align-items-center row">
+                        <div class="file-select-button col-sm-5 col-md-3" ><a class="btn btn-primary btn-icon-up-file w-100">Add File</a></div>
+                        <div class="file-select-name col-sm-7 col-md-9">No file chosen...</div>
+                        <input type="file" name="file-upload-input" id="file-upload-input">
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="text-center mt-5">
@@ -80,7 +92,7 @@
             </div>
         </form>
 
-
+        <x-partials.whatsapp></x-partials.whatsapp>
         </div>
 
     <footer>

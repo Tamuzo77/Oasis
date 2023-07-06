@@ -1,4 +1,4 @@
-const { AOS } = NodeRequire("aos");
+
 
 function myFunction() {
     var y = document.getElementById("hide1");
@@ -35,6 +35,30 @@ items.forEach((el) => {
     }
 })
 
-AOS.init();
 
-    
+
+    const navbar = document.querySelector("nav")
+    window.addEventListener("scroll",()=>{
+        if(window.innerWidth <= 991){
+            if(window.scrollY > 160){
+                navbar.style.position="absolute";
+            }
+            else{
+                navbar.style.top = 0;
+                navbar.style.position="fixed";
+            }
+        }
+    })
+
+
+    let fileInput = document.getElementById("file-upload-input");
+    let fileSelect = document.getElementsByClassName("file-upload-select")[0];
+    fileSelect.onclick = function() {
+        fileInput.click();
+    }
+    fileInput.onchange = function() {
+        let filename = fileInput.files[0].name;
+        let selectName = document.getElementsByClassName("file-select-name")[0];
+        selectName.innerText = filename;
+    }
+
