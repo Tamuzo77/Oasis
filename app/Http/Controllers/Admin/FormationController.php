@@ -44,9 +44,10 @@ class FormationController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Formation $formation)
+    public function show($slug)
     {
-        //
+        $formation = Formation::where('slug', $slug)->get()->first();
+        return \view('admin.formations.show', compact('formation'));
     }
 
     /**

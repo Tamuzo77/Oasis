@@ -84,15 +84,16 @@
                                                         <i class="bi bi-three-dots-vertical"></i> </a>
                                                     </a>
                                                     <div class="dropdown-menu">
-                                                        <form action="" method="get">
-                                                            @csrf
-                                                            <button type="submit"
+                                                            <button type="button"
+                                                                data-bs-toggle="modal"
+                                                                data-bs-target="#roleModalEdit"
                                                                 class="dropdown-item d-flex align-items-center">
                                                                 <i class=" dropdown-item-icon" data-feather="edit"></i>
+                                                                Assigner des Permissions
                                                             </button>
-                                                        </form>
+
                                                         <div class="dropdown-divider"></div>
-                                                        <form action="" method="post">
+                                                        <form action="{{ route('admin.roles.destroy', $role->id) }}" method="post">
                                                             @csrf
                                                             @method('DELETE')
                                                             <button type="submit"
@@ -143,7 +144,7 @@
                     </div>
                     <div class="modal-body">
                         <x-admin.form.label name="Attribuer des permissions (optionel)" />
-                        <select name="permissions" class="form-select" id="multiple-select-field" data-placeholder="Choose anything" multiple>
+                        <select name="permissions[]" class="form-select" id="multiple-select-field" data-placeholder="Choose anything" multiple>
                             @foreach ($permissions as $permission )
                                 <option value="{{ $permission->id }}">{{ $permission->name }}</option>
                             @endforeach
@@ -157,8 +158,52 @@
             </div>
         </div>
     </div>
+
+
+
+    <div class="modal fade" id="roleModalEdit" tabindex="-1" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true" style="display: none;">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">
+                        Modifier un Role</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+
+                    </button>
+                </div>
+                <form action="{{ route('admin.roles.update', $role->id) }}" method="post" enctype="multipart/form-data">
+                    @csrf
+                    @method('PATCH')
+                    <div class="modal-body">
+                        <x-admin.form.input value="{{ $role->name }}" name="name" label="Titre" :important="true" placeholder="" />
+
+                    </div>
+                    <div class="modal-body">
+                        <x-admin.form.label name="Attribuer des permissions (optionel)" />
+                        <select name="permissions[]" class="form-select" id="multiple-select-field1" data-placeholder="Choose anything" multiple>
+                            @foreach ($permissions as $permission )
+                                <option value="{{ $permission->id }}" {{ $role->permissions->contains($permission->id) ? 'selected' : '' }}>{{ $permission->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Enregistrer</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
     <script>
         $( '#multiple-select-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+} );
+
+$( '#multiple-select-field1' ).select2( {
     theme: "bootstrap-5",
     width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
     placeholder: $( this ).data( 'placeholder' ),

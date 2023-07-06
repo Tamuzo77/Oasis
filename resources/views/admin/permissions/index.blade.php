@@ -144,7 +144,7 @@
 
                     </div>
                     <div class="modal-body">
-                        <x-admin.form.label name="Attribuer des permissions (optionel)" />
+                        <x-admin.form.label name="Attribuer aux roles (optionel)" />
                         <select name="roles" class="form-select" id="multiple-select-field"
                             data-placeholder="Choose anything" multiple>
                             @foreach ($roles as $role)

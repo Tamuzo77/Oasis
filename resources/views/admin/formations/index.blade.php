@@ -102,6 +102,16 @@
                                                         <i class="bi bi-three-dots-vertical"></i> </a>
                                                     <div class="dropdown-menu">
                                                         <form
+                                                            action="{{ route('admin.formations.show', $formation->slug) }}"
+                                                            method="get">
+                                                            @csrf
+                                                            <button type="submit"
+                                                                class="dropdown-item d-flex align-items-center">
+                                                                <i class=" dropdown-item-icon"
+                                                                    data-feather="book"></i>Détails
+                                                            </button>
+                                                        </form>
+                                                        <form
                                                             action="{{ route('admin.formations.edit', $formation->slug) }}"
                                                             method="get">
                                                             @csrf
