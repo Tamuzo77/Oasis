@@ -67,7 +67,15 @@ class RoleController extends Controller
      */
     public function update(Request $request, Role $role)
     {
-        //
+        $attributes = $request->validate([
+            'name' => 'required|min:4|max:20',
+            'permissions' => 'required',
+        ]);
+        $role->setAttribute('name', $attributes['name']);
+        $role->save();
+        $role->syncPermissions($attributes['permissions']);
+        return \redirect()->back()->with('success', 'Role updated successfully');
+
     }
 
     /**
@@ -75,6 +83,7 @@ class RoleController extends Controller
      */
     public function destroy(Role $role)
     {
-        //
+        $role->delete();
+        return \redirect()->back()->with('success', 'Role deleted successfully');
     }
 }
