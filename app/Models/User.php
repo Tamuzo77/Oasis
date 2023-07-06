@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Models\Role;
+use App\Models\Formation;
 use App\Models\Structure;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
@@ -47,10 +48,10 @@ class User extends Authenticatable
 
     public function getRedirectRouteName()
     {
-        return match((int)$this->role_id)
+        return match((int)$this->is_admin)
         {
-            1 => 'home',
-            2 => 'admin.dashboard',
+            1 => 'admin.dashboard',
+            2 => 'home',
             3 => 'home',
             0 => 'home',
         };
@@ -59,5 +60,10 @@ class User extends Authenticatable
     public function structure()
     {
         return $this->belongsTo(Structure::class);
+    }
+
+    public function formations()
+    {
+        return $this->belongsToMany(Formation::class);
     }
 }

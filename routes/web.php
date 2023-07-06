@@ -68,5 +68,7 @@ Route::middleware(['guest'])->prefix('espace_emplois')->as('emplois.')->group(fu
     Route::resource('emplois', EmploiController::class);
 });
 
+Route::get('/inscription', [MainController::class, 'inscription']);
+Route::get('/inscription/{formation:slug}', [MainController::class, 'formationInscription'])->name('formationInscription');
 require __DIR__.'/auth.php';
 require __DIR__.'/admin.php';

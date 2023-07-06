@@ -66,7 +66,7 @@
                                                             <a href="#!"
                                                                 class="text-inherit">{{ $product->title }}</a>
                                                         </h5>
-                                                        <p class="mb-0 text-muted"> Creéation :
+                                                        <p class="mb-0 text-muted"> Création :
                                                             {{ $product->created_at->diffForHumans() }}</p>
                                                     </div>
                                                 </div>

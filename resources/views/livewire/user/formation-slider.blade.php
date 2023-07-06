@@ -11,7 +11,7 @@
             <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner" role="listbox">
                     @forelse ($formations as $formation )
-                        <div class="carousel-item active">
+                    <div class="carousel-item active">
                         <div class="col-md-4 col-sm-6 mx-3">
                             <div class="card card-1">
                                 <div class="card-img card-img-1">

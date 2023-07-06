@@ -76,7 +76,7 @@
                                             <td>{{ $formation->dateDebut }}</td>
                                             <td>{{ $formation->dateFin }}</td>
                                             <td>{{ 'f' }}</td>
-                                            <td>{{ 'f' }}</td>
+                                            <td>{{ $formation->users->count() }}</td>
                                             <td>
                                                 <span class="badge badge-{{ 'success' }}-soft">
                                                     @if ($formation->price == 0 || $formation->price == null)
@@ -108,7 +108,7 @@
                                                             <button type="submit"
                                                                 class="dropdown-item d-flex align-items-center">
                                                                 <i class=" dropdown-item-icon"
-                                                                    data-feather="edit"></i>Details
+                                                                    data-feather="edit"></i>Modifier
                                                             </button>
                                                         </form>
                                                         <div class="dropdown-divider"></div>

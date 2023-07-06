@@ -28,8 +28,9 @@ class AdminController extends Controller
         $emploiNonVisibles = Emploi::where('visible', false)->get();
         $cvs = Customer::count();
         $formationsCount = Formation::count();
+        $formationInactiveCount = Formation::where('status_id', 2)->count();
         $cvNonVisibles = Customer::where('visible', false)->count();
-        return \view('admin/dashboard', compact('notifications', 'emplois', 'recruteurs', 'emploiNonVisibles', 'formationsCount', 'cvs', 'cvNonVisibles'));
+        return \view('admin/dashboard', compact('notifications', 'emplois', 'recruteurs', 'emploiNonVisibles', 'formationsCount', 'cvs', 'cvNonVisibles', 'formationInactiveCount'));
     }
 
     public function markNotification(Request $request)
