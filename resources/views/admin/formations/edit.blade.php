@@ -93,7 +93,7 @@
                                 <label class="form-label"> Prix de la formation</label>
                                 <div class="input-group me-3 " readonly="readonly">
 
-                                    <input required name="price" type="number" value="{{ $formation->price }}" class="form-control @error($name) is-invalid @enderror" placeholder="_ _ _"
+                                    <input required name="price" type="number" value="{{ $formation->price }}" class="form-control @error('price') is-invalid @enderror" placeholder="_ _ _"
                                         aria-describedby="basic-addon2">
                                     <span class="input-group-text text-muted" id="basic-addon2">FCFA</span>
                                     <x-admin.form.error name="price" />

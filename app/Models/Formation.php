@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\User;
 use App\Models\Status;
 use App\Models\CategoryForm;
 use Illuminate\Database\Eloquent\Model;
@@ -36,5 +37,10 @@ class Formation extends Model
     public function status()
     {
         return $this->belongsTo(Status::class);
+    }
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
     }
 }

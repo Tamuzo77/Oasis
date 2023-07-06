@@ -10,12 +10,12 @@
                     <a href="/formations/{{ $formation->slug }}"><button class="inscrire">Consulter la formation</button></a>
                 </div>
                 </div>
-                a href=""><button class="inscrire mt-4 mb-5">Téléchargez notre catalogue de formation</button></a>
-
             @empty
                 <x-partials.vide />
 
             @endforelse
+            <a href=""><button class="inscrire mt-4 mb-5">Téléchargez notre catalogue de formation</button></a>
+
         </div>
         {{--<h2> Déposer une requête de formation</h2>
         <form class="formation justify-content-center mx-5 row mt-4">

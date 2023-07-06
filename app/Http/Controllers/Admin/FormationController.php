@@ -17,7 +17,7 @@ class FormationController extends Controller
      */
     public function index()
     {
-        $formations = Formation::with('categoryForm')->latest()->get();
+        $formations = Formation::with('categoryForm', 'users')->latest()->get();
         return \view('admin.formations.index', compact('formations'));
     }
 

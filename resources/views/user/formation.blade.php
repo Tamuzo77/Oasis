@@ -1,15 +1,39 @@
-<x-user.layout :title="$formation->name" :imageAccueil="$page->imageModels[0]->image_url ?? 'img64a2fe60842bf8.38281879/bg1.webp'">
+<x-user.layout :title="$formation->name" :imageAccueil="$page->imageModels[0]->image_url ?? 'img64a422e5886743.37976823/Image collée.png'">
     <x-slot name="headerText">
         <div class="accueil-title">OASIS Consulting</div>
-        <p class="inscrire col-5 text-center">Consulter la formation</p>
-    </x-slot>
+        @auth
+        <form action="{{route('formationInscription', \Crypt::encrypt($formation->slug))}}" method="get">
+            @csrf
+            @if ($formation->price > 0 && !Auth::user()->formations()->where('formation_id',$formation->id)->exists() )
+            <kkiapay-widget amount="{{ $formation->price }}" key="d2d7f4001b9111ee9b54894a7ada3c16"
+                url="{{ asset('oasis/accueil/logo Oasis Consulting 1.png') }}" position="center" sandbox="true" data=""
+                callback="{{route('formationInscription', \Crypt::encrypt($formation->slug))}}">
+            </kkiapay-widget>
+            @else
 
+            <button type="submit" data-bs-toggle="modal" data-bs-target="#inscriptionModalCenter"
+                class="inscrire col-5 text-center">
+                @if(Auth::user()->formations()->where('formation_id',$formation->id)->exists())
+                    {{ __('Consulter') }}
+                    @else
+                    {{ __('Inscrivez vous à la formation') }}
+
+                @endif
+            </button>
+            @endif
+        </form>          
+            
+            @else
+            <a href="/inscription" class="inscrire col-5 text-center">Inscrivez vous pour souscrire à une formation</a>
+        @endauth
+    </x-slot>
+<x-user.flash />
     <main class="mx-4" data-aos="fade-up" data-aos-duration="3000">
         <div class="mt-5 mb-3">
             <h3>Présentation</h3>
             <div class=" row align-items-center justify-content-center">
-                <img class="col-sm-4 mb-sm-none mb-3" src="{{ asset("storage/$formation->cover_image") }}" alt=""
-                    style="border-radius:30px;">
+                <img class="col-sm-4 mb-sm-none mb-3" src="{{ asset("storage/$formation->cover_image") }}"
+                    alt="" style="border-radius:30px;">
                 <p class=" col-sm-8">
                     {{ $formation->presentation }}
                 </p>
@@ -39,7 +63,6 @@
             </p>
         </div>
     </main>
-
 
 
 </x-user.layout>

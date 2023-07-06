@@ -54,9 +54,10 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Product $product)
+    public function show( $idProduct)
     {
-        //
+        $product = (new DecryptAndFind())->handle(Product::class, $idProduct, 'id');
+        return \view('admin.boutique.show', compact('product'));
     }
 
     /**

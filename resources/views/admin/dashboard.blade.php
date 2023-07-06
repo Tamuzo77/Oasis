@@ -86,9 +86,9 @@
                     <div class="lh-1">
                         <h1 class="  mb-1 fw-bold">{{ $formationsCount }}</h1>
                         <p class="mb-0">
-                            <span class="text-dark me-2">28</span>Inactives
-                            <span class="text-dark me-2">28</span>Candidats
-                            <span class="text-dark me-2">28</span>Resources
+                            <span class="text-dark me-2">{{ $formationInactiveCount }}</span>Inactives
+                            <span class="text-dark me-2">{{ \App\Models\Formation::where('price', '>',0)->count() }}</span>Certifiantes
+                            <span class="text-dark me-2">{{ \App\Models\Formation::where('price',0)->count() }}</span>Gratuites
                         </p>
                     </div>
                 </div>

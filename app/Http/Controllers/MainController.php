@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Page;
+use App\Models\Formation;
 use Illuminate\Http\Request;
+use App\Actions\DecryptAndFind;
 
 class MainController extends Controller
 {
@@ -28,5 +30,22 @@ class MainController extends Controller
     public function cvTheque()
     {
         return \view('user.cvTheque');
+    }
+
+    public function inscription()
+    {
+        return \view('user.inscription');
+    }
+    
+    public function formationInscription($slug)
+    {
+        try {
+            $formation = (new DecryptAndFind())->handle(Formation::class, $slug);
+            auth()->user()->formations()->attach($formation);
+            return \redirect()->back()->with('success', 'Votre inscription a été effectué avec succès');        
+        } catch (\Throwable $th) {
+            return \redirect()->back()->with('failure', $th->getMessage());
+        }
+
     }
 }
