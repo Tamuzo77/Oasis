@@ -62,3 +62,14 @@ items.forEach((el) => {
         selectName.innerText = filename;
     }
 
+
+    let fileInput1 = document.getElementById("file-upload-input1");
+    let fileSelect1 = document.getElementsByClassName("file-upload-select1")[0];
+    fileSelect1.onclick = function() {
+        fileInput1.click();
+    }
+    fileInput1.onchange = function() {
+        let filename = fileInput1.files[0].name;
+        let selectName = document.getElementsByClassName("file-select-name1")[0];
+        selectName.innerText = filename;
+    }

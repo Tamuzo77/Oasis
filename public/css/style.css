@@ -75,6 +75,7 @@
             margin-top: 135px;
         }
         .navbar{
+
             padding-bottom: 20px !important;
             position: fixed;
             width: 100%;
@@ -87,7 +88,10 @@
         header >div{
             padding-top: 160px;
         }
-
+        .div-ac-title{
+            margin-top: 0 !important;
+            height: 100%;
+        }
     }
     /* nav{
         display: none !important;
@@ -107,13 +111,18 @@
         margin-top: 50px;
 
     }
+    .blur{
+        background-color: #4684bf79;
+        height:100%;
+    }
+
     @media screen and (max-width:750px){
 
         .div-ac-title{
             margin-left: 1.3% !important;
             margin-right: 1.3% !important;
             text-align:center;
-            margin-top: 0;
+
         }
         .div-ac-title p{
             margin: 10px auto;
@@ -307,9 +316,10 @@
       h4{
         font-family: 'Arial' !important;
         font-weight: bold;
-        font-size: 22px;
+        font-size: 21px;
 
       }
+
       .card-2{
         width:400px;
         margin-left: 50px;
@@ -544,7 +554,7 @@
   }
 /*end icon file*/
 
-    .file-upload .file-upload-select input[type="file"] {
+    .file-upload .file-upload-select input[type="file"],.file-upload .file-upload-select1 input[type="file"] {
 	display: none;
     }
 
@@ -606,3 +616,16 @@
 .formation textarea{
     width: 80%;
 }
+.modal span,.modal-title{
+    color: #4684BF;
+  }
+  .modal-title:hover{
+    text-decoration:underline;
+    transition: 1s;
+  }
+  .modal-body h4{
+    color: #4684BF;
+    font-family: 'Arial' !important;
+    font-weight: bold;
+    font-size: 16px !important;
+  }

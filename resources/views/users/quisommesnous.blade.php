@@ -32,20 +32,23 @@
 <style>
     .nav-bar {
         background-image: url('oasis/accueil/Rectangle 2 (1).png');
+
     }
 </style>
 
 <body>
 
     <header class="nav-bar">
-        <x-partials.header></x-partials.header>
-        <div>
-            <div class="div-ac-title col-md-5 text-white opacity-80" style="">
-                <div class="accueil-title mb-4">Lorem ipsum  minus .</div>
-                <p> sit amet consectetur adipisicing elit  Numquam magnam eveniet repellendus . optio corporis vel id eaque nesciunt voluptatum, aperiam deleniti non tempora necessitatibus tempore </p>
-            </div>
+        <div class="blur">
+            <x-partials.header></x-partials.header>
+            <div>
+                <div class="div-ac-title col-md-5 text-white opacity-80" style="">
+                    <div class="accueil-title mb-4">Lorem ipsum  minus .</div>
+                    <p> sit amet consectetur adipisicing elit  Numquam magnam eveniet repellendus . optio corporis vel id eaque nesciunt voluptatum, aperiam deleniti non tempora necessitatibus tempore </p>
+                </div>
 
-               <x-partials.whatsapp></x-partials.whatsapp>
+                <x-partials.whatsapp></x-partials.whatsapp>
+            </div>
         </div>
     </header>
     <div class="mb-4 container">

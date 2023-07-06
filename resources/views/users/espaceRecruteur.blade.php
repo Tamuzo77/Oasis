@@ -68,7 +68,71 @@
                 <p class="col-md-3">le 12 mai 2023</p>
                 <span class="bold">Région</span>
             </div>
-            <a href="" class="inscrire col-md-2 col-xl-1 h-25 col-sm-3 col-5 m-auto m-md-none text-center">voir plus</a>
+            <a href="" class="inscrire col-md-2 col-xl-1 h-25 col-sm-3 col-5 m-auto m-md-none text-center" data-bs-toggle="modal" data-bs-target="#myModal1">voir plus</a>
+
+        <!-- The Modal -->
+        <div class="modal fade" id="myModal1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                    <h4 class="modal-title">Détails de l'offre</h4>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        Le Cabinet <span>𝐎𝐚𝐬𝐢𝐬 𝐂𝐨𝐧𝐬𝐮𝐥𝐭𝐢𝐧𝐠 𝐒𝐚𝐫𝐥</span>  recrute pour le compte d’un cabinet ophtalmologique basé à Cotonou,<b>UNE SECRETAIRE MEDICALE.</b>
+
+                        <h4>🔰  𝐌𝐈𝐒𝐒𝐈𝐎𝐍 :</h4>
+                        <p>Renforcement de l’équipe pour l'accueil et l’édition des reçus et l’établissement des factures aux assurances</p>
+                        <ul>
+                           <h4>🔰 𝐑𝐄𝐒𝐏𝐎𝐍𝐒𝐀𝐁𝐈𝐋𝐈𝐓𝐄𝐒 & 𝐀𝐂𝐓𝐈𝐕𝐈𝐓𝐄𝐒 𝐏𝐑𝐈𝐍𝐂𝐈𝐏𝐀𝐋𝐄𝐒 :</h4>
+
+                                <li> Accueil physique et téléphonique des patients</li>
+                                <li> Etablissement des tickets de caisse</li>
+                                <li> Prise et gestion optimale des rendez-vous</li>
+                                <li> Traitement des courriers et dossiers médicaux,</li>
+                                <li> Etablissement des factures en fin de mois aux assureurs.</li>
+                        </ul>
+                        <ul>
+                            <h4>🔰 𝐏𝐑𝐎𝐅𝐈𝐋 𝐑𝐄𝐂𝐇𝐄𝐑𝐂𝐇𝐄 : </h4>
+                                <li> Avoir entre 25 et 30 ans au 31 décembre 2023,</li>
+                                <li> Être titulaire d’un BAC ;</li>
+                                <li> Avoir une expérience significative à un poste similaire</li>
+                        </ul>
+
+                        <ul>
+                        <h4>🔰 𝐐𝐔𝐀𝐋𝐈𝐓𝐄𝐒 𝐑𝐄𝐐𝐔𝐈𝐒𝐄𝐒 :</h4>
+                                <li> Avoir une excellente aisance relationnelle</li>
+                                <li> Être en capacité de travailler en équipe ;</li>
+                                <li> Maitriser outil informatique Maitriser Excel et Word ;</li>
+                                <li> Maitriser la transmission des courriers ;</li>
+                                <li> Avoir un sens de compte rendu</li>
+                        </ul>
+
+                        <ul>
+                        <h4>🔰 𝐃𝐎𝐒𝐒𝐈𝐄𝐑 𝐀 𝐃𝐄𝐏𝐎𝐒𝐄𝐑 :</h4>
+                                <li> Une lettre de motivation précisant la prétention salariale ;</li>
+                                <li> Un CV détaillé contenant,</li>
+                                <li> Une Copie de la pièce d’identité ;</li>
+                                <li> Une copie des justificatifs (attestations ou certificats de travail) des expériences antérieures,</li>
+
+                        </ul>
+
+                        Exclusivement en version électronique : La compilation des pièces en fichier unique PDF est à envoyer à l’adresse oasis2consulting@gmail.com et au https://wa.me/22995017601
+                        le Mercredi 15 Mars 2023 à 12h12 au plus tard.
+
+                        #recrutement #commerciaux #consulting
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
         </div>
     </main>
                 <x-partials.vide></x-partials.vide>

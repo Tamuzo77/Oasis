@@ -49,8 +49,8 @@
         <div class="mt-5 mb-3">
             <h3>Présentation</h3>
             <div class=" row align-items-center justify-content-center">
-                    <img class="col-sm-4 mb-sm-none mb-3" src="oasis/images/bruce-barrow-aI9_9T03OIk-unsplash.jpg" alt="" style="border-radius:30px;">
-                <p class=" col-sm-8">
+                    <img class="col-sm-3 mb-sm-none mb-3" src="oasis/images/bruce-barrow-aI9_9T03OIk-unsplash.jpg" alt="" style="border-radius:30px;">
+                <p class=" col-sm-9">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, quod tempora excepturi doloribus voluptates sed sunt dignissimos, laboriosam laudantium nulla aperiam dolores nisi, aspernatur vel quisquam totam accusamus dolore
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur, vero sit quidem corporis tenetur exercitationem et nostrum, ex ab architecto minus molestiae dicta magni reprehenderit id atque nesciunt? Unde, temporibus.
                 </p>
