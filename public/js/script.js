@@ -73,3 +73,23 @@ items.forEach((el) => {
         let selectName = document.getElementsByClassName("file-select-name1")[0];
         selectName.innerText = filename;
     }
+
+    
+
+        $(document).ready(function () {
+            $('.dropdown').hover(function () {
+                $(this).find('.dropdown-menu')
+                   .stop(true, true).delay(100).fadeIn(200);
+            }, function () {
+                $(this).find('.dropdown-menu')
+                  .stop(true, true).delay(100).fadeOut(200);
+            });
+        });
+
+        let emploi = document.querySelector(".espaceEmploi")
+
+        emploi.addEventListener("click",()=>{
+            window.location.href = "/espaceRecruteur";
+        })
+
+

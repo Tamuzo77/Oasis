@@ -109,10 +109,11 @@
     .div-ac-title{
         margin-left:6%;
         margin-top: 50px;
-
+        font-weight:600;
+        background-color: rgba(0, 0, 0, 0.01);
     }
     .blur{
-        background-color: #4684bf79;
+        background-color: #4684bfb6;
         height:100%;
     }
 
@@ -584,8 +585,10 @@
     .inscrire:hover{
         color: white;
     }
+
     .photos-rac img{
         border-radius: 30px;
+
     }
     @media screen and (max-width:575px) {
         .photos-rac img{
@@ -603,7 +606,7 @@
 .formation input ,.formation textarea{
     border-radius: 5px;
     border: 0.2px solid #4684BF;
-    background-color:#807f7f33;
+    background-color: #4684bf61;
     padding-left: 15px;
     outline-color:#4684BF;
     font-size: 16px;
@@ -629,3 +632,85 @@
     font-weight: bold;
     font-size: 16px !important;
   }
+  .kits >a,.livres >a{
+    height: 400px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: black;
+  }
+
+  .kits img, .livres img{
+    height:50%;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+  .kits,.livres{
+    background-color: #22222200;
+  }
+
+  .kits span,.livres span{
+    font-weight: 600;
+  }
+
+
+  .dropdown:hover .dropdown-menu {
+    display: block;
+    transition: 3s;
+}
+
+
+
+.inputfile-6 + label {
+    color: #4684BF;
+}
+
+.inputfile-6 + label {
+    border: 1px solid #4684BF;
+    background-color: #c6e3ff;
+    padding: 0;
+}
+
+.inputfile-6:focus + label,
+.inputfile-6.has-focus + label,
+.inputfile-6 + label:hover {
+    border-color: #4684bf61;
+}
+
+.inputfile-6 + label span,
+.inputfile-6 + label strong {
+    padding: 0.625rem 1.25rem;
+    /* 10px 20px */
+}
+
+.inputfile-6 + label span {
+    width: 200px;
+    min-height: 2em;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    vertical-align: top;
+}
+
+.inputfile-6 + label strong {
+    height: 100%;
+    color: #f1e5e6;
+    background-color: #4684BF;
+    display: inline-block;
+}
+
+.inputfile-6:focus + label strong,
+.inputfile-6.has-focus + label strong,
+.inputfile-6 + label:hover strong {
+    background-color:  #4684bf61;
+}
+.inputfile-6 + label svg {
+
+    fill: #ffffff;
+}
+
+@media screen and (max-width: 50em) {
+	.inputfile-6 + label strong {
+		display: block;
+	}
+}

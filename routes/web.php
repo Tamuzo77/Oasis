@@ -1,10 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\KitsController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\EmploiController;
+use App\Http\Controllers\LivresController;
 use App\Http\Controllers\DepotCVController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CVThequeController;
@@ -43,6 +45,9 @@ Route::get('/accueilConnexion',[AccueilConnexionController::class,'accueilConnex
 Route::get('/espaceRecruteur',[EspaceRecruteurController::class,'espaceRecruteur']);
 Route::get('/formation',[FormationController::class,'formation']);
 Route::get('/cvTheque',[CVThequeController::class,'cvTheque']);
+Route::get('/kits',[KitsController::class,'kits']);
+Route::get('/livres',[LivresController::class,'livres']);
+Route::get('/espaceEmploi',[EmploiController::class,'espaceEmploi']);
 /*---------------------------------------------------------------------------------*/
 
 Route::get('/dashboard', function () {
