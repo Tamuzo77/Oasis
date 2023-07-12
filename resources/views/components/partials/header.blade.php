@@ -19,12 +19,12 @@
                     <a class="nav-link" href="reseauRac">Réseau RAC</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Espace
-                        emploi</a>
+                    <a class="nav-link dropdown-toggle espaceEmploi" href="/espaceRecruteur" role="button" data-bs-toggle="dropdown">Espace emploi</a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="/cvTheque">CVThèque</a></li>
                         <li><a class="dropdown-item" href="/espaceRecruteur">Espace recruteur</a></li>
                         <li><a class="dropdown-item" href="/dépôtCV">Dépôt de CV</a></li>
+                        <li><a class="dropdown-item" href="/espaceEmploi">Emploi</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
@@ -40,8 +40,8 @@
                     <a class="nav-link dropdown-toggle" href="#" role="button"
                         data-bs-toggle="dropdown">Boutique</a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Kits <br> professionnels</a></li>
-                        <li><a class="dropdown-item" href="#">Livres</a></li>
+                        <li><a class="dropdown-item" href="/kits">Kits <br> professionnels</a></li>
+                        <li><a class="dropdown-item" href="/livres">Livres</a></li>
 
                     </ul>
                 </li>
@@ -103,3 +103,4 @@
             </div>
         </div>
 </nav>
+
