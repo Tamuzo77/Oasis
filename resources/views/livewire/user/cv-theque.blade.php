@@ -13,7 +13,7 @@
                         </div>
                         <strong class="text-break">({{ $cv->email }})</strong>
                         <p class="mt-1">{{ $cv->biography }}</p>
-                            <kkiapay-widget amount="200" key="d2d7f4001b9111ee9b54894a7ada3c16"
+                            <kkiapay-widget amount="200" key="{{ env('KIKYAPAY_KEY') }}"
                                 url="{{ asset('oasis/accueil/logo Oasis Consulting 1.png') }}" position="center" sandbox="true" data=""
                                 callback="{{ asset("storage/$cv->cv_path") }}">
                             </kkiapay-widget>

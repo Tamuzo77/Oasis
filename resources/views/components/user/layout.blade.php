@@ -33,7 +33,7 @@
     @include('user.partials._footer')
     @include('user.frontend.script')
 
-    <x-user.flash />
+
     @livewireScripts
 </body>
 </html>

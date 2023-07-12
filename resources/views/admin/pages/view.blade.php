@@ -59,7 +59,7 @@
                             @endforeach
 
                         </select>
-                        <x-admin.form.input :important="true" label="Lien" value="{{ $page->href }}" disabled  name="href" />
+                        <x-admin.form.input :important="true" label="Lien" value="{{ $page->href }}"   name="href" />
                         <x-admin.form.input :important="true" label="Vue" value="{{ $page->view }}"  name="view" />
                         
                     </div>

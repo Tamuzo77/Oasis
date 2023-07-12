@@ -5,7 +5,7 @@
         <form action="{{route('formationInscription', \Crypt::encrypt($formation->slug))}}" method="get">
             @csrf
             @if ($formation->price > 0 && !Auth::user()->formations()->where('formation_id',$formation->id)->exists() )
-            <kkiapay-widget amount="{{ $formation->price }}" key="d2d7f4001b9111ee9b54894a7ada3c16"
+            <kkiapay-widget amount="{{ $formation->price }}" key="{{ env('KIKYAPAY_KEY') }}"
                 url="{{ asset('oasis/accueil/logo Oasis Consulting 1.png') }}" position="center" sandbox="true" data=""
                 callback="{{route('formationInscription', \Crypt::encrypt($formation->slug))}}">
             </kkiapay-widget>
