@@ -53,7 +53,6 @@ class MainController extends Controller
 
     public function depotDeCv(StoreCustomerRequest $request)
     {
-        dd('ok');
         Customer::create($request->validated());
         return redirect()->back()->with('success', 'Votre CV a été envoyé avec succès, il sera visible après notre confirmation. Merci pour votre compréhension');
     }

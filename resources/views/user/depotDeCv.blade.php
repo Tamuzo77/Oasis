@@ -13,7 +13,7 @@
 
 
     <div class="depotCV pt-4 mx-5 pb-5" data-aos="fade-up" data-aos-duration="3000">
-        <form action="{{ route('depotDeCv') }}" method="POST" class="pb-5 mt-5">
+        <form action="{{ route('depotDeCv') }}" method="POST" class="pb-5 mt-5" enctype="multipart/form-data">
             @csrf
             <h1 class="text-center">Remplissez ce formulaire</h1>
 
@@ -45,7 +45,7 @@
                             <div class="file-select-button col-sm-6"><a
                                     class="btn btn-primary btn-icon-up-file w-100">Add File</a></div>
                             <div class="file-select-name col-sm-6">No file chosen...</div>
-                            <input type="file" name="picture" id="">
+                            <input type="file" name="picture" id="file-upload-input">
                         </div>
                     </div>
 
@@ -57,15 +57,13 @@
             </div>
             <div class="col-md-4 col-sm-6 mt-3 w-100">
                 <label for="cv">Importer mon CV</label><br>
-                <div class="file-upload w-100">
-                    <div class="file-upload-select align-items-center row">
-                        <div class="file-select-button col-sm-5 col-md-3"><a
-                                class="btn btn-primary btn-icon-up-file w-100">Add File</a></div>
-                        <div class="file-select-name col-sm-7 col-md-9">No file chosen...</div>
-                        <input type="file" name="cv_path" id="file-upload-input">
+                    <div class="file-upload w-100">
+                        <div class="file-upload-select1 align-items-center row">
+                        <div class="file-select-button col-sm-5 col-md-3" ><a class="btn btn-primary btn-icon-up-file w-100">Add File</a></div>
+                        <div class="file-select-name1 col-sm-7 col-md-9">No file chosen...</div>
+                        <input type="file" name="cv_path" id="file-upload-input1">
+                        </div>
                     </div>
-                </div>
-            </div>
     </div>
     <div class="text-center">
         <button class="inscrire" type="submit">

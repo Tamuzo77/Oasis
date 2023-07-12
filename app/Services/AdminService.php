@@ -16,7 +16,7 @@ class AdminService {
                 $user = User::findOrFail($userId);
                 $user->is_admin = true;
                 $user->save();
-                $user->assignRole(Role::ADMIN);
+                $user->assignRole(3);
 
             }
             
