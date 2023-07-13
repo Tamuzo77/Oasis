@@ -77,7 +77,7 @@
                                         <label class="form-label">Statut</label>
                                         <select class="form-select" name="status_id">
                                             @foreach ($statuses as $status)
-                                                <option value="{{ $status->id }} {{ old('status_id', $actus->status_id) == $status->id ? 'selected="selected"' : '' }}">{{ $status->libelle }}</option>
+                                                <option value="{{ $status->id }}" {{ old('status_id', $actus->status_id) == $status->id ? 'selected="selected"' : '' }}>{{ $status->libelle }}</option>
                                             @endforeach
                                         </select>
                                     </div>
