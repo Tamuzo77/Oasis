@@ -35,7 +35,7 @@
                                     <label class="email" for="email">Identifiant ou adresse e-mail</label>
                                     <br>
                                     <div class="text-center">
-                                        <input type="text" name="input_type" value="{{ old('input_type') }}" required
+                                        <input type="text" id="email" name="input_type" value="{{ old('input_type') }}" required
                                             autofocus autocomplete="username" class="w-100">
                                         <br>
                                         <x-input-error :messages="$errors->get('email')" class="mt-2" />
@@ -59,7 +59,7 @@
                                     </div>
                                 </div>
                                 <div class="text-center button">
-                                    <button class="mt-4 mb-3 w-100 m-0" type="submit">Se
+                                    <button class="mt-4 mb-3 w-100 m-0 text-white" type="submit">Se
                                             connecter
                                     </button>
                                     <br>
