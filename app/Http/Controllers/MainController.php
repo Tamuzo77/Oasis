@@ -7,6 +7,7 @@ use App\Models\Customer;
 use App\Models\Formation;
 use Illuminate\Http\Request;
 use App\Actions\DecryptAndFind;
+use App\Http\Requests\StoreEmploiRequest;
 use App\Http\Requests\StoreCustomerRequest;
 
 class MainController extends Controller
@@ -55,5 +56,10 @@ class MainController extends Controller
     {
         Customer::create($request->validated());
         return redirect()->back()->with('success', 'Votre CV a été envoyé avec succès, il sera visible après notre confirmation. Merci pour votre compréhension');
+    }
+
+    public function emploiCreate(StoreEmploiRequest $request)
+    {
+        dd($request);
     }
 }

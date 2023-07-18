@@ -9,7 +9,8 @@
 
     <div class="row justify-content-center mx-sm-0 mx-1 px-0 livres">
         @forelse (\App\Models\Product::where('is_available', true)->where('product_type_id',2)->get() as $livre)
-            <a href="" class="row col-md-3 col-lg-2 col-sm-5 col-7 align-items-center shadow mx-2 px-0 mt-4 pb-2">
+            <div 
+                class="row col-md-3 col-lg-2 col-sm-5 col-7 align-items-center shadow mx-2 px-0 mt-4 pb-2">
                 <img class=" m-auto rounded-sm p-0 mt-0" src="{{ asset("storage/library/$livre->main_image") }}"
                     alt="">
                 <div class="mt-1 mx-1">
@@ -21,7 +22,8 @@
                     url="{{ asset('oasis/accueil/logo Oasis Consulting 1.png') }}" position="center" sandbox="true"
                     data="" callback="{{ route('home') }}">
                 </kkiapay-widget>
-            </a>
+            </div>
+
         @empty
             <x-partials.vide />
         @endforelse
