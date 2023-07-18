@@ -1,8 +1,7 @@
 <x-user.layout :title="$page->title" :imageAccueil="$page->imageModels[0]->image_url ?? 'img64a422e5886743.37976823/Image collée.png'">
     <x-slot name="headerText">
         <div class="accueil-title mb-4">OASIS Consulting</div>
-        <p> sit amet consectetur adipisicing elit Numquam magnam eveniet repellendus . optio corporis vel id eaque
-            nesciunt voluptatum, aperiam deleniti non tempora necessitatibus tempore </p>
+        <p> {{$page->header ?? ''}}</p>
 
     </x-slot>
 
