@@ -47,7 +47,7 @@
                 </li>
 
             </ul>
-            <span id="icon-connexion"class="ms-auto ps-sm-2" data-bs-toggle="modal" data-bs-target="#myModal"><img
+            <span id="icon-connexion"class="ms-auto" data-bs-toggle="modal" data-bs-target="#myModal"><img
                     src="oasis/accueil/Vector (1).png" alt="" width="50px" height="50px"
                     style="right:0;list-style:none;"></span>
 
