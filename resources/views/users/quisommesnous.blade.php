@@ -53,7 +53,7 @@
     </header>
     <div class="mb-4 container">
         <div class="text-center mt-4"><h2>Consulter nos services</h2></div>
-        <div class="row justify-content-center mx-5">
+        <div class="row justify-content-center mx-5 services">
             <a href="" class="col-xl-3 col-lg-4 col-sm-6 col-12 mt-4" ><img class="w-100" src="oasis/quisommesnous/photo1688464820 (1).jpeg" alt=""></a>
             <a href="" class="col-xl-3 col-lg-4 col-sm-6 col-12 mt-4"><img class="w-100" src="oasis/quisommesnous/photo1688464820 (2).jpeg" alt=""></a>
             <a href="" class="col-xl-3 col-lg-4 col-sm-6 col-12 mt-4"><img class="w-100" src="oasis/quisommesnous/photo1688464820 (3).jpeg" alt=""></a>

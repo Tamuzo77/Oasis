@@ -74,7 +74,7 @@ items.forEach((el) => {
         selectName.innerText = filename;
     }
 
-    
+
 
         $(document).ready(function () {
             $('.dropdown').hover(function () {
