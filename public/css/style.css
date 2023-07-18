@@ -480,7 +480,7 @@
     }
 
 
-    .inscription-formation input,.depotCV input,.depotCV textarea{
+    .inscription-formation input,.depotCV input,.depotCV textarea ,.ville{
         border-radius: 5px;
         border: 0.5px solid #4684BF;
         background-color:#FFFFFF ;

@@ -77,7 +77,7 @@ Route::get('/inscription', [MainController::class, 'inscription']);
 Route::get('/inscription/{formation:slug}', [MainController::class, 'formationInscription'])->name('formationInscription');
 
 Route::post('/depotDeCv', [MainController::class, 'depotDeCv'])->name('depotDeCv');
-
+Route::post('/emploiCreate', [MainController::class, 'emploiCreate'])->name('emploiCreate');
 
 require __DIR__.'/auth.php';
 require __DIR__.'/admin.php';
