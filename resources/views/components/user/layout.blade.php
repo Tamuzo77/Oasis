@@ -12,7 +12,7 @@
     <title> Oasis - {{ $title }}</title>
     <style>
         .nav-bar {
-            height: 500px;
+            height: 650px;
             background-image: url("{{ asset('storage/library/' . $imageAccueil) }}");
             background-size: cover;
             object-fit: cover;

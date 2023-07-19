@@ -84,7 +84,7 @@
             <div class="row mx-auto justify-content-center">
                 <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner" role="listbox">
-                        <div class="carousel-item active">
+                        <div class="carousel-item active" data-bs-interval="2000">
                             <div class="col-md-4 col-sm-6 mx-3">
                                 <div class="card card-1">
                                     <div class="card-img card-img-1">
@@ -95,7 +95,7 @@
 
                             </div>
                         </div>
-                        <div class="carousel-item">
+                        <div class="carousel-item" data-bs-interval="2000">
                             <div class="col-md-4 mx-3 col-sm-6">
                                 <div class="card card-1">
                                     <div class="card-img card-img-1">
@@ -107,7 +107,7 @@
 
                             </div>
                         </div>
-                        <div class="carousel-item">
+                        <div class="carousel-item" data-bs-interval="2000">
                             <div class="col-md-4 mx-3 col-sm-6">
                                 <div class="card card-1">
                                     <div class="card-img card-img-1">
@@ -120,7 +120,7 @@
 
                             </div>
                         </div>
-                        <div class="carousel-item">
+                        <div class="carousel-item" data-bs-interval="2000">
                             <div class="col-md-4 mx-3 col-sm-6">
                                 <div class="card card-1">
                                     <div class="card-img card-img-1">
@@ -131,7 +131,7 @@
 
                             </div>
                         </div>
-                        <div class="carousel-item">
+                        <div class="carousel-item" data-bs-interval="2000">
                             <div class="col-md-4 mx-3 col-sm-6">
                                 <div class="card card-1">
                                     <div class="card-img card-img-1">
@@ -143,7 +143,7 @@
 
                             </div>
                         </div>
-                        <div class="carousel-item">
+                        <div class="carousel-item" data-bs-interval="2000">
                             <div class="col-md-4 mx-3 col-sm-6">
                                 <div class="card card-1">
                                     <div class="card-img card-img-1">
@@ -202,7 +202,7 @@
     </footer>
 
     <script src="{{ asset('js/script.js') }}"></script>
-    
+
     {{-- @include('partials._footer') --}}
     <style>
         .ql-hidden {
