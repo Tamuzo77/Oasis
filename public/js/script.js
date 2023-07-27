@@ -16,11 +16,7 @@ function myFunction() {
     }
 }
 
-
-
-
 let items = document.querySelectorAll('.carousel .carousel-item')
-
 items.forEach((el) => {
     const minPerSlide = 3
     let next = el.nextElementSibling
@@ -35,7 +31,8 @@ items.forEach((el) => {
     }
 })
 
-
+let copy = document.querySelector(".logos-slide").cloneNode(true);
+document.querySelector(".logos").appendChild(copy);
 
     const navbar = document.querySelector("nav")
     window.addEventListener("scroll",()=>{

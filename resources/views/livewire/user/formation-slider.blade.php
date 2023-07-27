@@ -11,7 +11,7 @@
             <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner" role="listbox">
                     @forelse ($formations as $formation )
-                    <div class="carousel-item @if($loop->iteration < 2) active @endif">
+                    <div class="carousel-item @if($loop->iteration < 2) active @endif" data-bs-interval="2000">
                         <div class="col-md-4 col-sm-6 mx-3">
                             <div class="card card-1">
                                 <div class="card-img card-img-1">
@@ -26,7 +26,7 @@
                         <x-partials.vide />
 
                     @endforelse
-                    
+
                 </div>
                 <a class="carousel-control-prev bg-transparent w-aut" href="#recipeCarousel" role="button"
                     data-bs-slide="prev">

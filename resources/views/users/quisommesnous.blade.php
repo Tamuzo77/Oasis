@@ -43,8 +43,9 @@
             <x-partials.header></x-partials.header>
             <div>
                 <div class="div-ac-title col-md-5 text-white opacity-80" style="">
-                    <div class="accueil-title mb-4">Lorem ipsum  minus .</div>
-                    <p> sit amet consectetur adipisicing elit  Numquam magnam eveniet repellendus . optio corporis vel id eaque nesciunt voluptatum, aperiam deleniti non tempora necessitatibus tempore </p>
+                    <div class="accueil-title mb-4">Lorem ipsum minus .</div>
+                    <p> sit amet consectetur adipisicing elit Numquam magnam eveniet repellendus . optio corporis vel id
+                        eaque nesciunt voluptatum, aperiam deleniti non tempora necessitatibus tempore </p>
                 </div>
 
                 <x-partials.whatsapp></x-partials.whatsapp>
@@ -52,35 +53,54 @@
         </div>
     </header>
     <div class="mb-4 container">
-        <div class="text-center mt-4"><h2>Consulter nos services</h2></div>
+        <div class="text-center mt-4">
+            <h2>Consulter nos services</h2>
+        </div>
         <div class="row justify-content-center mx-5 services">
-            <a href="" class="col-xl-3 col-lg-4 col-sm-6 col-12 mt-4" ><img class="w-100" src="oasis/quisommesnous/photo1688464820 (1).jpeg" alt=""></a>
-            <a href="" class="col-xl-3 col-lg-4 col-sm-6 col-12 mt-4"><img class="w-100" src="oasis/quisommesnous/photo1688464820 (2).jpeg" alt=""></a>
-            <a href="" class="col-xl-3 col-lg-4 col-sm-6 col-12 mt-4"><img class="w-100" src="oasis/quisommesnous/photo1688464820 (3).jpeg" alt=""></a>
-            <a href="" class="col-xl-3 col-lg-4 col-sm-6 col-12 mt-4"><img class="w-100" src="oasis/quisommesnous/photo1688464820 (4).jpeg" alt=""></a>
-            <a href="" class="col-xl-3 col-lg-4 col-sm-6 col-12 mt-4"><img class="w-100" src="oasis/quisommesnous/photo1688464820 (5).jpeg" alt=""></a>
-            <a href="" class="col-xl-3 col-lg-4 col-sm-6 col-12 mt-4"><img class="w-100"  src="oasis/quisommesnous/photo1688464820.jpeg" alt=""></a>
+            <a href="" class="col-xl-3 col-lg-4 col-sm-6 col-12 mt-4"><img class="w-100"
+                    src="oasis/quisommesnous/photo1688464820 (1).jpeg" alt=""></a>
+            <a href="" class="col-xl-3 col-lg-4 col-sm-6 col-12 mt-4"><img class="w-100"
+                    src="oasis/quisommesnous/photo1688464820 (2).jpeg" alt=""></a>
+            <a href="" class="col-xl-3 col-lg-4 col-sm-6 col-12 mt-4"><img class="w-100"
+                    src="oasis/quisommesnous/photo1688464820 (3).jpeg" alt=""></a>
+            <a href="" class="col-xl-3 col-lg-4 col-sm-6 col-12 mt-4"><img class="w-100"
+                    src="oasis/quisommesnous/photo1688464820 (4).jpeg" alt=""></a>
+            <a href="" class="col-xl-3 col-lg-4 col-sm-6 col-12 mt-4"><img class="w-100"
+                    src="oasis/quisommesnous/photo1688464820 (5).jpeg" alt=""></a>
+            <a href="" class="col-xl-3 col-lg-4 col-sm-6 col-12 mt-4"><img class="w-100"
+                    src="oasis/quisommesnous/photo1688464820.jpeg" alt=""></a>
         </div>
     </div>
 
     <div class="text-center mt-5 mb-5 p-4 container-fluid" style="background-color: #4684BF; height:auto">
         <div class="container">
             <img src="oasis/accueil/logo Oasis Consulting 2.png" alt="" style="width :35%;height :auto;">
-            <div class="mt-4 text-white"><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime doloribus consequuntur id, nostrum aliquid reiciendis adipisci esse exercitationem et vero ducimus minus facere magni odio porro fuga voluptates, at cupiditate.</p></div>
+            <div class="mt-4 text-white">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime doloribus consequuntur id, nostrum
+                    aliquid reiciendis adipisci esse exercitationem et vero ducimus minus facere magni odio porro fuga
+                    voluptates, at cupiditate.</p>
+            </div>
         </div>
     </div>
 
 
-        <div class="photos mb-4 container">
-            <div class="text-center"><h2>Photos</h2></div>
-            <div class="row justify-content-center mx-sm-5">
-                <img class="col-xl-3 col-lg-4 col-sm-6 col-12 mt-4" src="oasis/images/bruce-barrow-aI9_9T03OIk-unsplash.jpg" alt="">
-                <img class="col-xl-3 col-lg-4 col-sm-6 col-12 mt-4" src="oasis/images/mwangi-gatheca-qlKaN7eqay8-unsplash.jpg" alt="">
-                <img class="col-xl-3 col-lg-4 col-sm-6 col-12 mt-4" src="oasis/images/charlesdeluvio-97Ir6ym25N4-unsplash.jpg" alt="">
-                <img class="col-xl-3 col-lg-4 col-sm-6 col-12 mt-4" src="oasis/images/mwangi-gatheca-qlKaN7eqay8-unsplash.jpg" alt="">
-                <img class="col-xl-3 col-lg-4 col-sm-6 col-12 mt-4" src="oasis/images/bruce-barrow-aI9_9T03OIk-unsplash.jpg" alt="">
-            </div>
+    <div class="photos mb-5 container" data-aos="fade-up" data-aos-duration="3000">
+        <div class="text-center">
+            <h2>Photos</h2>
         </div>
+        <div class="row justify-content-center mx-sm-5">
+            <img class="col-xl-3 col-lg-4 col-sm-6 col-12 mt-4" src="oasis/images/bruce-barrow-aI9_9T03OIk-unsplash.jpg"
+                alt="">
+            <img class="col-xl-3 col-lg-4 col-sm-6 col-12 mt-4"
+                src="oasis/images/mwangi-gatheca-qlKaN7eqay8-unsplash.jpg" alt="">
+            <img class="col-xl-3 col-lg-4 col-sm-6 col-12 mt-4"
+                src="oasis/images/charlesdeluvio-97Ir6ym25N4-unsplash.jpg" alt="">
+            <img class="col-xl-3 col-lg-4 col-sm-6 col-12 mt-4"
+                src="oasis/images/mwangi-gatheca-qlKaN7eqay8-unsplash.jpg" alt="">
+            <img class="col-xl-3 col-lg-4 col-sm-6 col-12 mt-4" src="oasis/images/bruce-barrow-aI9_9T03OIk-unsplash.jpg"
+                alt="">
+        </div>
+    </div>
 
     <div class="videos container justify-content-center mt-4 mb-5">
         <div class="text-center mb-5">
@@ -95,20 +115,54 @@
             </video>
         </div>
     </div>
-    <div class="partenaires container mb-5" >
-        <h2 class="text-center">Nos partenaires</h2>
-        <div class="row justify-content-center">
-            @foreach ($partenaires as $partenaire)
-                <img class="col-lg-2 col-sm-3 p-3 col-6 mt-4 " src="{{ asset("storage/$partenaire->logo") }}"
-                    alt="">
-            @endforeach
-            {{-- <img class="col-lg-2 col-sm-3 col-6 mt-4" src="oasis/images/mwangi-gatheca-qlKaN7eqay8-unsplash.jpg" alt="">
+    <div class="partenaires mb-5">
+
+        <h2 class="text-center mb-5">Nos partenaires</h2>
+        <div class="container">
+            <div class="logos">
+                <div class="logos-slide">
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png"
+                         alt="" />
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/2.png"
+                         alt="" />
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/3.png"
+                         alt="" />
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/4.png"
+                         alt="" />
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/5.png"
+                         alt="" />
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/6.png"
+                         alt="" />
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/7.png"
+                         alt="" />
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png"
+                         alt="" />
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/2.png"
+                         alt="" />
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/3.png"
+                         alt="" />
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/4.png"
+                         alt="" />
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/5.png"
+                         alt="" />
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/6.png"
+                         alt="" />
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/7.png"
+                         alt="" />
+                </div>
+            </div>
+        </div>
+        {{-- @foreach ($partenaires as $partenaire)
+            <img class="col-lg-2 col-sm-3 p-3 col-6 mt-4 " src="{{ asset("storage/$partenaire->logo") }}"
+                alt="">
+        @endforeach --}}
+        {{-- <img class="col-lg-2 col-sm-3 col-6 mt-4" src="oasis/images/mwangi-gatheca-qlKaN7eqay8-unsplash.jpg" alt="">
             <img class="col-lg-2 col-sm-3 col-6 mt-4" src="oasis/images/mwangi-gatheca-qlKaN7eqay8-unsplash.jpg" alt="">
             <img class="col-lg-2 col-sm-3 col-6 mt-4" src="oasis/images/mwangi-gatheca-qlKaN7eqay8-unsplash.jpg" alt="">
             <img class="col-lg-2 col-sm-3 col-6 mt-4" src="oasis/images/mwangi-gatheca-qlKaN7eqay8-unsplash.jpg" alt="">
 --}}
-        </div>
     </div>
+
 
     <footer>
         <x-partials.footer></x-partials.footer>
@@ -118,7 +172,9 @@
 
     {{-- @include('partials._footer') --}}
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init()</script>
+    <script>
+        AOS.init()
+    </script>
 </body>
 
 </html>

@@ -16,7 +16,7 @@
     </div>
 
 
-    <div class="photos mb-4 container">
+    <div class="photos mb-5 container"  data-aos="fade-up" data-aos-duration="3000">
         <div class="text-center">
             <h2>Photos</h2>
         </div>
@@ -24,13 +24,13 @@
             @foreach ($page->imageModels as $image )
             <img class="col-xl-3 col-lg-4 col-sm-6 col-12 mt-4" src="{{ asset("storage/library/$image->image_url") }}"
                 alt="">
-                
+
             @endforeach
         </div>
     </div>
 
-    <div class="videos container justify-content-center mt-4 mb-5">
-        <div class="text-center mb-5">
+    <div class="videos container justify-content-center mt-5 mb-5">
+        <div class="text-center mb-5 mt-4">
             <h2>Vidéos</h2>
         </div>
         <div class="">
