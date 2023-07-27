@@ -3,10 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Page;
+use App\Models\Emploi;
 use App\Models\Customer;
 use App\Models\Formation;
+use App\Models\Structure;
 use Illuminate\Http\Request;
+use App\Events\EmploiCreated;
 use App\Actions\DecryptAndFind;
+use Illuminate\Support\Facades\DB;
 use App\Http\Requests\StoreEmploiRequest;
 use App\Http\Requests\StoreCustomerRequest;
 
@@ -58,8 +62,35 @@ class MainController extends Controller
         return redirect()->back()->with('success', 'Votre CV a été envoyé avec succès, il sera visible après notre confirmation. Merci pour votre compréhension');
     }
 
-    public function emploiCreate(StoreEmploiRequest $request)
+    public function emploiCreate(Request $request)
     {
-        dd($request);
+        try {
+            DB::transaction(function () use ($request) {
+                $structure = Structure::updateOrCreate([
+                        'email' => $request->structure_email,
+                    ], [    
+                            'name' => $request->structure_name,
+                            'tel' => $request->structure_tel, 
+                            'ifu' => $request->structure_ifu ,  
+                            'lien_facebook'=>$request->structure_lien_facebook , 
+                            'lien_github'=>$request->structure_lien_github , 
+                            'lien_linkedin'=>$request->structure_lien_linkedin, 
+                            'logo' => $request->structure_logo->store('espace_emploi/structure', 'public') , 
+                         ]
+                );
+                    $emploi['structure_id'] = $structure->id;
+                    $emploi['author'] = auth()->user()->email ?? null;
+                    $emploi['slug'] = \Str::slug( $structure->name.' '.$emploi['libelle']);
+                    $emploi['libelle'] = $request->libelle;
+                    $emploi['description'] = $request->description;
+                    $emploi['ville_id'] = $request->ville_id;
+                     $emps = Emploi::create($emploi);
+                     EmploiCreated::dispatch($emps);
+                    return \redirect()->back()->with('success', "Emploi crée avec succes");
+
+            });
+            } catch (\Throwable $th) {
+                return \redirect()->back()->with('failure', $th->getMessage());
+            }
     }
 }
