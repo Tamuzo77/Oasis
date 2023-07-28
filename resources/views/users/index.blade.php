@@ -74,7 +74,7 @@
 
     <div class="carroussel container-fluid text-center py-3 text-white" style="background-color: #4684BF; height:auto">
         <div class="mb-5">
-            <h2>Souscrivez à nos formations</h2>
+            <h2 class="text-white">Souscrivez à nos formations</h2>
         </div>
 
 

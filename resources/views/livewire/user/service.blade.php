@@ -4,7 +4,7 @@
     </div>
     <div class="row justify-content-center mx-5">
         @forelse ($services as $service)
-            <a href="/services" class="col-xl-3 col-lg-4 col-sm-6 col-12 mt-4">
+            <a href="/services" class="col-lg-4 col-sm-6 col-12 mt-4">
                 <img class="w-100" src="{{ asset("storage/$service->cover_image") }}" alt="">
             </a>
         @empty

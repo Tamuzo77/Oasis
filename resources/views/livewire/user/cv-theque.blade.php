@@ -11,7 +11,7 @@
                             <h4 class="col-lg-6" style="color :rgba(0, 0, 0, 0.538)">
                                 <small>{{ $cv->created_at->diffForHumans() }}</small></h4>
                         </div>
-                        <strong class="text-break">({{ $cv->email }})</strong>
+
                         <p class="mt-1">{{ $cv->biography }}</p>
                             <kkiapay-widget amount="200" key="{{ env('KIKYAPAY_KEY') }}"
                                 url="{{ asset('oasis/accueil/logo Oasis Consulting 1.png') }}" position="center" sandbox="true" data=""

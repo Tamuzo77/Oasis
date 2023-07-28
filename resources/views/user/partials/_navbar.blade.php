@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg pt-0 absolute">
+<nav class="navbar navbar-expand-lg pt-0 fixed">
     <div class=" container-xl pt-0">
-        <a class="navbar-brand col-xl-2 col-lg-2 ms-lg-auto" href="#">
+        <a class="navbar-brand col-xl-2 col-lg-2 ms-lg-auto" href="/">
             <x-partials.logo></x-partials.logo>
         </a>
         <div class="navbar-toggler float-right" type="button" data-bs-toggle="collapse"

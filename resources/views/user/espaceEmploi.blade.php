@@ -67,7 +67,7 @@
                 </div>
             </div>
             <div class="text-center">
-                <button type="submit" class="inscrire">
+                <button type="submit" class="inscrire mt-5">
                     Enregistrer
                 </button>
             </div>
