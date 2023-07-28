@@ -73,11 +73,13 @@ Route::middleware(['guest'])->prefix('espace_emplois')->as('emplois.')->group(fu
     Route::resource('emplois', EmploiController::class);
 });
 
-Route::get('/inscription', [MainController::class, 'inscription']);
+Route::middleware('guest')->get('/inscription', [MainController::class, 'inscription']);
 Route::get('/inscription/{formation:slug}', [MainController::class, 'formationInscription'])->name('formationInscription');
 
 Route::post('/depotDeCv', [MainController::class, 'depotDeCv'])->name('depotDeCv');
 Route::post('/emploiCreate', [MainController::class, 'emploiCreate'])->name('emploiCreate');
 
+
+Route::get('/actus/{actualite:slug}', [MainController::class, 'actu']);
 require __DIR__.'/auth.php';
 require __DIR__.'/admin.php';

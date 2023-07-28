@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Page;
 use App\Models\Emploi;
 use App\Models\Customer;
+use App\Models\Actualite;
 use App\Models\Formation;
 use App\Models\Structure;
 use Illuminate\Http\Request;
@@ -92,5 +93,15 @@ class MainController extends Controller
             } catch (\Throwable $th) {
                 return \redirect()->back()->with('failure', $th->getMessage());
             }
+    }
+
+    public function actu($actu)
+    {
+        $actu = Actualite::where('slug', $actu)->get()->first();
+        $page = Page::first();
+        return \view('user.actu', [
+            'actu' => $actu,
+            'page' => $page
+        ]);
     }
 }
