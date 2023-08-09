@@ -1,6 +1,6 @@
 <div class="mb-4 container">
     <div class="text-center mt-4">
-        <h2>Consulter nos services</h2>
+        <h2>Consultez nos services</h2>
     </div>
     <div class="row justify-content-center mx-5">
         @forelse ($services as $service)
