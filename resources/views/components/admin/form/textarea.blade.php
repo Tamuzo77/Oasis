@@ -4,7 +4,7 @@
     <textarea class="form-control" 
               name="{{ $name }}"
               id="{{ $name }}" 
-              {{ $attributes(['rows'=>'5', 'required' ]) }}
+              {{ $attributes(['rows'=>'5' ]) }}
               >{{  old($name) ?? $slot   }}</textarea>
 </x-admin.form.field>
 <x-admin.form.error :name="$name" />
