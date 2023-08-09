@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Page;
 use App\Models\Emploi;
 use App\Models\Customer;
+use App\Events\ContactUs;
 use App\Models\Actualite;
 use App\Models\Formation;
 use App\Models\Structure;
@@ -104,5 +105,21 @@ class MainController extends Controller
             'actu' => $actu,
             'page' => $page
         ]);
+    }
+
+    public function contact()
+    {
+        return \view('user.contact');
+    }
+
+    public function contactUs(Request $request)
+    {
+        $datas = [
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'need'  => $request->need
+        ];
+        ContactUs::dispatch($datas);
     }
 }

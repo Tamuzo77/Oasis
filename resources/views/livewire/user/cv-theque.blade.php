@@ -9,14 +9,20 @@
                         <div class="row">
                             <h4 class="col-lg-6">{{ ucwords("$cv->firstname") . ' ' . ucwords("$cv->lastname") }}</h4>
                             <h4 class="col-lg-6" style="color :rgba(0, 0, 0, 0.538)">
-                                <small>{{ $cv->created_at->diffForHumans() }}</small></h4>
+                                <small>{{ $cv->created_at->diffForHumans() }}</small>
+                            </h4>
                         </div>
 
                         <p class="mt-1">{{ $cv->biography }}</p>
-                            <kkiapay-widget amount="200" key="{{ env('KIKYAPAY_KEY') }}"
-                                url="{{ asset('oasis/accueil/logo Oasis Consulting 1.png') }}" position="center" sandbox="true" data=""
-                                callback="{{ asset("storage/$cv->cv_path") }}">
-                            </kkiapay-widget>
+
+                            <button class="kkiapay-button btn btn-primary inscrire">Consulter Le CV</button>
+                        {{-- <kkiapay-widgetamount="200"key="env('KIKYAPAY_KEY') "
+                            url="{{ asset('oasis/accueil/logo Oasis Consulting 1.png') }}" position="center"
+                            sandbox="true" data="" callback="{{ asset("storage/$cv->cv_path") }}">
+                        </kkiapay-widget>--}}
+                                                <script amount="2000" callback="{{ asset("storage/$cv->cv_path") }}"
+                            url="{{ asset('oasis/accueil/logo Oasis Consulting 1.png') }}" position="center" theme="#0095ff" sandbox="true"
+                            key="{{ env('KIKYAPAY_KEY') }}" src="https://cdn.kkiapay.me/k.js"></script>
                     </div>
                 </div>
             @empty

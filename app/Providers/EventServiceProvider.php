@@ -2,10 +2,12 @@
 
 namespace App\Providers;
 
+use App\Events\ContactUs;
 use App\Events\EmploiCreated;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Auth\Events\Registered;
 use App\Listeners\SendUserNotificationListener;
+use App\Listeners\SendAdminNotificationFromContact;
 use App\Listeners\SendEmploiNotificationAdminListener;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -24,6 +26,9 @@ class EventServiceProvider extends ServiceProvider
         ],
         EmploiCreated::class => [
             SendEmploiNotificationAdminListener::class,
+        ],
+        ContactUs::class => [
+            SendAdminNotificationFromContact::class,
         ]
     ];
 
