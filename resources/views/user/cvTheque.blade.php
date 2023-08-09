@@ -5,6 +5,16 @@
 
     </x-slot>
 
+    <div class="consulting mt-4 container">
+        <div class="title text-center mb-3">CV - THEQUE</div>
+        <div class="align-items-center justify-content-center text-center">
+            <div class="">
+                <p>
+                    {{$page->midContent ?? ''}}
+                </p>
+            </div>
+        </div>
+    </div>
     <livewire:user.cv-theque />
 
 </x-user.layout>
