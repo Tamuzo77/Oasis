@@ -24,9 +24,9 @@ class StoreEmploiRequest extends FormRequest
         return [
             'structure_name' => 'required|min:3|max:255|string',
             'structure_email' => 'required|email|max:255',
-            'structure_tel' => 'required|phone:BJ',
+            'structure_tel' => 'required',
             'structure_ifu' => 'required | digits:13 | regex:/^[0-9]{13}$/ |numeric',
-            'structure_logo' => 'required|image',
+            'structure_logo' => 'image',
             'structure_lien_facebook' => 'url',
             'structure_lien_github' => 'url',
             'structure_lien_linkedin' => 'url',

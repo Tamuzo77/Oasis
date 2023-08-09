@@ -10,7 +10,7 @@
                 <p class="card-text ">{!! $actu->content !!} </p>
 
             </div>
-            <a href="#" class="button">Lire</a>
+            <a href="{{ url("/actus/$actu->slug") }}" class="button">Lire</a>
         </div>
         @empty
             <x-partials.vide />

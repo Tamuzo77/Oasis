@@ -22,6 +22,7 @@ use App\Http\Controllers\EspaceRecruteurController;
 use App\Http\Controllers\AccueilConnexionController;
 use App\Http\Controllers\Admin\PartenaireController;
 use App\Http\Controllers\Admin\CategoryNewController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\InscriptionFormationsController;
 
 /*
@@ -48,6 +49,7 @@ Route::get('/cvTheque',[CVThequeController::class,'cvTheque']);
 Route::get('/kits',[KitsController::class,'kits']);
 Route::get('/livres',[LivresController::class,'livres']);
 Route::get('/espaceEmploi',[EmploiController::class,'espaceEmploi']);
+Route::get('/contact',[ContactController::class,'contact']);
 /*---------------------------------------------------------------------------------*/
 
 Route::get('/dashboard', function () {
@@ -73,11 +75,13 @@ Route::middleware(['guest'])->prefix('espace_emplois')->as('emplois.')->group(fu
     Route::resource('emplois', EmploiController::class);
 });
 
-Route::get('/inscription', [MainController::class, 'inscription']);
+Route::middleware('guest')->get('/inscription', [MainController::class, 'inscription']);
 Route::get('/inscription/{formation:slug}', [MainController::class, 'formationInscription'])->name('formationInscription');
 
 Route::post('/depotDeCv', [MainController::class, 'depotDeCv'])->name('depotDeCv');
 Route::post('/emploiCreate', [MainController::class, 'emploiCreate'])->name('emploiCreate');
 
+
+Route::get('/actus/{actualite:slug}', [MainController::class, 'actu']);
 require __DIR__.'/auth.php';
 require __DIR__.'/admin.php';
