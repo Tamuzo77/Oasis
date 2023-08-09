@@ -83,5 +83,6 @@ Route::post('/emploiCreate', [MainController::class, 'emploiCreate'])->name('emp
 
 
 Route::get('/actus/{actualite:slug}', [MainController::class, 'actu']);
+Route::post('contactUs', [MainController::class, 'contactUs'])->name('contactUs');
 require __DIR__.'/auth.php';
 require __DIR__.'/admin.php';
