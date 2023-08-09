@@ -104,4 +104,9 @@ class MainController extends Controller
             'page' => $page
         ]);
     }
+
+    public function contact()
+    {
+        return \view('user.contact');
+    }
 }
