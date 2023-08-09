@@ -5,7 +5,7 @@
 
     </x-slot>
 
-    <div class="mt-5 Contact text-center">
+    <div class="mt-5 text-center">
         <h2 class="text-center">Contactez-nous</h2>
         <form action="">
             <div class="contact justify-content-center mx-5 row mt-4 text-primary mb-5">

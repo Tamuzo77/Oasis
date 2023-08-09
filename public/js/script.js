@@ -86,18 +86,30 @@ $(document).ready(function () {
     );
 });
 
-// Get the navbar
-const navbar = document.getElementById("navbar");
-
-// Get the offset position of the navbar
-const sticky = navbar.offsetTop;
-
-// Add the sticky class to the navbar when you reach its scroll position. Remove the sticky class when you leave the scroll position.
-function myFunction() {
-  if (window.scrollY >= sticky) {
-    navbar.classList.add("sticky")
-  } else {
-    navbar.classList.remove("sticky");
-  }
+function myFunction(imgs) {
+    // Get the expanded image
+    var expandImg = document.getElementById("expandedImg");
+    // Get the image text
+    var imgText = document.getElementById("imgtext");
+    // Use the same src in the expanded image as the image being clicked on from the grid
+    expandImg.src = imgs.src;
+    // Use the value of the alt attribute of the clickable image as text inside the expanded image
+    imgText.innerHTML = imgs.alt;
+    // Show the container element (hidden with CSS)
+    expandImg.parentElement.style.display = "block";
 }
+// // Get the navbar
+// const navbar = document.getElementById("navbar");
+
+// // Get the offset position of the navbar
+// const sticky = navbar.offsetTop;
+
+// // Add the sticky class to the navbar when you reach its scroll position. Remove the sticky class when you leave the scroll position.
+// function myFunction() {
+//   if (window.scrollY >= sticky) {
+//     navbar.classList.add("sticky")
+//   } else {
+//     navbar.classList.remove("sticky");
+//   }
+// }
 

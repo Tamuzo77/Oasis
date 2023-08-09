@@ -28,8 +28,8 @@
         @endauth
     </x-slot>
 <x-user.flash />
-    <main class="mx-4" data-aos="fade-up" data-aos-duration="3000">
-        <div class="mt-5 mb-3">
+    <main class="mx-5 px-md-5" data-aos="fade-up" data-aos-duration="3000">
+        <div class="mt-5 mb-3 px-lg-5">
             <h3>Présentation</h3>
             <div class=" row align-items-center justify-content-center">
                 <img class="col-sm-3 mb-sm-none mb-3" src="{{ asset("storage/$formation->cover_image") }}"
@@ -40,7 +40,7 @@
             </div>
 
         </div>
-        <div>
+        <div class="px-lg-5">
             <h3 class="mt-3 mb-3">Objectifs</h3>
             <p>
                 {{ $formation->objectif }}

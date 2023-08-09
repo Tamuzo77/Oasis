@@ -104,12 +104,15 @@
         background-color: #4684BF !important;
     }
 
-    .div-ac-title{
+    .div-ac-title {
         margin-left:6%;
         padding-top: 200px !important;
         font-weight:600;
         background-color: rgba(0, 0, 0, 0.01);
 
+    }
+    .div-ac{
+        padding-top: 200px !important;
     }
     .blur{
         background-color: #4684bfb6;
@@ -760,7 +763,7 @@
 }
 .modal-backdrop {
     z-index:0 !important;
-
+    display: none;
 
 }
 
