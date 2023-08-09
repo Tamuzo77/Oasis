@@ -45,35 +45,30 @@
         </div>
     </header>
     <div class="container px-5">
-        <h2 class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
-        <p class="text-center mb-4">Date</p>
+        <h2 class="text-center">{{ $actu->title }}</h2>
+        <p class="text-center mb-4">{{ gmdate( 'd M Y',strtotime($actu->updated_at)) }}</p>
         <!-- The expanding image container -->
         <div class="container text-center">
+
             <!-- Expanded image -->
-            <img id="expandedImg" class="w-50" style="height:auto;margin:auto;">
+            <img id="expandedImg" class="w-50" style="height:auto;margin:auto;" src="{{ asset("storage/$actu->cover_image") }}">
 
             <!-- Image text -->
             <div id="imgtext"></div>
         </div>
-        <div class="row mt-5 overflow-auto flex-nowrap p-3 mb-5 justify-content-center">
-            <img class="col-sm-3 col-4 col-md-2" src="/oasis/images/bruce-barrow-aI9_9T03OIk-unsplash.jpg"
-                alt="" onclick="myFunction(this);">
-            <img class="col-sm-3 col-4 col-md-2" src="/oasis/images/charlesdeluvio-97Ir6ym25N4-unsplash.jpg"
-                alt="" onclick="myFunction(this);">
-            <img class="col-sm-3 col-4 col-md-2" src="/oasis/images/mwangi-gatheca-qlKaN7eqay8-unsplash.jpg"
-                alt="" onclick="myFunction(this);">
-            <img class="col-sm-3 col-4 col-md-2" src="/oasis/images/charlesdeluvio-97Ir6ym25N4-unsplash.jpg"
-                alt="" onclick="myFunction(this);">
-        </div>
+        {{-- <div class="row mt-5 overflow-auto flex-nowrap p-3 mb-5 justify-content-center">
+            <img class="col-sm-3 col-4 col-md-2" src="/oasis/images/bruce-barrow-aI9_9T03OIk-unsplash.jpg" alt="" onclick="myFunction(this);">
+            <img class="col-sm-3 col-4 col-md-2" src="/oasis/images/charlesdeluvio-97Ir6ym25N4-unsplash.jpg" alt="" onclick="myFunction(this);">
+            <img class="col-sm-3 col-4 col-md-2" src="/oasis/images/mwangi-gatheca-qlKaN7eqay8-unsplash.jpg" alt="" onclick="myFunction(this);">
+            <img class="col-sm-3 col-4 col-md-2" src="/oasis/images/charlesdeluvio-97Ir6ym25N4-unsplash.jpg" alt="" onclick="myFunction(this);">
+        </div> --}}
 
-        <p class=" mt-5 text-center">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum laborum facere molestiae quaerat. Itaque eos
-            nesciunt aperiam dolorum a fugiat, laboriosam dignissimos. Eligendi alias minima nesciunt iusto, excepturi
-            doloribus eius.
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere nisi optio harum atque ea, odit iure,
-            tempore animi ut voluptatum aliquam sequi. Asperiores quod nesciunt deleniti ex illum, nisi quos?
+        <p class="mt-5 text-center">
+            {{ $actu->content }}
         </p>
     </div>
+
+
 
     <footer>
         <div class="div-footer pt-5 pb-5 mt-5">
