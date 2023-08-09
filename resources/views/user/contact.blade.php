@@ -5,7 +5,7 @@
 
     </x-slot>
 
-    <div class="mt-5 Contact text-center">
+    <div class="mt-5 text-center">
         <h2 class="text-center">Contactez-nous</h2>
         <form action="{{ route('contactUs') }}" method="POST">
             @csrf

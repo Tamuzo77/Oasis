@@ -86,7 +86,7 @@ $(document).ready(function () {
     );
 });
 
-/* Get the navbar
+// Get the navbar
 const navbar = document.getElementById("navbar");
 
 // Get the offset position of the navbar
@@ -100,4 +100,4 @@ function myFunction() {
     navbar.classList.remove("sticky");
   }
 }
-*/
+

@@ -45,13 +45,14 @@ class MainController extends Controller
     {
         return \view('user.inscription');
     }
-    
+
+
     public function formationInscription($slug)
     {
         try {
             $formation = (new DecryptAndFind())->handle(Formation::class, $slug);
             auth()->user()->formations()->attach($formation);
-            return \redirect()->back()->with('success', 'Votre inscription a été effectué avec succès');        
+            return \redirect()->back()->with('success', 'Votre inscription a été effectué avec succès');
         } catch (\Throwable $th) {
             return \redirect()->back()->with('failure', $th->getMessage());
         }
@@ -70,14 +71,14 @@ class MainController extends Controller
             DB::transaction(function () use ($request) {
                 $structure = Structure::updateOrCreate([
                         'email' => $request->structure_email,
-                    ], [    
+                    ], [
                             'name' => $request->structure_name,
-                            'tel' => $request->structure_tel, 
-                            'ifu' => $request->structure_ifu ,  
-                            'lien_facebook'=>$request->structure_lien_facebook , 
-                            'lien_github'=>$request->structure_lien_github , 
-                            'lien_linkedin'=>$request->structure_lien_linkedin, 
-                            'logo' => $request->structure_logo->store('espace_emploi/structure', 'public') , 
+                            'tel' => $request->structure_tel,
+                            'ifu' => $request->structure_ifu ,
+                            'lien_facebook'=>$request->structure_lien_facebook ,
+                            'lien_github'=>$request->structure_lien_github ,
+                            'lien_linkedin'=>$request->structure_lien_linkedin,
+                            'logo' => $request->structure_logo->store('espace_emploi/structure', 'public') ,
                          ]
                 );
                     $emploi['structure_id'] = $structure->id;

@@ -23,6 +23,11 @@
             background: none !important;
             border: none !important;
         }
+        .closebtn{
+            background-color:#4684BF;
+            font-weight: bold;
+
+        }
     </style>
 </head>
 
@@ -30,11 +35,36 @@
 
     <header class="nav-bar">
         @include('user.partials._navbar')
-        <div class="div-ac-title col-md-5 text-white opacity-80" style="">
+        <div class="div-ac">
             <x-partials.whatsapp></x-partials.whatsapp>
         </div>
     </header>
+    <div class="container px-5">
+        <h2 class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
+        <p class="text-center mb-4">Date</p>
+<!-- The expanding image container -->
+<div class="container text-center">
+    <!-- Close the image -->
+    <span onclick="this.parentElement.style.display='none'" class="closebtn p-2 text-white">&times;</span>
 
+    <!-- Expanded image -->
+    <img id="expandedImg" style="width:80%;height:auto;margin:auto;">
+
+    <!-- Image text -->
+    <div id="imgtext"></div>
+  </div>
+        <div class="row mt-5 overflow-auto flex-nowrap p-3 mb-5 justify-content-center">
+            <img class="col-sm-3 col-4 col-md-2" src="/oasis/images/bruce-barrow-aI9_9T03OIk-unsplash.jpg" alt="" onclick="myFunction(this);">
+            <img class="col-sm-3 col-4 col-md-2" src="/oasis/images/charlesdeluvio-97Ir6ym25N4-unsplash.jpg" alt="" onclick="myFunction(this);">
+            <img class="col-sm-3 col-4 col-md-2" src="/oasis/images/mwangi-gatheca-qlKaN7eqay8-unsplash.jpg" alt="" onclick="myFunction(this);">
+            <img class="col-sm-3 col-4 col-md-2" src="/oasis/images/charlesdeluvio-97Ir6ym25N4-unsplash.jpg" alt="" onclick="myFunction(this);">
+        </div>
+
+        <p class="mx-sm-5">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum laborum facere molestiae quaerat. Itaque eos nesciunt aperiam dolorum a fugiat, laboriosam dignissimos. Eligendi alias minima nesciunt iusto, excepturi doloribus eius.
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere nisi optio harum atque ea, odit iure, tempore animi ut voluptatum aliquam sequi. Asperiores quod nesciunt deleniti ex illum, nisi quos?
+        </p>
+    </div>
 
 
     <style>
