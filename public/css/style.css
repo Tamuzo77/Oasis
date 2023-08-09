@@ -106,13 +106,15 @@
 
     .div-ac-title {
         margin-left:6%;
-        padding-top: 200px !important;
+        position: absolute;
+        bottom:160px;
         font-weight:600;
         background-color: rgba(0, 0, 0, 0.01);
 
     }
     .div-ac{
         padding-top: 200px !important;
+
     }
     .blur{
         background-color: #4684bfb6;
@@ -129,6 +131,9 @@
         }
         .div-ac-title p{
             margin: 10px auto;
+        }
+        #expandedImg{
+            width:75% !important;
         }
     }
     /*---------------------------------------------------------------------------*/
@@ -762,7 +767,6 @@
     text-align: center;
 }
 .modal-backdrop {
-    z-index:0 !important;
     display: none;
 
 }

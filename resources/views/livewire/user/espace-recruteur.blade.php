@@ -15,29 +15,31 @@
             </div>
             <a href="" class="inscrire col-md-2 col-xl-1 h-25 col-sm-3 col-5 m-auto m-md-none text-center"
                 data-bs-toggle="modal" data-bs-target="#myModal1">voir plus</a>
-        </div>
-        <div class="modal fade" id="myModal1">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
 
-                    <!-- Modal Header -->
-                    <div class="modal-header">
-                        <h4 class="modal-title">Détails de l'offre</h4>
+            <div class="modal fade" id="myModal1">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Détails de l'offre</h4>
+                        </div>
+
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            {{ $emploi->description }}
+                        </div>
+
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                        </div>
+
                     </div>
-
-                    <!-- Modal body -->
-                    <div class="modal-body">
-                        {{ $emploi->description }}
-                    </div>
-
-                    <!-- Modal footer -->
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                    </div>
-
                 </div>
             </div>
         </div>
+
     @empty
         <x-partials.vide />
     @endforelse
