@@ -15,16 +15,17 @@
         </div>
     </div>
 
-
-    <div class="photos mb-5 container"  data-aos="fade-up" data-aos-duration="3000">
-        <div class="text-center">
+    <div class="photos mb-5 mx-sm-5 px-5 mt-5">
+        <div class="text-center mb-4">
             <h2>Photos</h2>
         </div>
-        <div class="row justify-content-center mx-sm-5">
+        <div class="caroussel slick-slider drop-shadow-2xl">
             @foreach ($page->imageModels as $image )
-            <img class="col-xl-3 col-lg-4 col-sm-6 col-12 mt-4" src="{{ asset("storage/library/$image->image_url") }}"
+            <a target="_top" href="{{ asset("storage/library/$image->image_url") }}">
+                <span>voir</span>
+                <img src="{{ asset("storage/library/$image->image_url") }}"
                 alt="">
-
+            </a>
             @endforeach
         </div>
     </div>

@@ -69,14 +69,8 @@
                     <input class="w-100" type="number" name="profession" id="">
                 </div>
                 <div class="col-md-4 col-sm-6 mt-3">
-                    <label for="cv">Importer mon CV</label><br>
-                    <div class="file-upload w-100">
-                        <div class="file-upload-select1 align-items-center row">
-                        <div class="file-select-button col-sm-5 col-md-3" ><a class="btn btn-primary btn-icon-up-file w-100">Add File</a></div>
-                        <div class="file-select-name1 col-sm-7 col-md-9">No file chosen...</div>
-                        <input type="file" name="file-upload-input1" id="file-upload-input1">
-                        </div>
-                    </div>
+                    <label for="age">Importer mon CV</label><br>
+                    <input class="w-100" type="file" name="" id="">
                 </div>
             </div>
     </div>

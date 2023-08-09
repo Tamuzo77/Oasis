@@ -4,7 +4,7 @@
         <div class="logos">
             <div class="logos-slide">
                 @forelse ($partenaires as $partenaire)
-                    <img src="{{ asset("storage/$partenaire->logo") }}" alt="">
+                    <img class="mx-4" src="{{ asset("storage/$partenaire->logo") }}" alt="">
                 @empty
                     <x-partials.vide />
                 @endforelse

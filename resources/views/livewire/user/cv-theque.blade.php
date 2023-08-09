@@ -12,7 +12,7 @@
                                 <small>{{ $cv->created_at->diffForHumans() }}</small>
                             </h4>
                         </div>
-                        <strong class="text-break">({{ $cv->email }})</strong>
+
                         <p class="mt-1">{{ $cv->biography }}</p>
 
                             <button class="kkiapay-button btn btn-primary inscrire">Consulter Le CV</button>

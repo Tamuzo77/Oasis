@@ -22,6 +22,7 @@ use App\Http\Controllers\EspaceRecruteurController;
 use App\Http\Controllers\AccueilConnexionController;
 use App\Http\Controllers\Admin\PartenaireController;
 use App\Http\Controllers\Admin\CategoryNewController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\InscriptionFormationsController;
 
 /*
@@ -48,6 +49,7 @@ Route::get('/cvTheque',[CVThequeController::class,'cvTheque']);
 Route::get('/kits',[KitsController::class,'kits']);
 Route::get('/livres',[LivresController::class,'livres']);
 Route::get('/espaceEmploi',[EmploiController::class,'espaceEmploi']);
+Route::get('/contact',[ContactController::class,'contact']);
 /*---------------------------------------------------------------------------------*/
 
 Route::get('/dashboard', function () {

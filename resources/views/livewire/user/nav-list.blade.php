@@ -13,6 +13,7 @@
 
         @endif
     @endforeach
+    <x-user.nav-item title="Contact" href="/contact" />
     {{--<x-user.nav-item title="Accueil" href="/" />
 
     <x-user.nav-item title="Qui sommes-nous" href="" />
@@ -30,7 +31,7 @@
         <x-user.nav-sub-link title="Formations Certifiantes" href="" />
         <x-user.nav-sub-link title="Formations Gratuites" href="" />
     </x-user.nav-item>
-    
+
     <x-user.nav-item title="Boutique" :toggled="true" >
         <x-user.nav-sub-link title="Kits Professionnels" href="" />
         <x-user.nav-sub-link title="Livres" href="" />

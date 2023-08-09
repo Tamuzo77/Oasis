@@ -84,23 +84,23 @@
     </div>
 
 
-    <div class="photos mb-5 container" data-aos="fade-up" data-aos-duration="3000">
+    {{-- <div class="photos mb-5 container" data-aos="fade-up" data-aos-duration="3000">
         <div class="text-center">
             <h2>Photos</h2>
         </div>
         <div class="row justify-content-center mx-sm-5">
-            <img class="col-xl-3 col-lg-4 col-sm-6 col-12 mt-4" src="oasis/images/bruce-barrow-aI9_9T03OIk-unsplash.jpg"
+            <img class=" col-lg-4 col-sm-6 col-12 mt-4" src="oasis/images/bruce-barrow-aI9_9T03OIk-unsplash.jpg"
                 alt="">
-            <img class="col-xl-3 col-lg-4 col-sm-6 col-12 mt-4"
+            <img class=" col-lg-4 col-sm-6 col-12 mt-4"
                 src="oasis/images/mwangi-gatheca-qlKaN7eqay8-unsplash.jpg" alt="">
-            <img class="col-xl-3 col-lg-4 col-sm-6 col-12 mt-4"
+            <img class=" col-lg-4 col-sm-6 col-12 mt-4"
                 src="oasis/images/charlesdeluvio-97Ir6ym25N4-unsplash.jpg" alt="">
-            <img class="col-xl-3 col-lg-4 col-sm-6 col-12 mt-4"
+            <img class=" col-lg-4 col-sm-6 col-12 mt-4"
                 src="oasis/images/mwangi-gatheca-qlKaN7eqay8-unsplash.jpg" alt="">
-            <img class="col-xl-3 col-lg-4 col-sm-6 col-12 mt-4" src="oasis/images/bruce-barrow-aI9_9T03OIk-unsplash.jpg"
+            <img class=" col-lg-4 col-sm-6 col-12 mt-4" src="oasis/images/bruce-barrow-aI9_9T03OIk-unsplash.jpg"
                 alt="">
         </div>
-    </div>
+    </div> --}}
 
     <div class="videos container justify-content-center mt-4 mb-5">
         <div class="text-center mb-5">
