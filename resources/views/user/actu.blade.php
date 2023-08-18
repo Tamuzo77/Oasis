@@ -45,7 +45,7 @@
         </div>
     </header>
     <div class="container px-5">
-        <h2 class="text-center">{{ $actu->title }}</h2>
+        <h2 class="text-center mb-4">{{ $actu->title }}</h2>
         <p class="text-center mb-4">{{ gmdate( 'd M Y',strtotime($actu->updated_at)) }}</p>
         <!-- The expanding image container -->
         <div class="container text-center">

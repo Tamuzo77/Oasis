@@ -50,6 +50,7 @@ Route::get('/kits',[KitsController::class,'kits']);
 Route::get('/livres',[LivresController::class,'livres']);
 Route::get('/espaceEmploi',[EmploiController::class,'espaceEmploi']);
 Route::get('/contact',[ContactController::class,'contact']);
+Route::get('/offres',[MainController::class,'offres']);
 /*---------------------------------------------------------------------------------*/
 
 Route::get('/dashboard', function () {

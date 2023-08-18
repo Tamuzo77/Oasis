@@ -1,6 +1,5 @@
 <x-user.layout :title="$page->title" :imageAccueil="$page->imageModels[0]->image_url ?? 'img64a422e5886743.37976823/Image collée.png'">
     <x-slot name="headerText">
-        <div class="accueil-title mb-4">OASIS Consulting</div>
         <p> {{$page->header ?? ''}}</p>
 
     </x-slot>
@@ -11,7 +10,10 @@
 
 
 
-    <div class="depotCV pt-4 mx-5 pb-5" data-aos="fade-up" data-aos-duration="3000">
+    <div class="depotCV pt-4 container pb-5" data-aos="fade-up" data-aos-duration="3000">
+        <p class=" mt-4 mb-4">
+            {{$page->midContent ?? ''}}
+        </p>
         <form action="{{ route('depotDeCv') }}" method="POST" class="pb-5 mt-5" enctype="multipart/form-data">
             @csrf
             <h1 class="text-center">Remplissez ce formulaire</h1>

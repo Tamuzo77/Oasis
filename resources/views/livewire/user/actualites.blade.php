@@ -1,8 +1,8 @@
 <div class="news my-5 container align-items-center">
     <div class="title text-center mb-3">Nos actualités</div>
-    <div class=" card-container row">
+    <div class=" card-container row overflow-auto flex-nowrap p-3 justify-content-center mb-4">
         @forelse ($actus as $actu )
-        <div class="card card-2 text-center col-md-6 mb-4">
+        <div class="card card-2">
             <img class="card-img-top" src="{{ asset("storage/$actu->cover_image") }}"
                 alt="">
             <div class="card-body card-body-2">
@@ -10,7 +10,7 @@
                 <p class="card-text ">{!! $actu->content !!} </p>
 
             </div>
-            <a href="{{ url("/actus/$actu->slug") }}" class="button">Lire</a>
+            <a href="{{ url("/actus/$actu->slug") }}" class="button text-center">Lire</a>
         </div>
         @empty
             <x-partials.vide />

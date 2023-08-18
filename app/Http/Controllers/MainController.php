@@ -41,6 +41,10 @@ class MainController extends Controller
         return \view('user.cvTheque');
     }
 
+    public function offres()
+    {
+        return \view('user.offres');
+    }
     public function inscription()
     {
         return \view('user.inscription');

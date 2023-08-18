@@ -17,7 +17,7 @@
             background-size: cover;
             object-fit: cover;
             background-repeat: no-repeat;
-            background-position: center;
+            padding-top: 200px;
 
         }
 
