@@ -26,11 +26,12 @@
             <a href="/inscription" class="inscrire col-5 text-center">Inscrivez vous pour souscrire à une formation</a>
         @endauth
     </x-slot>
-    <main class="mx-5 px-md-5" data-aos="fade-up" data-aos-duration="3000">
+<x-user.flash />
+    <main class="justify-content-center m-auto" data-aos="fade-up" data-aos-duration="3000" style="width:70%">
         <div class="mt-5 mb-3 px-lg-5">
             <h3>Présentation</h3>
             <div class=" row align-items-center justify-content-center">
-                <img class="col-sm-3 mb-sm-none mb-3" src="{{ asset("storage/$formation->cover_image") }}"
+                <img class="col-sm-4 col-lg-3 mb-sm-none mb-3" src="{{ asset("storage/$formation->cover_image") }}"
                     alt="" style="border-radius:30px;">
                 <p class=" col-sm-8">
                     {{ $formation->presentation }}

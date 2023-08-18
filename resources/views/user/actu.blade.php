@@ -29,6 +29,10 @@
             font-weight: bold;
 
         }
+
+        .div-footer {
+            background-image: url({{ asset('oasis/accueil/footer.png') }});
+        }
     </style>
 </head>
 
@@ -45,11 +49,9 @@
         <p class="text-center mb-4">{{ gmdate( 'd M Y',strtotime($actu->updated_at)) }}</p>
         <!-- The expanding image container -->
         <div class="container text-center">
-            <!-- Close the image -->
-            <span onclick="this.parentElement.style.display='none'" class="closebtn p-2 text-white">&times;</span>
 
             <!-- Expanded image -->
-            <img id="expandedImg" style="width:80%;height:auto;margin:auto;" src="{{ asset("storage/$actu->cover_image") }}">
+            <img id="expandedImg" class="w-50" style="height:auto;margin:auto;" src="{{ asset("storage/$actu->cover_image") }}">
 
             <!-- Image text -->
             <div id="imgtext"></div>
@@ -61,17 +63,13 @@
             <img class="col-sm-3 col-4 col-md-2" src="/oasis/images/charlesdeluvio-97Ir6ym25N4-unsplash.jpg" alt="" onclick="myFunction(this);">
         </div> --}}
 
-        <p class="mx-sm-5">
+        <p class="mt-5 text-center">
             {{ $actu->content }}
         </p>
     </div>
 
 
-    <style>
-        .div-footer {
-            background-image: url({{ asset('oasis/accueil/footer.png') }});
-        }
-    </style>
+
     <footer>
         <div class="div-footer pt-5 pb-5 mt-5">
             <div class="footer-bg text-center">
