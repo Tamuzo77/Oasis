@@ -1,6 +1,6 @@
 <style>
     .div-footer{
-        background-image:url('oasis/accueil/footer.png');
+        background-image:url("{{ asset('oasis/accueil/footer.png') }}");
     }
 </style>
 

@@ -1,28 +1,27 @@
 <x-user.layout :title="$formation->name" :imageAccueil="$page->imageModels[0]->image_url ?? 'img64a422e5886743.37976823/Image collée.png'">
     <x-slot name="headerText">
         @auth
-        <form action="{{route('formationInscription', \Crypt::encrypt($formation->slug))}}" method="get">
-            @csrf
-            @if ($formation->price > 0 && !Auth::user()->formations()->where('formation_id',$formation->id)->exists() )
-            <kkiapay-widget amount="{{ $formation->price }}" key="{{ env('KIKYAPAY_KEY') }}"
-                url="{{ asset('oasis/accueil/logo Oasis Consulting 1.png') }}" position="center" sandbox="true" data=""
-                callback="{{route('formationInscription', \Crypt::encrypt($formation->slug))}}">
-            </kkiapay-widget>
-            @else
-
-            <button type="submit" data-bs-toggle="modal" data-bs-target="#inscriptionModalCenter"
-                class="inscrire col-5 text-center">
-                @if(Auth::user()->formations()->where('formation_id',$formation->id)->exists())
-                    {{ __('Consulter') }}
-                    @else
-                    {{ __('Inscrivez vous à la formation') }}
-
+            <form action="{{ route('formationInscription', \Crypt::encrypt($formation->slug)) }}" method="get">
+                @csrf
+                @if (
+                    $formation->price > 0 &&
+                        !Auth::user()->formations()->where('formation_id', $formation->id)->exists())
+                    <kkiapay-widget amount="{{ $formation->price }}" key="{{ env('KIKYAPAY_KEY') }}"
+                        url="{{ asset('oasis/accueil/logo Oasis Consulting 1.png') }}" position="center" sandbox="true"
+                        data="" callback="{{ route('formationInscription', \Crypt::encrypt($formation->slug)) }}">
+                    </kkiapay-widget>
+                @else
+                    <button type="submit" data-bs-toggle="modal" data-bs-target="#inscriptionModalCenter"
+                        class="inscrire col-5 text-center">
+                        @if (Auth::user()->formations()->where('formation_id', $formation->id)->exists())
+                            {{ __('Consulter') }}
+                        @else
+                            {{ __('Inscrivez vous à la formation') }}
+                        @endif
+                    </button>
                 @endif
-            </button>
-            @endif
-        </form>
-
-            @else
+            </form>
+        @else
             <a href="/inscription" class="inscrire col-5 text-center">Inscrivez vous pour souscrire à une formation</a>
         @endauth
     </x-slot>
