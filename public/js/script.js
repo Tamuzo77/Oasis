@@ -14,7 +14,7 @@ function myFunction() {
     }
 }
 
-let items = document.querySelectorAll(".carousel .carousel-item");
+let items = document.querySelectorAll(".carroussel .carousel .carousel-item");
 items.forEach((el) => {
     const minPerSlide = 3;
     let next = el.nextElementSibling;
@@ -113,3 +113,9 @@ function myFunction(imgs) {
 //   }
 // }
 
+$('.autoplay').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+  });

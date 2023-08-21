@@ -12,6 +12,6 @@
     </div>
     <livewire:user.reseau-rac :images="$page->imageModels" />
     <div class="text-center">
-        <a class="inscrire" href="/contact">Contactez un personnel</a>
+        <a class="inscrire" href="/contact">Contactez un expert</a>
     </div>
 </x-user.layout>
