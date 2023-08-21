@@ -6,7 +6,7 @@
 
 
 <header>
-    <div class="blur">
+    <div>
         {{-- <x-partials.header></x-partials.header> --}}
         @include('user.partials._navbar')
         {{-- <div class="div-ac-title col-md-8 col-lg-7 text-white opacity-80" style="">

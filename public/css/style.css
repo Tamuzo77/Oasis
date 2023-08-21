@@ -128,13 +128,6 @@ p{
     padding-top: 200px !important;
 
 }
-.blur{
-    z-index: 1029 !important;
-    background-color: #4684bfb6;
-    height:100% !important;
-
-}
-
 
 @media screen and (max-width:750px){
 
